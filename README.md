@@ -1,1 +1,3 @@
-# wbdv-sp20-group6
+# Word Nerds
+
+P1: https://docs.google.com/document/d/1dXGW-LkW1DCGeepDEwpKy55eLejBVBa7obd173uS2Vg/edit?usp=sharing
