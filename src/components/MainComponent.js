@@ -1,0 +1,77 @@
+import React from "react";
+import "./main.css"
+import LandingComponent from "./LandingComponent"
+import SearchResultsComponent from "./SearchResultsComponent"
+import WordComponent from "./WordComponent"
+import {BrowserRouter as Router, Route, Link} from "react-router-dom";
+
+/*
+This is the main component in which the Router is contained.
+The navbar is currently displayed across all components.
+ */
+class MainComponent extends React.Component {
+
+    state = {
+        searchField: "", // string in the search field
+    }
+
+    // Updates searchField when user types in the search field
+    updateSearch = (e) =>
+        this.setState({searchField: e.target.value})
+
+    render () {
+        return (
+            <Router>
+
+                {/* Navigation bar displayed across all pages*/}
+                <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
+
+                    {/* Word Nerds logo in navbar-- brings user back to home */}
+                    <Link to="/" className="navbar-brand" href="#">
+                        <i className="fa fa-book-open"></i>
+                        Word Nerds
+                    </Link>
+
+                    {/* Search field in navbar */}
+                    <form className="form-inline">
+                        <input className="form-control mr-sm-0" type="search"
+                               placeholder="Search for a word!" onChange={this.updateSearch}/>
+                        <Link to={`/search/${this.state.searchField}`}>
+                            <button className="btn btn-outline-secondary my-2 my-sm-0" type="submit">
+                                <i className="fa fa-search"></i>
+                            </button>
+                        </Link>
+                    </form>
+                </nav>
+
+                {/* Home/landing component -- displays word of the day and daily stats */}
+                <Route
+                    path="/"
+                    exact={true}
+                    render={() =>
+                        <LandingComponent/>
+                    }/>
+
+                {/* Search results component -- displays search results */}
+                <Route
+                    path="/search/:searched"
+                    exact={true}
+                    render={(props) =>
+                        <SearchResultsComponent
+                            searched={props.match.params.searched}/>
+                    }/>
+
+                {/* Word components -- displays a word's details */}
+                <Route
+                    path="/word/:word"
+                    exact={true}
+                    render={(props) =>
+                        <WordComponent
+                            word={props.match.params.word}/>
+                    }/>
+
+            </Router>
+        )
+    }
+}
+export default MainComponent
