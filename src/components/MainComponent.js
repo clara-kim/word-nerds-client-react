@@ -4,6 +4,9 @@ import LandingComponent from "./LandingComponent"
 import SearchResultsComponent from "./SearchResultsComponent"
 import WordComponent from "./WordComponent"
 import {BrowserRouter as Router, Route, Link} from "react-router-dom";
+import LoginComponent from "./LoginComponent";
+import ProfileComponent from "./ProfileComponent";
+import RegisterComponent from "./RegisterComponent";
 
 /*
 This is the main component in which the Router is contained.
@@ -50,6 +53,30 @@ class MainComponent extends React.Component {
                     exact={true}
                     render={() =>
                         <LandingComponent/>
+                    }/>
+
+                {/* Login component -- login page */}
+                <Route
+                    path="/login"
+                    exact={true}
+                    render={() =>
+                        <LoginComponent/>
+                    }/>
+
+                {/* Profile component -- user's profile page */}
+                <Route
+                    path="/profile"
+                    exact={true}
+                    render={() =>
+                        <ProfileComponent/>
+                    }/>
+
+                {/* Profile component -- user's profile page */}
+                <Route
+                    path="/register"
+                    exact={true}
+                    render={() =>
+                        <RegisterComponent/>
                     }/>
 
                 {/* Search results component -- displays search results */}
