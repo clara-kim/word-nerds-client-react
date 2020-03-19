@@ -26,7 +26,7 @@ class SearchResultsComponent extends React.Component {
         fetch (proxyurl + url)
             .then(response =>response.json())
             .then(results => this.setState({words: results}))
-            .then(result => this.filterWords())
+            // .then(result => this.filterWords())
     }
 
     componentDidUpdate(prevProps, prevState, snapshot) {
@@ -36,7 +36,7 @@ class SearchResultsComponent extends React.Component {
             fetch (proxyurl + url)
                 .then(response =>response.json())
                 .then(results => this.setState({words: results}))
-                .then(result => this.filterWords())
+                // .then(result => this.filterWords())
         }
     }
 
