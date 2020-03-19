@@ -22,7 +22,7 @@ class SearchResultsComponent extends React.Component {
         // "No Access-Control-Allow-Origin header" problems
         // see https://stackoverflow.com/questions/43871637/no-access-control-allow-origin-header-is-present-on-the-requested-resource-whe/43881141
         const proxyurl = "https://cors-anywhere.herokuapp.com/";
-        const url = `http://api.datamuse.com/words?sp=${this.props.searched}&md=d`
+        const url = `http://api.datamuse.com/words?sp=${this.props.searched}*&md=d`
         fetch (proxyurl + url)
             .then(response =>response.json())
             .then(results => this.setState({words: results}))
