@@ -1,0 +1,68 @@
+/*https://www.w3docs.com/snippets/css/how-to-create-a-parallax-scrolling-effect.html*/
+.parallax {
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+#word-of-day {
+    background-image: url(../images/bookshelves-lightbulbs.jpg);
+    color: white;
+    padding-top: 20vh;
+    padding-bottom: 30vh;
+    padding-left: 20%;
+    padding-right: 20%;
+}
+
+#wod-word {
+    font-size: 50px;
+}
+
+#wod-def {
+    font-size: 25px;
+}
+
+#word-stats {
+    color: white;
+    background-image: url(../images/letters.jpg);
+    padding-top: 10vh;
+    padding-bottom: 20vh;
+    padding-left: 10%;
+    padding-right: 10%;
+}
+
+#word-of-day-details {
+    padding-top: 3%;
+    padding-bottom: 3%;
+    background: rgba(0, 0, 0, 0.7);
+    text-align: center;
+    border: solid white thin;
+    border-radius: 5px;
+}
+
+.section-title {
+    text-align: center;
+}
+
+#wod-source {
+    font-style: italic;
+    opacity: 50%;
+}
+
+.wbdv-wordly-happenings-section {
+    padding-top: 1%;
+    padding-bottom: 1%;
+    background: rgba(0, 0, 0, 0.3);
+    border: solid white thin;
+    border-radius: 5px;
+}
+
+#wbdv-personal-stats {
+    color: white;
+    background-image: url(../images/typewriter.jpg);
+    padding-top: 10vh;
+    padding-bottom: 20vh;
+    padding-left: 10%;
+    padding-right: 10%;
+}
