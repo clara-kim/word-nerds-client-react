@@ -10,18 +10,6 @@
     padding-top: 20px;
 }
 
-.word-description-page {
-    background-color: black;
-    background-image: url(../images/bookshelves-lightbulbs.jpg);
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-position: center;
-    background-size: cover;
-    margin-top: -10px;
-    height: 300vh;
-    padding-top: 30px;
-}
-
 .search-result-item {
     background: rgba(0, 0, 0, 0.3);
     text-align: center;
@@ -30,22 +18,6 @@
     border-radius: 5px;
     padding-top: 10px;
     padding-bottom: 10px;
-}
-
-.word-title {
-    font-weight: bold;
-    text-align: center;
-    color: #ffffff;
-}
-
-.word-definition {
-    padding-top: 3%;
-    padding-bottom: 3%;
-    background: rgba(0, 0, 0, 0.3);
-    text-align: center;
-    border: solid white thin;
-    border-radius: 5px;
-    color: white;
 }
 
 .wbdv-white-font {

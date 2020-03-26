@@ -1,0 +1,109 @@
+.word-description-page {
+    background-color: black;
+    background-image: url(../images/bookshelves-lightbulbs.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    margin-top: -10px;
+    height: 100vh;
+    padding-top: 30px;
+}
+
+.wbdv-word-title-section {
+    margin-top: 20px;
+    font-weight: bold;
+    color: #ffffff;
+    font-size: 70px;
+    text-align: center;
+}
+
+.wbdv-word-title {
+    background-color: rgb(52,58, 64);
+    padding-left: 20px;
+    padding-right: 20px;
+    border-radius: 20px;
+}
+
+.wbdv-word-thumbs{
+    margin-left: 15px;
+    font-size: 50px;
+    vertical-align: text-top;
+}
+
+.wbdv-transparent-button {
+    background-color: transparent;
+    border: none;
+}
+
+.wbdv-word-like-icon{
+    text-align: center;
+    color: green;
+}
+
+.wbdv-word-dislike-icon{
+    text-align: center;
+    color: darkred;
+}
+
+.wbdv-word-like-number {
+    font-size: 20px;
+    vertical-align: top;
+    color: green;
+}
+
+.wbdv-word-dislike-number {
+    font-size: 20px;
+    vertical-align: top;
+    color: darkred;
+}
+
+.word-definition {
+    font-size: 20px;
+    padding-top: 3%;
+    padding-bottom: 3%;
+    background: rgba(0, 0, 0, 0.3);
+    text-align: center;
+    border: solid white thin;
+    border-radius: 5px;
+    color: white;
+}
+
+.wbdv-mw {
+    padding-right: 15px;
+    color: darkgrey;
+    font-style: italic;
+    margin-bottom: 15px;
+}
+
+.wbdv-tabs-section {
+    margin-top: 30px;
+    background-color: rgb(52,58, 64);
+    height: 100vh;
+}
+.wbdv-tabs {
+    font-size: 20px;
+}
+
+.wbdv-tab-data {
+    margin-top: 20px;
+    font-size: 15px;
+    padding-top: 1%;
+    background: rgba(0, 0, 0, 0.3);
+    text-align: center;
+    border: solid white thin;
+    border-radius: 5px;
+    color: white;
+}
+
+.wbdv-tab-data-user{
+    text-align: right;
+    padding-right: 15px;
+    color: darkgrey;
+    font-style: italic;
+ }
+
+.wbdv-tab-thumbs {
+    font-size: 30px;
+    float: left;
+}
