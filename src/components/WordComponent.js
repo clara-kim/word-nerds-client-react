@@ -1,5 +1,7 @@
 import React from "react";
 import "./WordComponent.css"
+import Tab from 'react-bootstrap/Tabs'
+import Tabs from 'react-bootstrap/Tabs'
 
 /*
 This is the word component that includes all details about a particular word.
@@ -93,11 +95,281 @@ class WordComponent extends React.Component {
 
                     {/*WORD DEFINITION*/}
                     <div className="word-definition">
-                        {this.getWordDef()}
-                        <br/>
-                        <br/>
-                        <span className="float-right wbdv-mw"> Merriam-Webster Dictionary </span>
+                        <p>
+                            {this.getWordDef()}
+                            <br/>
+                            <br/>
+                            <span className="float-right wbdv-mw"> Merriam-Webster Dictionary </span>
+                        </p>
                     </div>
+                </div>
+
+                {/*TABS SECTION*/}
+                <div className="wbdv-tabs-section">
+                    <Tabs defaultActiveKey="quotes" id="uncontrolled-tab-example"
+                          className="wbdv-tabs">
+
+                        {/*QUOTES TAB*/}
+                        <Tab eventKey="quotes" title="Quotes" className="wbdv-tab">
+                            <div className="container wbdv-tab-data">
+
+                                {/*THUMBS UP AND THUMBS DOWN*/}
+                                <p className="wbdv-tab-thumbs">
+
+                                    {/*THUMBS UP*/}
+                                    <button className="wbdv-transparent-button">
+                                        <i className="fa fa-thumbs-up wbdv-word-like-icon"
+                                           title="like"/>
+                                        <br/>
+                                        <span className="wbdv-word-like-number">
+                                            10
+                                        </span>
+                                    </button>
+
+                                    {/*THUMBS DOWN*/}
+                                    <button className="wbdv-transparent-button">
+                                        <i className="fa fa-thumbs-down wbdv-word-dislike-icon"
+                                           title="dislike"/>
+                                        <br/>
+                                        <span className="wbdv-word-dislike-number">
+                                            1
+                                        </span>
+                                    </button>
+                                </p>
+
+                                {/*THE QUOTE*/}
+                                <p className="wbdv-tab-data-input">A user-submitted quote would go here.</p>
+                                <p className="wbdv-tab-data-user"> Book (Author) </p>
+                                <p className="wbdv-tab-data-user"> Submitted by: User </p>
+                            </div>
+
+                            <div className="container wbdv-tab-data">
+
+                                {/*THUMBS UP AND THUMBS DOWN*/}
+                                <p className="wbdv-tab-thumbs">
+
+                                    {/*THUMBS UP*/}
+                                    <button className="wbdv-transparent-button">
+                                        <i className="fa fa-thumbs-up wbdv-word-like-icon"
+                                           title="like"/>
+                                        <br/>
+                                        <span className="wbdv-word-like-number">
+                                            10
+                                        </span>
+                                    </button>
+
+                                    {/*THUMBS DOWN*/}
+                                    <button className="wbdv-transparent-button">
+                                        <i className="fa fa-thumbs-down wbdv-word-dislike-icon"
+                                           title="dislike"/>
+                                        <br/>
+                                        <span className="wbdv-word-dislike-number">
+                                            1
+                                        </span>
+                                    </button>
+                                </p>
+
+                                {/*THE QUOTE*/}
+                                <p className="wbdv-tab-data-input">A user-submitted quote would go here.</p>
+                                <p className="wbdv-tab-data-user"> Book (Author) </p>
+                                <p className="wbdv-tab-data-user"> Submitted by: User </p>
+                            </div>
+                        </Tab>
+
+                        {/*EXAMPLE SENTENCES TAB*/}
+                        <Tab eventKey="examples" title="Example Sentences">
+                            <div className="container wbdv-tab-data">
+
+                                {/*THUMBS UP AND THUMBS DOWN*/}
+                                <p className="wbdv-tab-thumbs">
+
+                                    {/*THUMBS UP*/}
+                                    <button className="wbdv-transparent-button">
+                                        <i className="fa fa-thumbs-up wbdv-word-like-icon"
+                                           title="like"/>
+                                        <br/>
+                                        <span className="wbdv-word-like-number">
+                                            10
+                                        </span>
+                                    </button>
+
+                                    {/*THUMBS DOWN*/}
+                                    <button className="wbdv-transparent-button">
+                                        <i className="fa fa-thumbs-down wbdv-word-dislike-icon"
+                                           title="dislike"/>
+                                        <br/>
+                                        <span className="wbdv-word-dislike-number">
+                                            1
+                                        </span>
+                                    </button>
+                                </p>
+
+                                {/*THE SENTENCE*/}
+                                <p className="wbdv-tab-data-input">A user-submitted sentence would go here.</p>
+                                <p className="wbdv-tab-data-user"> Submitted by: User </p>
+                            </div>
+
+                            <div className="container wbdv-tab-data">
+                                {/*THUMBS UP AND THUMBS DOWN*/}
+                                <p className="wbdv-tab-thumbs">
+
+                                    {/*THUMBS UP*/}
+                                    <button className="wbdv-transparent-button">
+                                        <i className="fa fa-thumbs-up wbdv-word-like-icon"
+                                           title="like"/>
+                                        <br/>
+                                        <span className="wbdv-word-like-number">
+                                            10
+                                        </span>
+                                    </button>
+
+                                    {/*THUMBS DOWN*/}
+                                    <button className="wbdv-transparent-button">
+                                        <i className="fa fa-thumbs-down wbdv-word-dislike-icon"
+                                           title="dislike"/>
+                                        <br/>
+                                        <span className="wbdv-word-dislike-number">
+                                            1
+                                        </span>
+                                    </button>
+                                </p>
+
+                                {/*THE SENTENCE*/}
+                                <p className="wbdv-tab-data-input">A user-submitted sentence would go here.</p>
+                                <p className="wbdv-tab-data-user"> Submitted by: User </p>
+                            </div>
+                        </Tab>
+
+                        {/*COMMENTS TAB*/}
+                        <Tab eventKey="comments" title="Comments">
+                            <div className="container wbdv-tab-data">
+
+                                {/*THUMBS UP AND THUMBS DOWN*/}
+                                <p className="wbdv-tab-thumbs">
+
+                                    {/*THUMBS UP*/}
+                                    <button className="wbdv-transparent-button">
+                                        <i className="fa fa-thumbs-up wbdv-word-like-icon"
+                                           title="like"/>
+                                        <br/>
+                                        <span className="wbdv-word-like-number">
+                                            10
+                                        </span>
+                                    </button>
+
+                                    {/*THUMBS DOWN*/}
+                                    <button className="wbdv-transparent-button">
+                                        <i className="fa fa-thumbs-down wbdv-word-dislike-icon"
+                                           title="dislike"/>
+                                        <br/>
+                                        <span className="wbdv-word-dislike-number">
+                                            1
+                                        </span>
+                                    </button>
+                                </p>
+
+                                {/*THE COMMENT*/}
+                                <p className="wbdv-tab-data-input">A user-submitted comment would go here.</p>
+                                <p className="wbdv-tab-data-user"> Submitted by: User </p>
+                            </div>
+
+                            <div className="container wbdv-tab-data">
+
+                                {/*THUMBS UP AND THUMBS DOWN*/}
+                                <p className="wbdv-tab-thumbs">
+
+                                    {/*THUMBS UP*/}
+                                    <button className="wbdv-transparent-button">
+                                        <i className="fa fa-thumbs-up wbdv-word-like-icon"
+                                           title="like"/>
+                                        <br/>
+                                        <span className="wbdv-word-like-number">
+                                            10
+                                        </span>
+                                    </button>
+
+                                    {/*THUMBS DOWN*/}
+                                    <button className="wbdv-transparent-button">
+                                        <i className="fa fa-thumbs-down wbdv-word-dislike-icon"
+                                           title="dislike"/>
+                                        <br/>
+                                        <span className="wbdv-word-dislike-number">
+                                            1
+                                        </span>
+                                    </button>
+                                </p>
+
+                                {/*THE COMMENT*/}
+                                <p className="wbdv-tab-data-input">A user-submitted comment would go here.</p>
+                                <p className="wbdv-tab-data-user"> Submitted by: User </p>
+                            </div>
+                        </Tab>
+
+                        {/*DEFINITION TAB*/}
+                        <Tab eventKey="definitions" title="User-Uploaded Definitions">
+                            <div className="container wbdv-tab-data">
+
+                                {/*THUMBS UP AND THUMBS DOWN*/}
+                                <p className="wbdv-tab-thumbs">
+
+                                    {/*THUMBS UP*/}
+                                    <button className="wbdv-transparent-button">
+                                        <i className="fa fa-thumbs-up wbdv-word-like-icon"
+                                           title="like"/>
+                                        <br/>
+                                        <span className="wbdv-word-like-number">
+                                            10
+                                        </span>
+                                    </button>
+
+                                    {/*THUMBS DOWN*/}
+                                    <button className="wbdv-transparent-button">
+                                        <i className="fa fa-thumbs-down wbdv-word-dislike-icon"
+                                           title="dislike"/>
+                                        <br/>
+                                        <span className="wbdv-word-dislike-number">
+                                            1
+                                        </span>
+                                    </button>
+                                </p>
+
+                                {/*THE DEFINITION*/}
+                                <p className="wbdv-tab-data-input">A user-submitted definition would go here.</p>
+                                <p className="wbdv-tab-data-user"> Submitted by: User </p>
+                            </div>
+
+                            <div className="container wbdv-tab-data">
+
+                                {/*THUMBS UP AND THUMBS DOWN*/}
+                                <p className="wbdv-tab-thumbs">
+
+                                    {/*THUMBS UP*/}
+                                    <button className="wbdv-transparent-button">
+                                        <i className="fa fa-thumbs-up wbdv-word-like-icon"
+                                           title="like"/>
+                                        <br/>
+                                        <span className="wbdv-word-like-number">
+                                            10
+                                        </span>
+                                    </button>
+
+                                    {/*THUMBS DOWN*/}
+                                    <button className="wbdv-transparent-button">
+                                        <i className="fa fa-thumbs-down wbdv-word-dislike-icon"
+                                           title="dislike"/>
+                                        <br/>
+                                        <span className="wbdv-word-dislike-number">
+                                            1
+                                        </span>
+                                    </button>
+                                </p>
+
+                                {/*THE DEFINITION*/}
+                                <p className="wbdv-tab-data-input">A user-submitted definition would go here.</p>
+                                <p className="wbdv-tab-data-user"> Submitted by: User </p>
+                            </div>
+                        </Tab>
+                    </Tabs>
                 </div>
             </div>
         )
