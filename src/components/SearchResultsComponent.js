@@ -3,13 +3,11 @@ import {Link} from "react-router-dom";
 import {getSearchResults} from "../services/SearchService";
 
 /*
+    The search results component which displays the search results.
+
     The search page and the word details page use different APIs.
     The search page uses the DataMuse API, which is useful for looking up words (eg. accounts for typos).
     The word details page uses Merriam Webster for its depth of information.
-
-    The DataMuse API yields many nonexistent words, however.
-    In the actual implementation, we will cross-reference each word in the DataMuse search
-    with the Merriam Webster API in order to confirm that only real words are displayed in the search results page.
      */
 class SearchResultsComponent extends React.Component {
 

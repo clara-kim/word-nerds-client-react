@@ -2,6 +2,8 @@ import React from "react";
 import "./WordComponent.css"
 import Tab from 'react-bootstrap/Tabs'
 import Tabs from 'react-bootstrap/Tabs'
+import {getWordDetails} from "../services/DictionaryService";
+import {getSearchResults} from "../services/SearchService";
 
 /*
 This is the word component that includes all details about a particular word.
@@ -37,18 +39,14 @@ class WordComponent extends React.Component {
         }
     }
 
-    componentDidMount() {
-        const url = `https://www.dictionaryapi.com/api/v3/references/collegiate/json/${this.props.word}?key=64a0dba8-3f3e-4b8f-8eef-e0e6e33247ee`
-        fetch(url)
-            .then(response => response.json())
-            .then(result => this.setState({wordData: result[0]}))
+    componentDidMount = async() => {
+        const wordData = await getWordDetails(this.props.word)
+        this.setState({wordData: wordData})
     }
 
     componentDidUpdate(prevProps, prevState, snapshot) {
         if(prevProps.word !== this.props.word) {
-            const url = `https://www.dictionaryapi.com/api/v3/references/collegiate/json/${this.props.word}?key=64a0dba8-3f3e-4b8f-8eef-e0e6e33247ee`
-            fetch(url)
-                .then(response => response.json())
+            getWordDetails(this.props.word)
                 .then(result => this.setState({wordData: result[0]}))
         }
     }
