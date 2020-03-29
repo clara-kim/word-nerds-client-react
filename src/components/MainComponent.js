@@ -22,6 +22,11 @@ class MainComponent extends React.Component {
     updateSearch = (e) =>
         this.setState({searchField: e.target.value})
 
+
+    clearSearch = () => {
+        this.setState({searchField: ""})
+    }
+
     render () {
         return (
             <Router>
@@ -38,8 +43,10 @@ class MainComponent extends React.Component {
                     {/* Search field in navbar */}
                     <form className="form-inline">
                         <input className="form-control mr-sm-0" type="search"
-                               placeholder="Search for a word!" onChange={this.updateSearch}/>
-                        <Link to={`/search/${this.state.searchField}`}>
+                               placeholder="Search for a word!" value={this.state.searchField}
+                               onChange={this.updateSearch}/>
+                        <Link to={`/search/${this.state.searchField}`}
+                              onClick={this.clearSearch}>
                             <button className="btn btn-outline-secondary my-2 my-sm-0" type="submit">
                                 <i className="fa fa-search"></i>
                             </button>
@@ -85,7 +92,8 @@ class MainComponent extends React.Component {
                     exact={true}
                     render={(props) =>
                         <SearchResultsComponent
-                            searched={props.match.params.searched}/>
+                            searched={props.match.params.searched}
+                            clearSearch = {this.clearSearch}/>
                     }/>
 
                 {/* Word components -- displays a word's details */}

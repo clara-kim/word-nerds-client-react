@@ -13,6 +13,10 @@ import {Link} from "react-router-dom";
      */
 class SearchResultsComponent extends React.Component {
 
+    constructor(props) {
+        super(props)
+    }
+
     state = {
         words: []
     }
