@@ -33,23 +33,6 @@ class SearchResultsComponent extends React.Component {
         }
     }
 
-    /*
-    For the time being, I filtered out words that do not have a definition in the DataMuse API
-    in hopes that incorrect words are weeded out.
-     */
-    filterWords = () => {
-        let i = 0;
-        let filtered = []
-        for (const word in this.state.words) {
-            let wd = this.state.words[i]
-            if (wd.defs !== undefined) {
-                filtered.push(wd)
-            }
-            i++
-        }
-        this.setState({words: filtered})
-    }
-
     render() {
         return (
             <div className="search-results-page">
@@ -59,8 +42,8 @@ class SearchResultsComponent extends React.Component {
                     {this.state.words.length > 0 &&
                      this.state.words.map( (item, index) =>
                         <div className="search-result-item" key={index}>
-                            <Link to={`/word/${item.word}`}>
-                                <h4 className="wbdv-white-font">{item.word}</h4>
+                            <Link to={`/word/${item}`}>
+                                <h4 className="wbdv-white-font">{item}</h4>
                             </Link>
                         </div>)}
 
