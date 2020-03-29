@@ -1,6 +1,6 @@
 import React from "react"
 import {Link} from "react-router-dom";
-
+import {getSearchResults} from "../services/SearchService";
 
 /*
     The search page and the word details page use different APIs.
@@ -21,26 +21,15 @@ class SearchResultsComponent extends React.Component {
         words: []
     }
 
-    componentDidMount() {
-        // https://cors-anywhere.herokuapp.com/ is a CORS proxy for getting around
-        // "No Access-Control-Allow-Origin header" problems
-        // see https://stackoverflow.com/questions/43871637/no-access-control-allow-origin-header-is-present-on-the-requested-resource-whe/43881141
-        const proxyurl = "https://cors-anywhere.herokuapp.com/";
-        const url = `http://api.datamuse.com/words?sp=${this.props.searched}*&md=d`
-        fetch (proxyurl + url)
-            .then(response =>response.json())
-            .then(results => this.setState({words: results}))
-            // .then(result => this.filterWords())
+    componentDidMount = async() => {
+        const searchResults = await getSearchResults(this.props.searched)
+        this.setState({words: searchResults})
     }
 
     componentDidUpdate(prevProps, prevState, snapshot) {
         if(prevProps.searched !== this.props.searched) {
-            const proxyurl = "https://cors-anywhere.herokuapp.com/";
-            const url = `http://api.datamuse.com/words?sp=${this.props.searched}&md=d`
-            fetch (proxyurl + url)
-                .then(response =>response.json())
-                .then(results => this.setState({words: results}))
-                // .then(result => this.filterWords())
+            getSearchResults(this.props.searched)
+                .then(searchResults => this.setState({words: searchResults}))
         }
     }
 
