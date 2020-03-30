@@ -17,6 +17,9 @@ export const getSearchResults = async(searchQuery) => {
         if (check) {
             filtered.push(wd.word)
         }
+        if (res > 15) {
+            break;
+        }
     }
     return filtered;
 }
