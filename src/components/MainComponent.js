@@ -52,6 +52,11 @@ class MainComponent extends React.Component {
                             </button>
                         </Link>
                     </form>
+
+                    {/*<Link to="/login" href="#" className="float-right">*/}
+                        {/*<i className="fa fa-sign-in"*/}
+                           {/*title="Sign In"></i>*/}
+                    {/*</Link>*/}
                 </nav>
 
                 {/* Home/landing component -- displays word of the day and daily stats */}
