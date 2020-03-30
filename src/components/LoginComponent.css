@@ -1,0 +1,21 @@
+#wbdv-login-page-background {
+    color: white;
+    background-image: url(../images/typewriter.jpg);
+    padding-top: 10vh;
+    padding-bottom: 20vh;
+    padding-left: 10%;
+    padding-right: 10%;
+    height: 91.3vh;
+}
+
+#wbdv-login-form-box {
+    padding-top: 5%;
+    padding-bottom: 5%;
+    background: rgba(0, 0, 0, 0.4);
+    text-align: center;
+    border-radius: 15px;
+}
+
+h2.wbdv-login-greeting {
+    color: #34AFC1;
+}

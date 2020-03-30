@@ -1,0 +1,26 @@
+#wbdv-register-page-background {
+    color: white;
+    background-image: url(../images/typewriter.jpg);
+    padding-top: 10vh;
+    padding-bottom: 20vh;
+    padding-left: 10%;
+    padding-right: 10%;
+    height: 91.3vh;
+}
+
+#wbdv-register-form-box {
+    padding-top: 5%;
+    padding-bottom: 5%;
+    background: rgba(0, 0, 0, 0.4);
+    text-align: center;
+    border-radius: 15px;
+}
+
+.wbdv-register-greeting {
+    color: #34AFC1;
+}
+
+.wbdv-encryption-note{
+    float: left;
+    font-style: italic;
+}
