@@ -9,7 +9,7 @@ class LoginComponent extends React.Component {
             <div id="wbdv-login-page-background">
                 <div id="wbdv-login-form-box" className="container">
 
-                    <h2>Salutations, Word Nerd!</h2>
+                    <h2 className="wbdv-login-greeting">Salutations, Word Nerd!</h2>
                     <br/>
 
                     {/*Username*/}
