@@ -1,6 +1,7 @@
 import React from "react"
 import {Link} from "react-router-dom";
 import {getSearchResults} from "../services/SearchService";
+import "./SearchResultsComponent.css"
 
 /*
     The search results component which displays the search results.
