@@ -1,7 +1,21 @@
 import React from "react";
+import {register} from "../services/UserService"
 import "./RegisterComponent.css"
 
 class RegisterComponent extends React.Component {
+
+    state = {
+        username: '',
+        password: '',
+        verifyPassword: ''
+    }
+
+    handleRegister = () => {
+        console.log(this.state)
+        this.props.history.push('/profile')
+        // register(this.state)
+        //     .then(newUser => this.props.history.push('/profile'))
+    }
 
     render() {
         return (
@@ -23,7 +37,9 @@ class RegisterComponent extends React.Component {
                                    type="text"
                                    id="username"
                                    title="Username"
-                                   placeholder="Your Username"/>
+                                   placeholder="Your Username"
+                                   value={this.state.username}
+                                   onChange={(e) => this.setState({username: e.target.value})}/>
                         </div>
                     </div>
 
@@ -37,7 +53,9 @@ class RegisterComponent extends React.Component {
                                    className="form-control"
                                    id="password"
                                    title="Password"
-                                   placeholder="********"/>
+                                   placeholder="********"
+                                   value={this.state.password}
+                                   onChange={(e) => this.setState({password: e.target.value})}/>
                             <span className="wbdv-encryption-note">
                                 Please note that passwords are not encrypted.
                             </span>
@@ -54,7 +72,9 @@ class RegisterComponent extends React.Component {
                                    className="form-control"
                                    id="verify-password"
                                    title="Verify Password"
-                                   placeholder="********"/>
+                                   placeholder="********"
+                                   value={this.state.verifyPassword}
+                                   onChange={(e) => this.setState({verifyPassword: e.target.value})}/>
                         </div>
                     </div>
 
@@ -62,7 +82,8 @@ class RegisterComponent extends React.Component {
                     <div className="form-group row">
                         <label className="col-sm-2 col-form-label"></label>
                         <div className="col-sm-10">
-                            <button className="btn btn-info btn-block">
+                            <button className="btn btn-info btn-block"
+                                    onClick={() => this.handleRegister()}>
                                 Register!
                             </button>
                         </div>

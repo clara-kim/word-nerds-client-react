@@ -4,6 +4,18 @@ import "./LoginComponent.css"
 
 class LoginComponent extends React.Component {
 
+    state = {
+        username: '',
+        password: ''
+    }
+    handleLogin = () => {
+        console.log(this.state)
+        this.props.history.push('profile')
+        // login(this.state)
+        //     .then(currentUser => this.props.history.push('/profile'))
+    }
+
+
     render() {
         return (
             <div id="wbdv-login-page-background">
@@ -22,7 +34,9 @@ class LoginComponent extends React.Component {
                                    type="text"
                                    id="username"
                                    title="Username"
-                                   placeholder="Your Username"/>
+                                   placeholder="Your Username"
+                                   value={this.state.username}
+                                   onChange={(e) => this.setState({username: e.target.value})}/>
                         </div>
                     </div>
 
@@ -36,7 +50,9 @@ class LoginComponent extends React.Component {
                                    type="password"
                                    id="password"
                                    title="Password"
-                                   placeholder="********"/>
+                                   placeholder="********"
+                                   value={this.state.password}
+                                   onChange={(e) => this.setState({password: e.target.value})}/>
                         </div>
                     </div>
 
@@ -45,7 +61,7 @@ class LoginComponent extends React.Component {
                         <label className="col-sm-2 col-form-label"></label>
                         <div className="col-sm-10">
                             <button className="btn btn-info btn-block"
-                                    // onClick= MAKE LOGIN FXN
+                                    onClick={() => this.handleLogin()}
                             >
                                 Sign in
                             </button>
