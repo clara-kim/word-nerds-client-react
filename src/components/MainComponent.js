@@ -71,9 +71,7 @@ class MainComponent extends React.Component {
                 <Route
                     path="/login"
                     exact={true}
-                    render={() =>
-                        <LoginComponent/>
-                    }/>
+                    component={LoginComponent}/>
 
                 {/* Profile component -- user's profile page */}
                 <Route
@@ -87,9 +85,7 @@ class MainComponent extends React.Component {
                 <Route
                     path="/register"
                     exact={true}
-                    render={() =>
-                        <RegisterComponent/>
-                    }/>
+                    component={RegisterComponent}/>
 
                 {/* Search results component -- displays search results */}
                 <Route
