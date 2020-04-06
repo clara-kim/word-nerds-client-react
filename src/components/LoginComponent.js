@@ -1,6 +1,7 @@
 import React from "react";
 import {Link} from "react-router-dom";
 import "./LoginComponent.css"
+import {login} from "../services/UserService"
 
 class LoginComponent extends React.Component {
 
@@ -9,10 +10,10 @@ class LoginComponent extends React.Component {
         password: ''
     }
     handleLogin = () => {
-        console.log(this.state)
-        this.props.history.push('profile')
-        // login(this.state)
-        //     .then(currentUser => this.props.history.push('/profile'))
+        // console.log(this.state)
+        // this.props.history.push('profile')
+        login(this.state)
+            .then(currentUser => this.props.history.push('/profile'))
     }
 
 
