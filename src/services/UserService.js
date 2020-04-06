@@ -26,7 +26,7 @@ export const logout = () =>
     })
 
 export const profile = () =>
-    fetch("https://cors-anywhere.herokuapp.com/" + "https://polar-ravine-37796.herokuapp.com/profile", {
+    fetch("https://polar-ravine-37796.herokuapp.com/profile", {
         method: 'POST',
         credentials: "include"
     }).then(response => response.json())
