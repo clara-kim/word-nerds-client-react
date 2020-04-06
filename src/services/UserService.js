@@ -27,6 +27,7 @@ export const logout = () =>
 
 export const profile = () =>
     fetch("https://polar-ravine-37796.herokuapp.com/profile", {
+        mode: 'cors',
         method: 'POST',
         credentials: "include"
     }).then(response => response.json())
