@@ -6,7 +6,7 @@ class ProfileComponent extends React.Component {
         profile: {
             username: '',
             password: '',
-            firstName: 'Test',
+            firstName: '',
             lastName: '',
             email: '',
             roles: []
@@ -30,7 +30,7 @@ class ProfileComponent extends React.Component {
         return(
             <div>
                 <h1>Profile</h1>
-                Hi, {this.state.profile.firstName}!
+                Hi, {this.state.profile.username}!
                 <hr/>
                 <button
                     onClick={this.logout}
