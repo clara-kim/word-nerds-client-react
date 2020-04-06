@@ -64,7 +64,7 @@ class RegisterComponent extends React.Component {
 
                     {/*Verify Password*/}
                     <div className="form-group row">
-                        <label for="password" className="col-sm-2 col-form-label">
+                        <label htmlFor="password" className="col-sm-2 col-form-label">
                             Verify Password
                         </label>
                         <div className="col-sm-10">
