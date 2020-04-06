@@ -13,18 +13,18 @@ class ProfileComponent extends React.Component {
         }
     }
 
-    // componentDidMount() {
-    //     profile()
-    //         .then(profile => this.setState({
-    //                                            profile: profile
-    //                                        }))
-    // }
+    componentDidMount() {
+        profile()
+            .then(profile => this.setState({
+                                               profile: profile
+                                           }))
+    }
 
-    // logout = () =>
-    //     logout()
-    //         .then(status => {
-    //             this.props.history.push('/')
-    //         })
+    logout = () =>
+        logout()
+            .then(status => {
+                this.props.history.push('/')
+            })
 
     render() {
         return(
@@ -33,7 +33,7 @@ class ProfileComponent extends React.Component {
                 Hi, {this.state.profile.firstName}!
                 <hr/>
                 <button
-                    //onClick={this.logout}
+                    onClick={this.logout}
                     className={`btn btn-danger`}>
                     Logout
                 </button>

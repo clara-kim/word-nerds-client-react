@@ -11,10 +11,10 @@ class RegisterComponent extends React.Component {
     }
 
     handleRegister = () => {
-        console.log(this.state)
-        this.props.history.push('/profile')
-        // register(this.state)
-        //     .then(newUser => this.props.history.push('/profile'))
+        // console.log(this.state)
+        // this.props.history.push('/profile')
+        register(this.state)
+            .then(newUser => this.props.history.push('/profile'))
     }
 
     render() {

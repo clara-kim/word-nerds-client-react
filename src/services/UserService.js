@@ -1,5 +1,5 @@
 export const register = (user) =>
-    fetch(`http://localhost:8080/register`, {
+    fetch("https://mysterious-scrubland-13751.herokuapp.com/register", {
         method: 'POST',
         body: JSON.stringify(user),
         headers: {
@@ -10,7 +10,7 @@ export const register = (user) =>
 
 
 export const login = (user) =>
-    fetch(`http://localhost:8080/login`, {
+    fetch("https://mysterious-scrubland-13751.herokuapp.com/login", {
         method: 'POST',
         body: JSON.stringify(user),
         headers: {
@@ -20,13 +20,13 @@ export const login = (user) =>
     }).then(response => response.json())
 
 export const logout = () =>
-    fetch(`http://localhost:8080/logout`, {
+    fetch("https://mysterious-scrubland-13751.herokuapp.com/logout", {
         method: 'POST',
         credentials: "include"
     })
 
 export const profile = () =>
-    fetch(`http://localhost:8080/profile`, {
+    fetch("https://mysterious-scrubland-13751.herokuapp.com/profile", {
         method: 'POST',
         credentials: "include"
     }).then(response => response.json())
