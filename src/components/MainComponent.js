@@ -75,6 +75,7 @@ class MainComponent extends React.Component {
                     </div>
 
                     <div class="col-2 wbdv-navbar-right">
+                        {/*Login button (displayed if user is not logged in)*/}
                         {this.state.username === undefined &&
                          <Link to="/login" href="#">
                              <button className="btn btn-outline-secondary wbdv-navbar-button"
@@ -83,6 +84,7 @@ class MainComponent extends React.Component {
                                     title="Sign In"></i>
                              </button>
                          </Link> }
+                         {/*Go to Profile button (displayed if user is logged in)*/}
                         {this.state.username !== undefined &&
                          <Link to="/profile" href="#">
                              <button className="btn btn-outline-secondary wbdv-navbar-button"
