@@ -10,16 +10,13 @@ class LoginComponent extends React.Component {
         password: ''
     }
     handleLogin = () => {
-        try {
-            login(this.state).then(currentUser => {
-                console.log(currentUser);
-                this.props.history.push('/profile')})
-        } catch (err){
-            console.log("In login:", err.name, err.message)
-            alert("Login failed. Please try again.")
-        }
+        login(this.state).then(currentUser => {
+                if (currentUser === undefined) {
+                    alert("Login failed. Plexe try again.")
+                } else {
+                    this.props.history.push('/profile')
+                }})
     }
-
 
     render() {
         return (
