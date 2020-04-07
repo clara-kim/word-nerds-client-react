@@ -52,7 +52,7 @@ class MainComponent extends React.Component {
 
                 {/* Navigation bar displayed across all pages*/}
                 <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
-                    <div class="row col-10">
+                    <div className="row col-10">
                         {/* Word Nerds logo in navbar-- brings user back to home */}
                         <Link to="/" className="navbar-brand" href="#">
                             <i className="fa fa-book-open"></i>
@@ -74,7 +74,7 @@ class MainComponent extends React.Component {
                         </form>
                     </div>
 
-                    <div class="col-2 wbdv-navbar-right">
+                    <div className="col-2 wbdv-navbar-right">
                         {/*Login button (displayed if user is not logged in)*/}
                         {this.state.userType === "PUBLIC" &&
                          <Link to="/login" href="#">
@@ -85,7 +85,7 @@ class MainComponent extends React.Component {
                              </button>
                          </Link> }
                          {/*Go to Profile button (displayed if user is logged in)*/}
-                        {this.state.username !== "PUBLIC" &&
+                        {this.state.userType === "MEMBER" || this.state.userType === "ADMIN" &&
                          <Link to="/profile" href="#">
                              <button className="btn btn-outline-secondary wbdv-navbar-button"
                                      type="submit" title="Go to My Profile">
