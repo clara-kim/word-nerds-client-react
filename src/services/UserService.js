@@ -9,7 +9,7 @@ export const register = (user) =>
     }).then(response => response.json())
 
 
-export const login = (user) =>
+export const login = (user) => {
     fetch("https://polar-ravine-37796.herokuapp.com/login", {
         method: 'POST',
         body: JSON.stringify(user),
@@ -18,6 +18,7 @@ export const login = (user) =>
         },
         credentials: "include"
     }).then(response => response.json())
+}
 
 export const logout = () =>
     fetch("https://polar-ravine-37796.herokuapp.com/logout", {
