@@ -11,7 +11,9 @@ class LoginComponent extends React.Component {
     }
     handleLogin = () => {
         try {
-            login(this.state).then(currentUser => this.props.history.push('/profile'))
+            login(this.state).then(currentUser => {
+                console.log(currentUser);
+                this.props.history.push('/profile')})
         } catch (err){
             console.log("In login:", err.name, err.message)
             alert("Login failed. Please try again.")
