@@ -10,14 +10,18 @@ export const register = (user) =>
 
 
 export const login = (user) => {
-    fetch("https://polar-ravine-37796.herokuapp.com/login", {
-        method: 'POST',
-        body: JSON.stringify(user),
-        headers: {
-            'content-type': 'application/json'
-        },
-        credentials: "include"
-    }).then(response => response.json())
+    try {
+        return fetch("https://polar-ravine-37796.herokuapp.com/login", {
+            method: 'POST',
+            body: JSON.stringify(user),
+            headers: {
+                'content-type': 'application/json'
+            },
+            credentials: "include"
+        }).then(response => response.json())
+    } catch (err) {
+        return undefined;
+    }
 }
 
 export const logout = () =>
