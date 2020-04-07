@@ -23,7 +23,7 @@ class MainComponent extends React.Component {
             firstName: '',
             lastName: '',
             email: '',
-            roles: []
+            userType: "PUBLIC"
         }
     }
 
@@ -76,8 +76,7 @@ class MainComponent extends React.Component {
 
                     <div class="col-2 wbdv-navbar-right">
                         {/*Login button (displayed if user is not logged in)*/}
-                        {/*{this.state.username === undefined &&*/}
-                        {this.state.username === null &&
+                        {this.state.userType === "PUBLIC" &&
                          <Link to="/login" href="#">
                              <button className="btn btn-outline-secondary wbdv-navbar-button"
                                      type="submit" title="Sign In">
@@ -86,8 +85,7 @@ class MainComponent extends React.Component {
                              </button>
                          </Link> }
                          {/*Go to Profile button (displayed if user is logged in)*/}
-                        {/*{this.state.username !== undefined &&*/}
-                        {this.state.username !== null &&
+                        {this.state.username !== "PUBLIC" &&
                          <Link to="/profile" href="#">
                              <button className="btn btn-outline-secondary wbdv-navbar-button"
                                      type="submit" title="Go to My Profile">
