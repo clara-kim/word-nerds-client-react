@@ -1,3 +1,11 @@
 .wbdv-white-font {
     color: white;
 }
+
+.wbdv-navbar-button {
+    margin-left: 5px;
+}
+
+.wbdv-navbar-right{
+    text-align: right;
+}

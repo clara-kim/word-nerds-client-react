@@ -7,6 +7,7 @@ import {BrowserRouter as Router, Route, Link} from "react-router-dom";
 import LoginComponent from "./LoginComponent";
 import ProfileComponent from "./ProfileComponent";
 import RegisterComponent from "./RegisterComponent";
+import {profile} from "../services/UserService"
 
 /*
 This is the main component in which the Router is contained.
@@ -16,16 +17,34 @@ class MainComponent extends React.Component {
 
     state = {
         searchField: "", // string in the search field
+        profile: { // user information (if user is logged in)
+            username: '',
+            password: '',
+            firstName: '',
+            lastName: '',
+            email: '',
+            roles: []
+        }
     }
 
     // Updates searchField when user types in the search field
     updateSearch = (e) =>
         this.setState({searchField: e.target.value})
 
-
+    // Clears searchField (called when word is searched)
     clearSearch = () => {
         this.setState({searchField: ""})
     }
+
+    // Requests user information upon component mount.
+    // Content displayed is user-specific.
+    componentDidMount(){
+        profile()
+            .then(profile => this.setState({
+                                               profile: profile
+                                           }))
+    }
+
 
     render () {
         return (
@@ -33,30 +52,46 @@ class MainComponent extends React.Component {
 
                 {/* Navigation bar displayed across all pages*/}
                 <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
-
-                    {/* Word Nerds logo in navbar-- brings user back to home */}
-                    <Link to="/" className="navbar-brand" href="#">
-                        <i className="fa fa-book-open"></i>
-                        Word Nerds
-                    </Link>
-
-                    {/* Search field in navbar */}
-                    <form className="form-inline">
-                        <input className="form-control mr-sm-0" type="search"
-                               placeholder="Search for a word!" value={this.state.searchField}
-                               onChange={this.updateSearch}/>
-                        <Link to={`/search/${this.state.searchField}`}
-                              onClick={this.clearSearch}>
-                            <button className="btn btn-outline-secondary my-2 my-sm-0" type="submit">
-                                <i className="fa fa-search"></i>
-                            </button>
+                    <div class="row col-10">
+                        {/* Word Nerds logo in navbar-- brings user back to home */}
+                        <Link to="/" className="navbar-brand" href="#">
+                            <i className="fa fa-book-open"></i>
+                            Word Nerds
                         </Link>
-                    </form>
 
-                    {/*<Link to="/login" href="#" className="float-right">*/}
-                        {/*<i className="fa fa-sign-in"*/}
-                           {/*title="Sign In"></i>*/}
-                    {/*</Link>*/}
+                        {/* Search field in navbar */}
+                        <form className="form-inline">
+                            <input className="form-control mr-xxs-0 col-8" type="search"
+                                   placeholder="Search for a word!" value={this.state.searchField}
+                                   onChange={this.updateSearch}/>
+                            <Link to={`/search/${this.state.searchField}`}
+                                  onClick={this.clearSearch} className="">
+                                <button className="btn btn-outline-secondary my-sm-0 wbdv-navbar-button"
+                                        type="submit">
+                                    <i className="fa fa-search"></i>
+                                </button>
+                            </Link>
+                        </form>
+                    </div>
+
+                    <div class="col-2 wbdv-navbar-right">
+                        {this.state.username === undefined &&
+                         <Link to="/login" href="#">
+                             <button className="btn btn-outline-secondary wbdv-navbar-button"
+                                     type="submit" title="Sign In">
+                                 <i className="fa fa-sign-in"
+                                    title="Sign In"></i>
+                             </button>
+                         </Link> }
+                        {this.state.username !== undefined &&
+                         <Link to="/profile" href="#">
+                             <button className="btn btn-outline-secondary wbdv-navbar-button"
+                                     type="submit" title="Go to My Profile">
+                                 <i className="fa fa-user"
+                                    title="Go to My Profile"></i>
+                             </button>
+                         </Link>}
+                    </div>
                 </nav>
 
                 {/* Home/landing component -- displays word of the day and daily stats */}
