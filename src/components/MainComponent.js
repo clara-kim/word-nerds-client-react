@@ -38,12 +38,12 @@ class MainComponent extends React.Component {
 
     // Requests user information upon component mount.
     // Content displayed is user-specific.
-    componentDidMount(){
-        profile()
-            .then(profile => this.setState({
-                                               profile: profile
-                                           }))
-    }
+    // componentDidMount(){
+    //     profile()
+    //         .then(profile => this.setState({
+    //                                            profile: profile
+    //                                        }))
+    // }
 
 
     render () {
@@ -76,7 +76,8 @@ class MainComponent extends React.Component {
 
                     <div class="col-2 wbdv-navbar-right">
                         {/*Login button (displayed if user is not logged in)*/}
-                        {this.state.username === undefined &&
+                        {/*{this.state.username === undefined &&*/}
+                        {this.state.username === '' &&
                          <Link to="/login" href="#">
                              <button className="btn btn-outline-secondary wbdv-navbar-button"
                                      type="submit" title="Sign In">
@@ -85,7 +86,8 @@ class MainComponent extends React.Component {
                              </button>
                          </Link> }
                          {/*Go to Profile button (displayed if user is logged in)*/}
-                        {this.state.username !== undefined &&
+                        {/*{this.state.username !== undefined &&*/}
+                        {this.state.username !== '' &&
                          <Link to="/profile" href="#">
                              <button className="btn btn-outline-secondary wbdv-navbar-button"
                                      type="submit" title="Go to My Profile">
