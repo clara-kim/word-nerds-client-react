@@ -12,7 +12,7 @@ class LoginComponent extends React.Component {
     handleLogin = () => {
         login(this.state).then(currentUser => {
                 if (currentUser === undefined) {
-                    alert("Login failed. Plexe try again.")
+                    alert("Login failed. Please try again.")
                 } else {
                     this.props.history.push('/profile')
                 }})
