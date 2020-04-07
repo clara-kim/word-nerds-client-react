@@ -10,12 +10,12 @@ class LoginComponent extends React.Component {
         password: ''
     }
     handleLogin = () => {
-        try {
+        // try {
             login(this.state).then(currentUser => this.props.history.push('/profile'))
-        } catch (err){
-            console.log("In login:", err.name, err.message)
-            alert("Login failed. Please try again.")
-        }
+        // } catch (err){
+        //     console.log("In login:", err.name, err.message)
+        //     alert("Login failed. Please try again.")
+        // }
     }
 
 
