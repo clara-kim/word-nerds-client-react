@@ -1,5 +1,6 @@
 import React from "react";
 import {logout, profile} from "../services/UserService";
+import {Link} from "react-router-dom";
 
 class ProfileComponent extends React.Component {
     state = {
@@ -9,7 +10,8 @@ class ProfileComponent extends React.Component {
             firstName: '',
             lastName: '',
             email: '',
-            roles: []
+            roles: [],
+            userType: "PUBLIC"
         }
     }
 
@@ -29,14 +31,22 @@ class ProfileComponent extends React.Component {
     render() {
         return(
             <div>
-                <h1>Profile</h1>
-                Hi, {this.state.profile.username}!
-                <hr/>
-                <button
-                    onClick={this.logout}
-                    className={`btn btn-danger`}>
-                    Logout
-                </button>
+                {this.state.profile.userType === "PUBLIC" &&
+                 <div>
+                     <h1>Please login to view your profile!</h1>
+                     <Link to="/register" href="#"></Link>
+                 </div>}
+
+                {this.state.profile.userType !== "PUBLIC" &&
+                 <div>
+                     <h1>Profile</h1>
+                     Hi, {this.state.profile.username}!
+                     <hr/>
+                     <button onClick={this.logout} className={`btn btn-danger`}>
+                         Logout
+                     </button>
+                 </div>
+                }
             </div>
         )
     }
