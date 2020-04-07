@@ -76,7 +76,7 @@ class MainComponent extends React.Component {
 
                     <div className="col-2 wbdv-navbar-right">
                         {/*Login button (displayed if user is not logged in)*/}
-                        {this.state.userType === "PUBLIC" &&
+                        {this.state.profile.userType === "PUBLIC" &&
                          <Link to="/login" href="#">
                              <button className="btn btn-outline-secondary wbdv-navbar-button"
                                      type="submit" title="Sign In">
@@ -85,7 +85,7 @@ class MainComponent extends React.Component {
                              </button>
                          </Link> }
                          {/*Go to Profile button (displayed if user is logged in as MEMBER)*/}
-                        {this.state.userType === "MEMBER" &&
+                        {this.state.profile.userType === "MEMBER" &&
                          <Link to="/profile" href="#">
                              <button className="btn btn-outline-secondary wbdv-navbar-button"
                                      type="submit" title="Go to My Profile">
@@ -94,7 +94,7 @@ class MainComponent extends React.Component {
                              </button>
                          </Link>}
                         {/*Go to Profile button (displayed if user is logged in as ADMIN)*/}
-                        {this.state.userType === "ADMIN" &&
+                        {this.state.profile.userType === "ADMIN" &&
                             <Link to="/profile" href="#">
                             <button className="btn btn-outline-secondary wbdv-navbar-button"
                             type="submit" title="Go to My Profile">
