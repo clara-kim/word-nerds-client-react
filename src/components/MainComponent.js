@@ -41,8 +41,7 @@ class MainComponent extends React.Component {
     componentDidMount(){
         profile()
             .then(profile =>
-                  {this.setState({profile: profile});
-                  console.log(this.state)})
+                  this.setState({profile: profile}))
     }
 
 
@@ -100,9 +99,7 @@ class MainComponent extends React.Component {
                 <Route
                     path="/"
                     exact={true}
-                    render={() =>
-                        <LandingComponent/>
-                    }/>
+                    component={LandingComponent}/>
 
                 {/* Login component -- login page */}
                 <Route
