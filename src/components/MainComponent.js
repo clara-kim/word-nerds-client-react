@@ -84,8 +84,8 @@ class MainComponent extends React.Component {
                                     title="Sign In"></i>
                              </button>
                          </Link> }
-                         {/*Go to Profile button (displayed if user is logged in as MEMBER)*/}
-                        {this.state.profile.userType === "MEMBER" &&
+                         {/*Go to Profile button (displayed if user is logged in)*/}
+                        {this.state.profile.userType !== "PUBLIC" &&
                          <Link to="/profile" href="#">
                              <button className="btn btn-outline-secondary wbdv-navbar-button"
                                      type="submit" title="Go to My Profile">
@@ -93,15 +93,6 @@ class MainComponent extends React.Component {
                                     title="Go to My Profile"></i>
                              </button>
                          </Link>}
-                        {/*Go to Profile button (displayed if user is logged in as ADMIN)*/}
-                        {this.state.profile.userType === "ADMIN" &&
-                            <Link to="/profile" href="#">
-                            <button className="btn btn-outline-secondary wbdv-navbar-button"
-                            type="submit" title="Go to My Profile">
-                            <i className="fa fa-user"
-                            title="Go to My Profile"></i>
-                            </button>
-                            </Link>}
                     </div>
                 </nav>
 
@@ -123,9 +114,7 @@ class MainComponent extends React.Component {
                 <Route
                     path="/profile"
                     exact={true}
-                    render={() =>
-                        <ProfileComponent/>
-                    }/>
+                    component={ProfileComponent}/>
 
                 {/* Profile component -- user's profile page */}
                 <Route
