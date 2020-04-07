@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="5ebd5028-f892-4d65-9156-9ba402878a9e" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/MainComponent.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/MainComponent.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -15,8 +16,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/components/MainComponent.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="437">
-              <caret line="90" column="38" lean-forward="true" selection-start-line="90" selection-start-column="38" selection-end-line="90" selection-end-column="38" />
+            <state relative-caret-position="389">
+              <caret line="44" column="44" selection-start-line="44" selection-start-column="44" selection-end-line="44" selection-end-column="44" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
               </folding>
@@ -239,21 +240,7 @@
       <workItem from="1586109896935" duration="2506000" />
       <workItem from="1586175165935" duration="2511000" />
       <workItem from="1586204924548" duration="11530000" />
-      <workItem from="1586266641918" duration="1721000" />
-    </task>
-    <task id="LOCAL-00001" summary="refactored landing page">
-      <created>1583796106849</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1583796106849</updated>
-    </task>
-    <task id="LOCAL-00002" summary="separated navbar from landing page">
-      <created>1583806712072</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1583806712072</updated>
+      <workItem from="1586266641918" duration="2881000" />
     </task>
     <task id="LOCAL-00003" summary="implemented SearchResultsComponent and Router">
       <created>1583815014284</created>
@@ -584,11 +571,25 @@
       <option name="project" value="LOCAL" />
       <updated>1586278299534</updated>
     </task>
-    <option name="localTasksCounter" value="50" />
+    <task id="LOCAL-00050" summary="changed to check for this.state.userType === &quot;PUBLIC&quot; instead of username">
+      <created>1586279340148</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1586279340149</updated>
+    </task>
+    <task id="LOCAL-00051" summary="changed to check for this.state.userType === &quot;PUBLIC&quot; instead of username">
+      <created>1586279890435</created>
+      <option name="number" value="00051" />
+      <option name="presentableId" value="LOCAL-00051" />
+      <option name="project" value="LOCAL" />
+      <updated>1586279890435</updated>
+    </task>
+    <option name="localTasksCounter" value="52" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="84362000" />
+    <option name="totallyTimeSpent" value="85522000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1295" height="695" extended-state="6" />
@@ -660,7 +661,6 @@
     <option name="version" value="1" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="search field cleared on search" />
     <MESSAGE value="implemented searchService (DataMuse)" />
     <MESSAGE value="moved search result filter to searchService (DataMuse)" />
     <MESSAGE value="implemented dictionary service and search results filter by dictionary" />
@@ -685,7 +685,8 @@
     <MESSAGE value="additional comments" />
     <MESSAGE value="commented out componentDidMount profile for the time being" />
     <MESSAGE value="re-instated componentDidMount profile" />
-    <option name="LAST_COMMIT_MESSAGE" value="re-instated componentDidMount profile" />
+    <MESSAGE value="changed to check for this.state.userType === &quot;PUBLIC&quot; instead of username" />
+    <option name="LAST_COMMIT_MESSAGE" value="changed to check for this.state.userType === &quot;PUBLIC&quot; instead of username" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/App.js" />
@@ -822,8 +823,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/components/MainComponent.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="437">
-          <caret line="90" column="38" lean-forward="true" selection-start-line="90" selection-start-column="38" selection-end-line="90" selection-end-column="38" />
+        <state relative-caret-position="389">
+          <caret line="44" column="44" selection-start-line="44" selection-start-column="44" selection-end-line="44" selection-end-column="44" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
           </folding>

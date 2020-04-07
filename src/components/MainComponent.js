@@ -40,9 +40,9 @@ class MainComponent extends React.Component {
     // Content displayed is user-specific.
     componentDidMount(){
         profile()
-            .then(profile => this.setState({
-                                               profile: profile
-                                           }))
+            .then(profile =>
+                  {this.setState({profile: profile});
+                  console.log(this.state)})
     }
 
 
@@ -84,8 +84,8 @@ class MainComponent extends React.Component {
                                     title="Sign In"></i>
                              </button>
                          </Link> }
-                         {/*Go to Profile button (displayed if user is logged in)*/}
-                        {this.state.userType === "MEMBER" || this.state.userType === "ADMIN" &&
+                         {/*Go to Profile button (displayed if user is logged in as MEMBER)*/}
+                        {this.state.userType === "MEMBER" &&
                          <Link to="/profile" href="#">
                              <button className="btn btn-outline-secondary wbdv-navbar-button"
                                      type="submit" title="Go to My Profile">
@@ -93,6 +93,15 @@ class MainComponent extends React.Component {
                                     title="Go to My Profile"></i>
                              </button>
                          </Link>}
+                        {/*Go to Profile button (displayed if user is logged in as ADMIN)*/}
+                        {this.state.userType === "ADMIN" &&
+                            <Link to="/profile" href="#">
+                            <button className="btn btn-outline-secondary wbdv-navbar-button"
+                            type="submit" title="Go to My Profile">
+                            <i className="fa fa-user"
+                            title="Go to My Profile"></i>
+                            </button>
+                            </Link>}
                     </div>
                 </nav>
 
