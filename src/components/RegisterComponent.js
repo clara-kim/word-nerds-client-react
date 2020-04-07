@@ -11,8 +11,6 @@ class RegisterComponent extends React.Component {
     }
 
     handleRegister = () => {
-        // console.log(this.state)
-        // this.props.history.push('/profile')
         if (this.state.username === '' || this.state.password === '' || this.state.verifyPassword === ''){
             alert("Please fill in all fields.");
         } else if (this.state.password !== this.state.verifyPassword){
