@@ -19,7 +19,7 @@ export const login = (user) => {
             },
             credentials: "include"
         }).then(response => response.json())
-    } catch (err) {
+    } catch (e) {
         console.log("Login failed.")
     }
 }
