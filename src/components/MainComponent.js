@@ -15,6 +15,12 @@ The navbar is currently displayed across all components.
  */
 class MainComponent extends React.Component {
 
+    constructor(props){
+        super(props)
+
+        this.updateUser = this.updateUser.bind(this)
+    }
+
     state = {
         searchField: "", // string in the search field
         profile: { // user information (if user is logged in)
@@ -25,6 +31,12 @@ class MainComponent extends React.Component {
             email: '',
             userType: "PUBLIC"
         }
+    }
+
+    updateUser() {
+        profile()
+            .then(profile =>
+                      this.setState({profile: profile}))
     }
 
     // Clears searchField (called when word is searched)
@@ -100,13 +112,13 @@ class MainComponent extends React.Component {
                 <Route
                     path="/login"
                     exact={true}
-                    component={LoginComponent}/>
+                    render={(props) => <LoginComponent {...props} updateUser={this.updateUser}/>}/>
 
                 {/* Profile component -- user's profile page */}
                 <Route
                     path="/profile"
                     exact={true}
-                    component={ProfileComponent}/>
+                    render={(props) => <ProfileComponent {...props} updateUser={this.updateUser}/>}/>
 
                 {/* Profile component -- user's profile page */}
                 <Route

@@ -25,6 +25,7 @@ class ProfileComponent extends React.Component {
     logout = () =>
         logout()
             .then(status => {
+                this.props.updateUser();
                 this.props.history.push('/')
             })
 

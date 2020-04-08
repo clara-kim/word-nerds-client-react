@@ -3,7 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="5ebd5028-f892-4d65-9156-9ba402878a9e" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/services/UserService.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/UserService.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/LoginComponent.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/LoginComponent.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/MainComponent.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/MainComponent.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ProfileComponent.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ProfileComponent.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -14,19 +16,10 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/services/UserService.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="216">
-              <caret line="20" column="40" selection-start-line="20" selection-start-column="40" selection-end-line="20" selection-end-column="40" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/components/LoginComponent.js">
+        <entry file="file://$PROJECT_DIR$/src/components/MainComponent.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="221">
-              <caret line="13" column="50" selection-start-line="13" selection-start-column="50" selection-end-line="13" selection-end-column="50" />
+              <caret line="115" column="42" lean-forward="true" selection-start-line="115" selection-start-column="42" selection-end-line="115" selection-end-column="42" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
               </folding>
@@ -35,10 +28,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/components/LandingComponent.js">
+        <entry file="file://$PROJECT_DIR$/src/components/LoginComponent.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-136">
-              <caret line="17" column="12" lean-forward="true" selection-start-line="17" selection-start-column="12" selection-end-line="17" selection-end-column="30" />
+            <state relative-caret-position="289">
+              <caret line="17" column="43" selection-start-line="17" selection-start-column="43" selection-end-line="17" selection-end-column="43" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
               </folding>
@@ -49,20 +42,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/ProfileComponent.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="493">
-              <caret line="29" lean-forward="true" selection-start-line="29" selection-end-line="29" />
-              <folding>
-                <element signature="e#0#26#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/components/RegisterComponent.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
-              <caret line="22" lean-forward="true" selection-start-line="22" selection-end-line="22" />
+            <state relative-caret-position="323">
+              <caret line="27" column="39" selection-start-line="27" selection-start-column="39" selection-end-line="27" selection-end-column="39" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
               </folding>
@@ -82,7 +63,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>word</find>
       <find>nsole.log(&quot;here</find>
       <find>0</find>
       <find>wod-word</find>
@@ -108,6 +88,11 @@
       <find>Profile</find>
       <find>console.</find>
       <find>console.log</find>
+      <find>clearSe</find>
+      <find>props</find>
+      <find>clear</find>
+      <find>Navbar</find>
+      <find>clearSearch</find>
     </findStrings>
     <replaceStrings>
       <replace>user-submitted</replace>
@@ -139,11 +124,16 @@
         <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/src/components/main.css" />
         <option value="$PROJECT_DIR$/src/components/RegisterComponent.js" />
-        <option value="$PROJECT_DIR$/src/components/MainComponent.js" />
+        <option value="$PROJECT_DIR$/src/services/UserService.js" />
+        <option value="$PROJECT_DIR$/src/components/NavbarComponent.js" />
+        <option value="$PROJECT_DIR$/src/components/NavbarMinimalComponent.js" />
         <option value="$PROJECT_DIR$/src/components/LandingComponent.js" />
+        <option value="$PROJECT_DIR$/src/reducer/UserReducer.js" />
+        <option value="$PROJECT_DIR$/src/actions/userAction.js" />
+        <option value="$PROJECT_DIR$/src/reducers/UserReducer.js" />
+        <option value="$PROJECT_DIR$/src/components/MainComponent.js" />
         <option value="$PROJECT_DIR$/src/components/ProfileComponent.js" />
         <option value="$PROJECT_DIR$/src/components/LoginComponent.js" />
-        <option value="$PROJECT_DIR$/src/services/UserService.js" />
       </list>
     </option>
   </component>
@@ -199,7 +189,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1586112372668" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1586311468088" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
@@ -211,6 +201,7 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\danbi\Documents\Master's in Computer Science\CS5610\Project\src\components" />
       <recent name="C:\Users\danbi\Documents\Master's in Computer Science\CS5610\Project Prototype\wbdv-sp20-group6-prototype\src\components" />
       <recent name="C:\Users\danbi\Documents\Master's in Computer Science\CS5610\Project Prototype\wbdv-sp20-group6-prototype\src\images" />
     </key>
@@ -257,35 +248,7 @@
       <workItem from="1586109896935" duration="2506000" />
       <workItem from="1586175165935" duration="2511000" />
       <workItem from="1586204924548" duration="11530000" />
-      <workItem from="1586266641918" duration="9389000" />
-    </task>
-    <task id="LOCAL-00019" summary="search field cleared on search">
-      <created>1585492788680</created>
-      <option name="number" value="00019" />
-      <option name="presentableId" value="LOCAL-00019" />
-      <option name="project" value="LOCAL" />
-      <updated>1585492788680</updated>
-    </task>
-    <task id="LOCAL-00020" summary="implemented searchService (DataMuse)">
-      <created>1585493773624</created>
-      <option name="number" value="00020" />
-      <option name="presentableId" value="LOCAL-00020" />
-      <option name="project" value="LOCAL" />
-      <updated>1585493773624</updated>
-    </task>
-    <task id="LOCAL-00021" summary="moved search result filter to searchService (DataMuse)">
-      <created>1585518163944</created>
-      <option name="number" value="00021" />
-      <option name="presentableId" value="LOCAL-00021" />
-      <option name="project" value="LOCAL" />
-      <updated>1585518163944</updated>
-    </task>
-    <task id="LOCAL-00022" summary="implemented dictionary service and search results filter by dictionary">
-      <created>1585522350892</created>
-      <option name="number" value="00022" />
-      <option name="presentableId" value="LOCAL-00022" />
-      <option name="project" value="LOCAL" />
-      <updated>1585522350892</updated>
+      <workItem from="1586266641918" duration="18907000" />
     </task>
     <task id="LOCAL-00023" summary="set up basic structure of login component">
       <created>1585573572654</created>
@@ -602,11 +565,39 @@
       <option name="project" value="LOCAL" />
       <updated>1586288480486</updated>
     </task>
-    <option name="localTasksCounter" value="68" />
+    <task id="LOCAL-00068" summary="testing try/catch">
+      <created>1586288938668</created>
+      <option name="number" value="00068" />
+      <option name="presentableId" value="LOCAL-00068" />
+      <option name="project" value="LOCAL" />
+      <updated>1586288938668</updated>
+    </task>
+    <task id="LOCAL-00069" summary="testing try/catch">
+      <created>1586289323123</created>
+      <option name="number" value="00069" />
+      <option name="presentableId" value="LOCAL-00069" />
+      <option name="project" value="LOCAL" />
+      <updated>1586289323123</updated>
+    </task>
+    <task id="LOCAL-00070" summary="testing try/catch">
+      <created>1586289340011</created>
+      <option name="number" value="00070" />
+      <option name="presentableId" value="LOCAL-00070" />
+      <option name="project" value="LOCAL" />
+      <updated>1586289340011</updated>
+    </task>
+    <task id="LOCAL-00071" summary="reverting to original after experimenting">
+      <created>1586310569842</created>
+      <option name="number" value="00071" />
+      <option name="presentableId" value="LOCAL-00071" />
+      <option name="project" value="LOCAL" />
+      <updated>1586310569842</updated>
+    </task>
+    <option name="localTasksCounter" value="72" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="92030000" />
+    <option name="totallyTimeSpent" value="101548000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1295" height="695" extended-state="6" />
@@ -678,7 +669,6 @@
     <option name="version" value="1" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="set up userService for register/login/profile/logout (still need backend)" />
     <MESSAGE value="hooked up backend" />
     <MESSAGE value="updated backend url" />
     <MESSAGE value="added mode:cors to register service" />
@@ -703,7 +693,8 @@
     <MESSAGE value="added try/catch to login" />
     <MESSAGE value="removed try/catch for the moment" />
     <MESSAGE value="testing try/catch" />
-    <option name="LAST_COMMIT_MESSAGE" value="testing try/catch" />
+    <MESSAGE value="reverting to original after experimenting" />
+    <option name="LAST_COMMIT_MESSAGE" value="reverting to original after experimenting" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/App.js" />
@@ -766,16 +757,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/SearchResultsComponent.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-221">
-          <caret line="8" column="55" lean-forward="true" selection-start-line="8" selection-start-column="55" selection-end-line="8" selection-end-column="56" />
-          <folding>
-            <element signature="e#0#25#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/RegisterComponent.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="340">
@@ -818,16 +799,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/MainComponent.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="15" column="40" lean-forward="true" selection-start-line="15" selection-start-column="40" selection-end-line="15" selection-end-column="40" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/RegisterComponent.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="374">
@@ -838,30 +809,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/ProfileComponent.js">
+    <entry file="file://$PROJECT_DIR$/src/components/NavbarComponent.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="493">
-          <caret line="29" lean-forward="true" selection-start-line="29" selection-end-line="29" />
+        <state relative-caret-position="697">
+          <caret line="41" column="55" selection-start-line="41" selection-start-column="55" selection-end-line="41" selection-end-column="55" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/LandingComponent.js">
+    <entry file="file://$PROJECT_DIR$/src/components/NavbarMinimalComponent.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-136">
-          <caret line="17" column="12" lean-forward="true" selection-start-line="17" selection-start-column="12" selection-end-line="17" selection-end-column="30" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/LoginComponent.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="13" column="50" selection-start-line="13" selection-start-column="50" selection-end-line="13" selection-end-column="50" />
+        <state relative-caret-position="165">
+          <caret line="20" lean-forward="true" selection-start-line="20" selection-end-line="20" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
           </folding>
@@ -870,8 +831,72 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/services/UserService.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="20" column="40" selection-start-line="20" selection-start-column="40" selection-end-line="20" selection-end-column="40" />
+        <state>
+          <caret line="6" column="10" lean-forward="true" selection-start-line="6" selection-start-column="10" selection-end-line="6" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/reducers/UserReducer.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="18" selection-start-line="18" selection-end-line="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/actions/userAction.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="21" selection-start-column="21" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/SearchResultsComponent.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="24" column="45" selection-start-line="24" selection-start-column="45" selection-end-line="24" selection-end-column="45" />
+          <folding>
+            <element signature="e#0#25#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/LandingComponent.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="48" selection-start-line="2" selection-start-column="48" selection-end-line="2" selection-end-column="48" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/ProfileComponent.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="27" column="39" selection-start-line="27" selection-start-column="39" selection-end-line="27" selection-end-column="39" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/LoginComponent.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="17" column="43" selection-start-line="17" selection-start-column="43" selection-end-line="17" selection-end-column="43" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/MainComponent.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="115" column="42" lean-forward="true" selection-start-line="115" selection-start-column="42" selection-end-line="115" selection-end-column="42" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

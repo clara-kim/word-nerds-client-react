@@ -15,7 +15,8 @@ class LoginComponent extends React.Component {
                 if (currentUser === undefined) {
                     alert("Login failed. Please try again.")
                 } else {
-                    this.props.history.push('/profile')
+                    this.props.updateUser();
+                    this.props.history.push('/profile');
                 }})
     }
 
