@@ -27,10 +27,6 @@ class MainComponent extends React.Component {
         }
     }
 
-    // Updates searchField when user types in the search field
-    updateSearch = (e) =>
-        this.setState({searchField: e.target.value})
-
     // Clears searchField (called when word is searched)
     clearSearch = () => {
         this.setState({searchField: ""})
@@ -43,7 +39,6 @@ class MainComponent extends React.Component {
             .then(profile =>
                   this.setState({profile: profile}))
     }
-
 
     render () {
         return (
@@ -62,7 +57,7 @@ class MainComponent extends React.Component {
                         <form className="form-inline">
                             <input className="form-control mr-xxs-0 col-8" type="search"
                                    placeholder="Search for a word!" value={this.state.searchField}
-                                   onChange={this.updateSearch}/>
+                                   onChange={(e) => this.setState({searchField: e.target.value})}/>
                             <Link to={`/search/${this.state.searchField}`}
                                   onClick={this.clearSearch} className="">
                                 <button className="btn btn-outline-secondary my-sm-0 wbdv-navbar-button"

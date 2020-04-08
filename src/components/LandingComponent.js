@@ -98,8 +98,7 @@ class LandingComponent extends React.Component {
                              </ol>
                          </div>
                      </div>
-                 </div>
-                }
+                 </div> }
             </div>
         )
     }
