@@ -1,0 +1,67 @@
+.wbdv-profile-background {
+    color: white;
+    background-image: url(../images/typewriter.jpg);
+    min-height: 91.3vh;
+    padding-bottom: 5vh;
+    padding-left: 5%;
+    padding-right: 5%;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+div.wbdv-logout{
+    text-align: right;
+}
+
+.wbdv-logout-btn{
+    margin-top: 5vh;
+    margin-bottom: 5vh;
+}
+
+.wbdv-profile-section {
+    border-style: solid;
+    border-radius: 10px;
+    border-color: rgba(255, 255, 255, 0.4);
+    padding: 1vh;
+    margin-bottom: 2vh;
+}
+
+.wbdv-section-title{
+    background-color: #34AFC1;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.wbdv-section-details{
+    background-color: rgba(255, 255, 255, 0.8);
+    color: black;
+    border-radius: 10px;
+    padding: 1vh;
+}
+
+.wbdv-bold{
+    font-weight: bold;
+}
+
+.wbdv-activity-details {
+    background-color: rgba(255, 255, 255, 0.8);
+    color: black;
+    border-radius: 10px;
+    padding: 1vh;
+    margin-bottom: 1vh;
+    text-align: center;
+}
+
+.wbdv-login-notice{
+    padding-top: 5%;
+    padding-bottom: 5%;
+    background: rgba(0, 0, 0, 0.4);
+    text-align: center;
+    border-radius: 15px;
+}
+
+.wbdv-profile-public{
+    padding-top: 20vh;
+}
