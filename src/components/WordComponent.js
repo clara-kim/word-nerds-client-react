@@ -118,22 +118,30 @@ class WordComponent extends React.Component {
 
                         {/*QUOTES TAB*/}
                         <Tab eventKey="quotes" title="Quotes" className="wbdv-tab">
+                            {this.props.profile.userType !== "PUBLIC" &&
+                             <button className="float-left btn btn-info wbdv-add-button">Add New</button>}
                             <QuoteComponent profile={this.props.profile}/>
                             <QuoteComponent profile={this.props.profile}/>
                         </Tab>
 
                         {/*EXAMPLE SENTENCES TAB*/}
                         <Tab eventKey="examples" title="Example Sentences">
+                            {this.props.profile.userType !== "PUBLIC" &&
+                             <button className="float-left btn btn-info wbdv-add-button">Add New</button>}
                             <SentenceComponent profile={this.props.profile}/>
                         </Tab>
 
                         {/*COMMENTS TAB*/}
                         <Tab eventKey="comments" title="Comments">
+                            {this.props.profile.userType !== "PUBLIC" &&
+                             <button className="float-left btn btn-info wbdv-add-button">Add New</button>}
                             <CommentComponent profile={this.props.profile}/>
                         </Tab>
 
                         {/*DEFINITION TAB*/}
                         <Tab eventKey="definitions" title="User-Uploaded Definitions">
+                            {this.props.profile.userType !== "PUBLIC" &&
+                             <button className="float-left btn btn-info wbdv-add-button">Add New</button>}
                             <DefinitionComponent profile={this.props.profile}/>
                         </Tab>
                     </Tabs>
