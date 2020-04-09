@@ -142,7 +142,8 @@ class MainComponent extends React.Component {
                     exact={true}
                     render={(props) =>
                         <WordComponent
-                            word={props.match.params.word}/>
+                            word={props.match.params.word}
+                            profile={this.state.profile}/>
                     }/>
 
             </Router>
