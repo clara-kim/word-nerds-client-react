@@ -71,6 +71,12 @@ const PrivacyPolicyComponent = () =>
                 contributions and expand their exposure to new words.
             </li>
         </ol>
+        <br/>
+        <p className="wbdv-policy-note">
+            *Please note that this only applies to logged-in users. Data on users who are not
+            logged into Word Nerds are not gathered in any shape or form. These users are able to
+            freely view content, but are unable to make any contributions to the site.
+        </p>
     </div>
 
 
