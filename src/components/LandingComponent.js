@@ -1,6 +1,7 @@
 import React from "react";
 import "./LandingComponent.css"
 import {profile} from "../services/UserService";
+import {Link} from "react-router-dom";
 
 /*
 This is the landing component that acts as the home page.
@@ -112,6 +113,9 @@ class LandingComponent extends React.Component {
                     <p>
                         Developers: Christopher Sims, Clara Kim, Rebecca Bonne-Annee, Yarrow Simmons
                     </p>
+                    <Link to="/privacy-policy" href="#">
+                        Privacy Policy
+                    </Link>
                 </div>
             </div>
         )
