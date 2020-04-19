@@ -8,6 +8,7 @@ import LoginComponent from "./LoginComponent";
 import ProfileComponent from "./ProfileComponent";
 import RegisterComponent from "./RegisterComponent";
 import {profile} from "../services/UserService"
+import PrivacyPolicyComponent from "./PrivacyPolicyComponent";
 
 /*
 This is the main component in which the Router is contained.
@@ -125,6 +126,12 @@ class MainComponent extends React.Component {
                     path="/register"
                     exact={true}
                     component={RegisterComponent}/>
+
+                {/* Profile component -- user's profile page */}
+                <Route
+                    path="/privacy-policy"
+                    exact={true}
+                    render = {() => <PrivacyPolicyComponent/>}/>
 
                 {/* Search results component -- displays search results */}
                 <Route
