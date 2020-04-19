@@ -100,7 +100,7 @@ class LandingComponent extends React.Component {
                      </div>
                  </div> }
 
-                {/* Daily Stats -- VIEWABLE BY GENERAL PUBLIC */}
+                {/* Blurb About Word Nerds -- VIEWABLE BY GENERAL PUBLIC */}
                 <div id="wbdv-blurb">
                     <h5 className="">About Word Nerds</h5>
                     <p>
