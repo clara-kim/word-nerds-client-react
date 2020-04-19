@@ -113,9 +113,22 @@ class LandingComponent extends React.Component {
                     <p>
                         Developers: Christopher Sims, Clara Kim, Rebecca Bonne-Annee, Yarrow Simmons
                     </p>
-                    <Link to="/privacy-policy" href="#">
-                        Privacy Policy
-                    </Link>
+                    <p>
+                        <Link to="/privacy-policy" href="#">
+                            OUR PRIVACY POLICY
+                        </Link>
+                        &nbsp;&nbsp;&nbsp;&nbsp; Photo Credits:
+                        <a href="https://www.pexels.com/photo/blur-book-stack-books-bookshelves-590493/">
+                            &nbsp;&nbsp;&nbsp;&nbsp;Bookshelves (Janko Ferlic)
+                        </a>
+                        <a href="https://www.pexels.com/photo/letter-cubes-1822568/">
+                            &nbsp;&nbsp;&nbsp;&nbsp;Letter Cubes (Suzy Hazelwood)
+                        </a>
+                        <a href="https://pixabay.com/photos/typewriter-book-notes-paper-801921/">
+                            &nbsp;&nbsp;&nbsp;&nbsp;Typewriter
+                        </a>
+                    </p>
+
                 </div>
             </div>
         )
