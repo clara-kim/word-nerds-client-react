@@ -117,7 +117,7 @@ class LandingComponent extends React.Component {
                         <Link to="/privacy-policy" href="#">
                             OUR PRIVACY POLICY
                         </Link>
-                        &nbsp;&nbsp;&nbsp;&nbsp; Photo Credits:
+                        &nbsp;&nbsp;&nbsp;&nbsp; [&nbsp;Photo Credits:
                         <a href="https://www.pexels.com/photo/blur-book-stack-books-bookshelves-590493/">
                             &nbsp;&nbsp;&nbsp;&nbsp;Bookshelves (Janko Ferlic)
                         </a>
@@ -127,6 +127,7 @@ class LandingComponent extends React.Component {
                         <a href="https://pixabay.com/photos/typewriter-book-notes-paper-801921/">
                             &nbsp;&nbsp;&nbsp;&nbsp;Typewriter
                         </a>
+                        &nbsp;]
                     </p>
 
                 </div>

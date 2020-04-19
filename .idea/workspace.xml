@@ -29,7 +29,7 @@
         <entry file="file://$PROJECT_DIR$/src/components/LandingComponent.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="352">
-              <caret line="120" column="24" selection-start-line="120" selection-start-column="24" selection-end-line="120" selection-end-column="24" />
+              <caret line="129" column="25" selection-start-line="129" selection-start-column="25" selection-end-line="129" selection-end-column="25" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
               </folding>
@@ -209,7 +209,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1587324957428" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1587326081959" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
@@ -274,14 +274,7 @@
       <workItem from="1586453580427" duration="248000" />
       <workItem from="1586461657111" duration="623000" />
       <workItem from="1587065510665" duration="1416000" />
-      <workItem from="1587315194399" duration="9120000" />
-    </task>
-    <task id="LOCAL-00034" summary="set up userService for register/login/profile/logout (still need backend)">
-      <created>1586112357717</created>
-      <option name="number" value="00034" />
-      <option name="presentableId" value="LOCAL-00034" />
-      <option name="project" value="LOCAL" />
-      <updated>1586112357717</updated>
+      <workItem from="1587315194399" duration="9953000" />
     </task>
     <task id="LOCAL-00035" summary="hooked up backend">
       <created>1586177248658</created>
@@ -619,11 +612,18 @@
       <option name="project" value="LOCAL" />
       <updated>1587324136947</updated>
     </task>
-    <option name="localTasksCounter" value="83" />
+    <task id="LOCAL-00083" summary="added photo credits">
+      <created>1587324984114</created>
+      <option name="number" value="00083" />
+      <option name="presentableId" value="LOCAL-00083" />
+      <option name="project" value="LOCAL" />
+      <updated>1587324984115</updated>
+    </task>
+    <option name="localTasksCounter" value="84" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="121704000" />
+    <option name="totallyTimeSpent" value="122537000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1295" height="695" extended-state="6" />
@@ -695,7 +695,6 @@
     <option name="version" value="1" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="additional comments" />
     <MESSAGE value="commented out componentDidMount profile for the time being" />
     <MESSAGE value="re-instated componentDidMount profile" />
     <MESSAGE value="changed to check for this.state.userType === &quot;PUBLIC&quot; instead of username" />
@@ -720,7 +719,8 @@
     <MESSAGE value="added privacy policy" />
     <MESSAGE value="added note about not logged-in users" />
     <MESSAGE value="added link to privacy policy" />
-    <option name="LAST_COMMIT_MESSAGE" value="added link to privacy policy" />
+    <MESSAGE value="added photo credits" />
+    <option name="LAST_COMMIT_MESSAGE" value="added photo credits" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/App.js" />
@@ -941,7 +941,7 @@
     <entry file="file://$PROJECT_DIR$/src/components/LandingComponent.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="352">
-          <caret line="120" column="24" selection-start-line="120" selection-start-column="24" selection-end-line="120" selection-end-column="24" />
+          <caret line="129" column="25" selection-start-line="129" selection-start-column="25" selection-end-line="129" selection-end-column="25" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
           </folding>
