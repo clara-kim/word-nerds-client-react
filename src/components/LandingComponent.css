@@ -32,6 +32,15 @@
     padding-right: 10%;
 }
 
+#wbdv-blurb{
+    color: white;
+    background-color: #414747;
+    padding-top: 2vh;
+    padding-bottom: 2vh;
+    padding-left: 10%;
+    padding-right: 10%;
+}
+
 #word-of-day-details {
     padding-top: 3%;
     padding-bottom: 3%;

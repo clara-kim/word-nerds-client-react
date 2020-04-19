@@ -99,6 +99,20 @@ class LandingComponent extends React.Component {
                          </div>
                      </div>
                  </div> }
+
+                {/* Daily Stats -- VIEWABLE BY GENERAL PUBLIC */}
+                <div id="wbdv-blurb">
+                    <h5 className="">About Word Nerds</h5>
+                    <p>
+                        Word Nerds is a community dictionary where users personally engage with
+                        words and enhance them with meaningful human input. We want to ignite
+                        young people’s interest in vocabulary and books by giving them a space to
+                        engage with and take ownership of their language.
+                    </p>
+                    <p>
+                        Developers: Christopher Sims, Clara Kim, Rebecca Bonne-Annee, Yarrow Simmons
+                    </p>
+                </div>
             </div>
         )
     }
