@@ -1,11 +1,12 @@
 import React from "react";
-import {logout, profile} from "../services/UserService";
+import {logout, profile, updateProfile} from "../services/UserService";
 import {Link} from "react-router-dom";
 import "./ProfileComponent.css"
 
 class ProfileComponent extends React.Component {
     state = {
         profile: {
+            userId: '',
             username: '',
             password: '',
             firstName: '',
@@ -13,14 +14,39 @@ class ProfileComponent extends React.Component {
             email: '',
             roles: [],
             userType: "PUBLIC"
-        }
+        },
+        editing: false
     }
 
     componentDidMount() {
         profile()
-            .then(profile => this.setState({
-                                               profile: profile
-                                           }))
+            .then(profile => {
+                this.setState({profile: profile});
+                if (profile.firstName === null) {
+                    this.setState({
+                                      profile: {
+                                          ...this.state.profile,
+                                          firstName: ""
+                                      }
+                                  })
+                }
+                if (profile.lastName === null) {
+                    this.setState({
+                                      profile: {
+                                          ...this.state.profile,
+                                          lastName: ""
+                                      }
+                                  })
+                }
+                if (profile.email === null) {
+                    this.setState({
+                                      profile: {
+                                          ...this.state.profile,
+                                          email: ""
+                                      }
+                                  })
+                }
+            })
     }
 
     logout = () =>
@@ -29,6 +55,9 @@ class ProfileComponent extends React.Component {
                 this.props.updateUser();
                 this.props.history.push('/')
             })
+
+    updateProfile = () =>
+        updateProfile(this.state.profile).then(response => this.setState({editing: false}));
 
     render() {
         return(
@@ -60,17 +89,64 @@ class ProfileComponent extends React.Component {
                      <div className="row">
                          <div className="col-md-4">
                              <div className="wbdv-profile-section">
-                                 <h2 className="wbdv-section-title">About</h2>
+                                 <h2 className="wbdv-section-title">
+                                     About
+                                     {!this.state.editing &&
+                                      <button id="wbdv-profile-edit" className="btn btn-warning"
+                                              title="Edit My Details"
+                                              onClick={() => this.setState({editing: true})}>
+                                          Edit <i className="fa fa-edit"></i>
+                                      </button>}
+                                     {this.state.editing &&
+                                      <button id="wbdv-profile-edit" className="btn btn-success"
+                                              title="Save My Details"
+                                              onClick={this.updateProfile}>
+                                          Save <i className="fa fa-save"></i>
+                                      </button>}
+                                 </h2>
                                  <div className="wbdv-section-details">
                                      <p>Username:
                                          <span className="wbdv-bold"> {this.state.profile.username}</span>
                                      </p>
-                                         <p>Name:
-                                             <span className="wbdv-bold"> {this.state.profile.firstName} {this.state.profile.lastName}
-                                             </span>
+                                         <p>Name:&nbsp;&nbsp;
+                                             {!this.state.editing && <span className="wbdv-bold">
+                                                 {this.state.profile.firstName} {this.state.profile.lastName}
+                                             </span> }
                                          </p>
-                                         <p>Email:
-                                             <span className="wbdv-bold"> {this.state.profile.email}</span>
+                                         {this.state.editing && <div>
+                                             <input className="input-group" type="text"
+                                                    placeholder="First Name" title="First Name"
+                                                    value={this.state.profile.firstName}
+                                                    onChange={(e) => this.setState({
+                                                                                       profile: {
+                                                                                           ...this.state.profile,
+                                                                                           firstName: e.target.value
+                                                                                       }
+                                                                                   })}/>
+                                             <input className="input-group" type="text"
+                                                    placeholder="Last Name" title="Last Name"
+                                                    value={this.state.profile.lastName}
+                                                    onChange={(e) => this.setState({
+                                                                                       profile: {
+                                                                                           ...this.state.profile,
+                                                                                           lastName: e.target.value
+                                                                                       }
+                                                                                   })}/>
+                                         </div>}
+                                         <p>Email:&nbsp;&nbsp;
+                                             {!this.state.editing && <span className="wbdv-bold">
+                                                 {this.state.profile.email}
+                                             </span>}
+                                             { this.state.editing &&
+                                               <input className="input-group" type="email"
+                                                      placeholder="Email" title="Email"
+                                                      value={this.state.profile.email}
+                                                      onChange={(e) => this.setState({
+                                                             profile: {
+                                                                 ...this.state.profile,
+                                                                 email: e.target.value
+                                                             }
+                                                         })}/>}
                                          </p>
                                  </div>
                              </div>

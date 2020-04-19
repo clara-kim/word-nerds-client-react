@@ -32,3 +32,14 @@ export const profile = () =>
         method: 'GET',
         credentials: "include"
     }).then(response => response.json())
+
+export const updateProfile = (user) =>
+    fetch(`https://polar-ravine-37796.herokuapp.com/api/users/${user.userId}`, {
+        method: 'PUT',
+        body: JSON.stringify(user),
+        headers: {
+            'content-type': 'application/json'
+        },
+        credentials: "include"
+    })
+        .then(response => response.json())
