@@ -17,9 +17,10 @@ class RegisterComponent extends React.Component {
             alert("Mismatching passwords. Please try again.");
         } else {
             register(this.state)
-                .then(newUser => newUser.userId !== null ?
+                .then(newUser => newUser !== undefined ? (newUser.userId !== null ?
                                  this.props.history.push('/profile') :
                                  alert("Registration failed. Please try a different username."))
+                                                       : alert("Registration failed. Please try a different username."))
         }
     }
 

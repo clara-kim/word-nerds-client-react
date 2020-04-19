@@ -6,7 +6,8 @@ export const register = (user) =>
             'content-type': 'application/json'
         },
         credentials: "include"
-    }).then(response => response.json())
+    }).then(response => response.status === 200 ? response.json() : undefined)
+        .catch(err => undefined)
 
 
 export const login = (user) =>
