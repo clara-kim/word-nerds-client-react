@@ -90,6 +90,7 @@ class MainComponent extends React.Component {
                                      type="submit" title="Sign In">
                                  <i className="fa fa-sign-in"
                                     title="Sign In"></i>
+                                 &nbsp; Log In
                              </button>
                          </Link> }
                          {/*Go to Profile button (displayed if user is logged in)*/}
@@ -99,6 +100,7 @@ class MainComponent extends React.Component {
                                      type="submit" title="Go to My Profile">
                                  <i className="fa fa-user"
                                     title="Go to My Profile"></i>
+                                 &nbsp; Profile
                              </button>
                          </Link>}
                     </div>
