@@ -18,15 +18,15 @@ class WordComponent extends React.Component {
 
     state = {
         wordData: [],
+        definition:[],
         likes: 46,
         dislikes: 2
     }
 
     // For some reason, can only access one level down of the word JSON.
     // We can implement wordData structure properly when we build the server
-    // Short def located at wordData[0].shortdef[0]
     getWordDef = () => {
-        return this.state.wordData.shortdef
+        return this.state.definition[0]
     }
 
     // IF NOT SIGNED IN, CLICKING LIKE OR DISLIKE OPENS POP-UP
@@ -50,7 +50,8 @@ class WordComponent extends React.Component {
 
     componentDidMount = async() => {
         const wordData = await getWordDetails(this.props.word)
-        this.setState({wordData: wordData})
+        this.setState({wordData: wordData});
+        this.setState({definition: wordData.shortdef})
     }
 
     componentDidUpdate(prevProps, prevState, snapshot) {
@@ -101,14 +102,16 @@ class WordComponent extends React.Component {
                     </h1>
 
                     {/*WORD DEFINITION*/}
+                    {this.state.definition && this.state.definition.map( def =>
                     <div className="word-definition">
                         <p>
-                            {this.getWordDef()}
+                            {def}
                             <br/>
                             <br/>
                             <span className="float-right wbdv-mw"> Merriam-Webster Dictionary </span>
                         </p>
                     </div>
+                    )}
                 </div>
 
                 {/*TABS SECTION*/}
