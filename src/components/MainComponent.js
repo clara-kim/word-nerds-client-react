@@ -9,6 +9,7 @@ import ProfileComponent from "./ProfileComponent";
 import RegisterComponent from "./RegisterComponent";
 import {profile} from "../services/UserService"
 import PrivacyPolicyComponent from "./PrivacyPolicyComponent";
+import ProfileViewOnlyComponent from "./ProfileViewOnlyComponent";
 
 /*
 This is the main component in which the Router is contained.
@@ -120,6 +121,17 @@ class MainComponent extends React.Component {
                     path="/profile"
                     exact={true}
                     render={(props) => <ProfileComponent {...props} updateUser={this.updateUser}/>}/>
+
+                {/* Profile component -- viewing another user's profile page */}
+                <Route
+                    path="/profile/:userId"
+                    exact={true}
+                    render={(props) =>
+                        <ProfileViewOnlyComponent
+                            {...props}
+                            profile = {this.state.profile}
+                            viewUserId={props.match.params.userId}/>
+                    }/>
 
                 {/* Profile component -- user's profile page */}
                 <Route

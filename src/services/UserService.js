@@ -43,3 +43,11 @@ export const updateProfile = (user) =>
         credentials: "include"
     })
         .then(response => response.json())
+
+export const viewProfile = (userId) =>
+    fetch(`https://polar-ravine-37796.herokuapp.com/api/users/${userId}`, {
+        method: 'GET',
+        credentials: "include"
+    })
+        .then(response => response.json())
+        .catch(err => undefined)
