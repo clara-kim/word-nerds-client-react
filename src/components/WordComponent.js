@@ -19,10 +19,11 @@ class WordComponent extends React.Component {
         likes: 46,
         dislikes: 2,
         newQuote: "",
-        newQuoteBook: "",
-        newQuoteAuthor: "",
+        newBook: "",
+        newAuthor: "",
         newSentence: "",
-        newComment: ""
+        newComment: "",
+        newDefinition: ""
     }
 
     // IF NOT SIGNED IN, CLICKING LIKE OR DISLIKE OPENS POP-UP
@@ -54,6 +55,44 @@ class WordComponent extends React.Component {
         if(prevProps.word !== this.props.word) {
             getWordDetails(this.props.word)
                 .then(result => this.setState({wordData: result[0]}))
+        }
+    }
+
+    addContent (type) {
+        if (this.props.profile.userType === "PUBLIC"){
+            alert("You must be logged in to perform this action!")
+        } else if (type === "QUOTE") {
+            if (this.state.newBook === "" || this.state.newAuthor === "" || this.state.newQuote === "") {
+                alert("Please fill in all fields and try again!")
+            } else {
+                //console.log(this.state.newBook + this.state.newAuthor + this.state.newQuote);
+                this.setState({newBook: "", newAuthor: "", newQuote: ""});
+                // CALL ADD SERVICE CONTENT
+            }
+        } else if (type === "SENTENCE") {
+            if (this.state.newSentence === "") {
+                alert("Please fill in the field and try again!")
+            } else {
+                //console.log(this.state.newSentence);
+                this.setState({newSentence: ""})
+                // CALL ADD SERVICE CONTENT
+            }
+        } else if (type === "COMMENT") {
+            if (this.state.newComment === "") {
+                alert("Please fill in the field and try again!")
+            } else {
+                //console.log(this.state.newComment);
+                this.setState({newComment: ""})
+                // CALL ADD SERVICE CONTENT
+            }
+        } else if (type === "DEFINITION") {
+            if (this.state.newComment === "") {
+                alert("Please fill in the field and try again!")
+            } else {
+                //console.log(this.state.newDefinition);
+                this.setState({newDefinition: ""})
+                // CALL ADD SERVICE CONTENT
+            }
         }
     }
 
@@ -127,7 +166,10 @@ class WordComponent extends React.Component {
                                 <input type="text" className="container wbdv-input-data" title="Author"
                                        placeholder="Add quote's author here..." value={this.state.newAuthor}
                                        onChange={(e) => this.setState({newAuthor: e.target.value})}/>
-                                <button className="container btn btn-success">Add New Quote</button>
+                                <button className="container btn btn-success"
+                                        onClick={() => this.addContent("QUOTE")}>
+                                    Add New Quote
+                                </button>
                             </div>
                         </Tab>
 
@@ -138,7 +180,10 @@ class WordComponent extends React.Component {
                                 <textarea className="container wbdv-input-data" title="Sentence"
                                           placeholder="Add a new sentence here..." value={this.state.newSentence}
                                           onChange={(e) => this.setState({newSentence: e.target.value})}/>
-                                <button className="container btn btn-success">Add New Sentence</button>
+                                <button className="container btn btn-success"
+                                        onClick={() => this.addContent("SENTENCE")}>
+                                    Add New Sentence
+                                </button>
                             </div>
                         </Tab>
 
@@ -149,7 +194,10 @@ class WordComponent extends React.Component {
                                 <textarea className="container wbdv-input-data" title="Comment"
                                           placeholder="Add a new comment here..." value={this.state.newComment}
                                           onChange={(e) => this.setState({newComment: e.target.value})}/>
-                                <button className="container btn btn-success">Add New Comment</button>
+                                <button className="container btn btn-success"
+                                        onClick={() => this.addContent("COMMENT")}>
+                                    Add New Comment
+                                </button>
                             </div>
                         </Tab>
                     </Tabs>
