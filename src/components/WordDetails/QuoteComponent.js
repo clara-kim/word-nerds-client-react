@@ -5,7 +5,7 @@ class QuoteComponent extends React.Component {
     state = {
         wordData: [],
         likes: 17,
-        dislikes: 4
+        dislikes: 4,
     }
 
     // IF NOT SIGNED IN, CLICKING LIKE OR DISLIKE OPENS POP-UP
@@ -31,7 +31,6 @@ class QuoteComponent extends React.Component {
     render(){
         return(
             <div className="container wbdv-tab-data">
-
                 {/*THUMBS UP AND THUMBS DOWN*/}
                 <p className="wbdv-tab-thumbs">
 

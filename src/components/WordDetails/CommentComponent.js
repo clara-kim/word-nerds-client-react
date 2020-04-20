@@ -5,7 +5,7 @@ class CommentComponent extends React.Component {
     state = {
         wordData: [],
         likes: 9,
-        dislikes: 1
+        dislikes: 1,
     }
 
     // IF NOT SIGNED IN, CLICKING LIKE OR DISLIKE OPENS POP-UP
