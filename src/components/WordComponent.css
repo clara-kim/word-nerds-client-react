@@ -122,3 +122,24 @@
 .wbdv-add-button{
     margin-left: 10px;
 }
+
+.wbdv-input-data {
+    margin-bottom: 1vh;
+    font-size: 15px;
+    padding-top: 1%;
+    background: rgba(150, 150, 150, 0.3);
+    text-align: left;
+    border: solid white thin;
+    border-radius: 5px;
+    color: white;
+}
+
+.wbdv-input-div{
+    text-align: center;
+    background: rgba(0, 0, 0, 0.3);
+    border: solid white thin;
+    border-radius: 5px;
+    margin-top: 20px;
+    padding-bottom: 1%;
+    padding-top: 1%;
+}

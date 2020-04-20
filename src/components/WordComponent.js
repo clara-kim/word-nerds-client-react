@@ -3,16 +3,13 @@ import "./WordComponent.css"
 import Tab from 'react-bootstrap/Tabs'
 import Tabs from 'react-bootstrap/Tabs'
 import {getWordDetails} from "../services/DictionaryService";
-import {getSearchResults} from "../services/SearchService";
 import QuoteComponent from "./WordDetails/QuoteComponent"
 import SentenceComponent from "./WordDetails/SentenceComponent";
 import CommentComponent from "./WordDetails/CommentComponent";
 import DefinitionComponent from "./WordDetails/DefinitionComponent";
 
 /*
-This is the word component that includes all details about a particular word.
-Currently, it only displays the definition.
-In the implementation, it will also include likes, comments, example sentences, quotes, etc.
+This is the word component that includes all content about a particular word.
  */
 class WordComponent extends React.Component {
 
@@ -20,13 +17,12 @@ class WordComponent extends React.Component {
         wordData: [],
         definition:[],
         likes: 46,
-        dislikes: 2
-    }
-
-    // For some reason, can only access one level down of the word JSON.
-    // We can implement wordData structure properly when we build the server
-    getWordDef = () => {
-        return this.state.definition[0]
+        dislikes: 2,
+        newQuote: "",
+        newQuoteBook: "",
+        newQuoteAuthor: "",
+        newSentence: "",
+        newComment: ""
     }
 
     // IF NOT SIGNED IN, CLICKING LIKE OR DISLIKE OPENS POP-UP
@@ -102,8 +98,8 @@ class WordComponent extends React.Component {
                     </h1>
 
                     {/*WORD DEFINITION*/}
-                    {this.state.definition && this.state.definition.map( def =>
-                    <div className="word-definition">
+                    {this.state.definition && this.state.definition.map( (def, index) =>
+                    <div className="word-definition" key={index}>
                         <p className="wbdv-tab-data-input">{def}</p>
                         <p className="wbdv-tab-data-user"> Merriam-Webster Dictionary </p>
                     </div>
@@ -119,24 +115,42 @@ class WordComponent extends React.Component {
 
                         {/*QUOTES TAB*/}
                         <Tab eventKey="quotes" title="Quotes" className="wbdv-tab">
-                            {this.props.profile.userType !== "PUBLIC" &&
-                             <button className="float-left btn btn-info wbdv-add-button">Add New</button>}
                             <QuoteComponent profile={this.props.profile}/>
                             <QuoteComponent profile={this.props.profile}/>
+                            <div className="wbdv-input-div container">
+                                <textarea className="container wbdv-input-data" title="Quote"
+                                          placeholder="Add a new quote here..." value={this.state.newQuote}
+                                          onChange={(e) => this.setState({newQuote: e.target.value})}/>
+                                <input type="text" className="container wbdv-input-data" title="Book"
+                                          placeholder="Add quote's book here..." value={this.state.newBook}
+                                          onChange={(e) => this.setState({newBook: e.target.value})}/>
+                                <input type="text" className="container wbdv-input-data" title="Author"
+                                       placeholder="Add quote's author here..." value={this.state.newAuthor}
+                                       onChange={(e) => this.setState({newAuthor: e.target.value})}/>
+                                <button className="container btn btn-success">Add New Quote</button>
+                            </div>
                         </Tab>
 
                         {/*EXAMPLE SENTENCES TAB*/}
                         <Tab eventKey="examples" title="Example Sentences">
-                            {this.props.profile.userType !== "PUBLIC" &&
-                             <button className="float-left btn btn-info wbdv-add-button">Add New</button>}
                             <SentenceComponent profile={this.props.profile}/>
+                            <div className="wbdv-input-div container">
+                                <textarea className="container wbdv-input-data" title="Sentence"
+                                          placeholder="Add a new sentence here..." value={this.state.newSentence}
+                                          onChange={(e) => this.setState({newSentence: e.target.value})}/>
+                                <button className="container btn btn-success">Add New Sentence</button>
+                            </div>
                         </Tab>
 
                         {/*COMMENTS TAB*/}
                         <Tab eventKey="comments" title="Comments">
-                            {this.props.profile.userType !== "PUBLIC" &&
-                             <button className="float-left btn btn-info wbdv-add-button">Add New</button>}
                             <CommentComponent profile={this.props.profile}/>
+                            <div className="wbdv-input-div container">
+                                <textarea className="container wbdv-input-data" title="Comment"
+                                          placeholder="Add a new comment here..." value={this.state.newComment}
+                                          onChange={(e) => this.setState({newComment: e.target.value})}/>
+                                <button className="container btn btn-success">Add New Comment</button>
+                            </div>
                         </Tab>
                     </Tabs>
                 </div>
