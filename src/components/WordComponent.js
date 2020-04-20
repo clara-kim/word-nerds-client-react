@@ -86,7 +86,7 @@ class WordComponent extends React.Component {
                 // CALL ADD SERVICE CONTENT
             }
         } else if (type === "DEFINITION") {
-            if (this.state.newComment === "") {
+            if (this.state.newDefinition === "") {
                 alert("Please fill in the field and try again!")
             } else {
                 //console.log(this.state.newDefinition);
@@ -145,6 +145,16 @@ class WordComponent extends React.Component {
                     )}
 
                     <DefinitionComponent profile={this.props.profile}/>
+
+                    <div className="wbdv-input-div container">
+                        <textarea className="container wbdv-input-data" title="Quote"
+                                  placeholder="Add a new definition here..." value={this.state.newDefinition}
+                                  onChange={(e) => this.setState({newDefinition: e.target.value})}/>
+                        <button className="container btn btn-success"
+                                onClick={() => this.addContent("DEFINITION")}>
+                            Add New Definition
+                        </button>
+                    </div>
                 </div>
 
                 {/*TABS SECTION*/}
