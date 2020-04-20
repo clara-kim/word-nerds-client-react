@@ -30,7 +30,7 @@ class DefinitionComponent extends React.Component {
 
     render(){
         return(
-            <div className="container wbdv-tab-data">
+            <div className="container wbdv-def-data">
 
                 {/*THUMBS UP AND THUMBS DOWN*/}
                 <p className="wbdv-tab-thumbs">

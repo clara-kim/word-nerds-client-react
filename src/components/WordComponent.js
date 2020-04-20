@@ -104,14 +104,12 @@ class WordComponent extends React.Component {
                     {/*WORD DEFINITION*/}
                     {this.state.definition && this.state.definition.map( def =>
                     <div className="word-definition">
-                        <p>
-                            {def}
-                            <br/>
-                            <br/>
-                            <span className="float-right wbdv-mw"> Merriam-Webster Dictionary </span>
-                        </p>
+                        <p className="wbdv-tab-data-input">{def}</p>
+                        <p className="wbdv-tab-data-user"> Merriam-Webster Dictionary </p>
                     </div>
                     )}
+
+                    <DefinitionComponent profile={this.props.profile}/>
                 </div>
 
                 {/*TABS SECTION*/}
@@ -139,13 +137,6 @@ class WordComponent extends React.Component {
                             {this.props.profile.userType !== "PUBLIC" &&
                              <button className="float-left btn btn-info wbdv-add-button">Add New</button>}
                             <CommentComponent profile={this.props.profile}/>
-                        </Tab>
-
-                        {/*DEFINITION TAB*/}
-                        <Tab eventKey="definitions" title="User-Uploaded Definitions">
-                            {this.props.profile.userType !== "PUBLIC" &&
-                             <button className="float-left btn btn-info wbdv-add-button">Add New</button>}
-                            <DefinitionComponent profile={this.props.profile}/>
                         </Tab>
                     </Tabs>
                 </div>
