@@ -65,3 +65,7 @@ div.wbdv-logout{
 .wbdv-profile-public{
     padding-top: 20vh;
 }
+
+.wbdv-left {
+    margin-right: 1vh;
+}

@@ -1,5 +1,5 @@
 import React from "react";
-import {viewProfile, deleteUser} from "../services/UserService";
+import {viewProfile, updateProfile, deleteUser} from "../services/UserService";
 import "./ProfileComponent.css"
 
 class ProfileViewOnlyComponent extends React.Component {
@@ -26,6 +26,12 @@ class ProfileViewOnlyComponent extends React.Component {
         })
     }
 
+    makeAdmin(){
+        //this.setState({viewProfile: {...this.state.viewProfile, userType: "ADMIN"}});
+        //updateProfile(this.state.viewProfile);
+        updateProfile({userId: this.state.viewProfile.userId, userType: "ADMIN"})
+    }
+
     render() {
         return(
             <div>
@@ -38,14 +44,15 @@ class ProfileViewOnlyComponent extends React.Component {
 
                 {this.state.viewProfile.userType !== "PUBLIC" &&
                  <div className="wbdv-profile-background">
-                     { this.state.viewProfile.userType !== "ADMIN" &&
+                     { this.props.profile.userType === "ADMIN" &&
                      <div className="wbdv-logout">
-                         <button
-                                 className="btn btn-warning wbdv-logout-btn">
-                             <i className="fa fa-thumbs-up"/>
-                             &nbsp;Upgrade this user to ADMIN!
-                         </button>
-                         &nbsp;&nbsp;
+                         {this.state.viewProfile.userType !== "ADMIN" &&
+                          <button onClick={() => this.makeAdmin()}
+                                  className="btn btn-warning wbdv-logout-btn wbdv-left">
+                              <i className="fa fa-thumbs-up"/>
+                              &nbsp;Upgrade this user to ADMIN!
+                          </button>
+                         }
                          <button onClick={() => this.deleteUser(this.state.viewProfile.userId)}
                              className="btn btn-danger wbdv-logout-btn">
                              <i className="fa fa-trash"/>
