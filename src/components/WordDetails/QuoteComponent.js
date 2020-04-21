@@ -53,6 +53,13 @@ class QuoteComponent extends React.Component {
                             {this.state.dislikes}
                                             </span>
                     </button>
+
+                    {/*DELETE -- ONLY VISIBLE TO ADMIN*/}
+                    {this.props.profile.userType === "ADMIN" &&
+                     <button className="wbdv-transparent-button">
+                         <i className="fa fa-trash wbdv-word-dislike-icon"
+                            title="delete"/>
+                     </button>}
                 </p>
 
                 {/*THE QUOTE*/}
