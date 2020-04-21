@@ -15,7 +15,7 @@ import {
     FIND_QUOTES_FOR_WORD,
     UPDATE_QUOTE
 } from "../../actions/quoteAction";
-import QuoteService from "../../services/QuoteService"
+import QuoteService from "../../services/ContentService"
 
 class ContentSectionComponent extends React.Component {
 
