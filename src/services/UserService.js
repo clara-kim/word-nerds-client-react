@@ -53,3 +53,7 @@ export const viewProfile = (userId) =>
     })
         .then(response => response.json())
         .catch(err => undefined)
+
+export const deleteUser = (userId) =>
+    fetch (`${WN_API_URL}/api/users/${userId}`, {method: 'DELETE'})
+        .then(response=>response.json())
