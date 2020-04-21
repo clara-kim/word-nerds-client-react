@@ -67,6 +67,16 @@ export const updateContent = async (contentId, content) => {
     return await response.json()
 }
 
+export const findAllContent =  () =>
+    fetch(`${WN_API_URL}/api/contents`, {
+        method: 'GET',
+        headers: {
+            'content-type': 'application/json'
+        },
+    })
+        .then(response => response.status === 200 ? response.json() : [])
+        .catch(err => [])
+
 export default {
     deleteContent,
     createContent,
@@ -74,5 +84,6 @@ export default {
     findQuotesForWord,
     findSentencesForWord,
     findCommentsForWord,
-    findDefinitionsForWord
+    findDefinitionsForWord,
+    findAllContent
 }
