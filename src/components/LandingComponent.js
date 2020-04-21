@@ -73,20 +73,20 @@ class LandingComponent extends React.Component {
                             {this.state.allContents && this.state.allContents.map(content =>
                                 <div key={content.contentId}>
                                     {content.contentType === "QUOTATION" &&
-                                     <li className="wbdv-activity-details">
-                                         User posted a new quote-- "{content.text}".
+                                     <li>
+                                         User posted a new quote-- "{content.text}"
                                      </li>}
                                     {content.contentType === "SENTENCE" &&
-                                     <li className="wbdv-activity-details">
-                                         User posted a new sentence-- "{content.text}".
+                                     <li>
+                                         User posted a new sentence-- "{content.text}"
                                      </li>}
                                     {content.contentType === "DEFINITION" &&
-                                     <li className="wbdv-activity-details">
-                                         User posted a new definition-- "{content.text}".
+                                     <li>
+                                         User posted a new definition-- "{content.text}"
                                      </li>}
                                     {content.contentType === "COMMENT" &&
-                                     <li className="wbdv-activity-details">
-                                         User posted a new definition-- "{content.text}".
+                                     <li>
+                                         User posted a new definition-- "{content.text}"
                                      </li>}
                                 </div>
                             )}
@@ -108,20 +108,20 @@ class LandingComponent extends React.Component {
                              {this.state.contents && this.state.contents.map(content =>
                                    <div key={content.contentId}>
                                        {content.contentType === "QUOTATION" &&
-                                        <li className="wbdv-activity-details">
-                                            You posted a new quote-- "{content.text}".
+                                        <li >
+                                            You posted a new quote-- "{content.text}"
                                         </li>}
                                        {content.contentType === "SENTENCE" &&
-                                        <li className="wbdv-activity-details">
-                                            You posted a new sentence-- "{content.text}".
+                                        <li>
+                                            You posted a new sentence-- "{content.text}"
                                         </li>}
                                        {content.contentType === "DEFINITION" &&
-                                        <li className="wbdv-activity-details">
-                                            You posted a new definition-- "{content.text}".
+                                        <li>
+                                            You posted a new definition-- "{content.text}"
                                         </li>}
                                        {content.contentType === "COMMENT" &&
-                                        <li className="wbdv-activity-details">
-                                            You posted a new definition-- "{content.text}".
+                                        <li>
+                                            You posted a new definition-- "{content.text}"
                                         </li>}
                                    </div>
                              )}

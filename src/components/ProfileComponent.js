@@ -213,19 +213,19 @@ class ProfileComponent extends React.Component {
                                       <div key={content.contentId}>
                                           {content.contentType === "QUOTATION" &&
                                            <div className="wbdv-activity-details">
-                                               You posted a new quote-- "{content.text}".
+                                               You posted a new quote-- "{content.text}"
                                            </div>}
                                           {content.contentType === "SENTENCE" &&
                                           <div className="wbdv-activity-details">
-                                              You posted a new sentence-- "{content.text}".
+                                              You posted a new sentence-- "{content.text}"
                                           </div>}
                                           {content.contentType === "DEFINITION" &&
                                            <div className="wbdv-activity-details">
-                                               You posted a new definition-- "{content.text}".
+                                               You posted a new definition-- "{content.text}"
                                            </div>}
                                           {content.contentType === "COMMENT" &&
                                            <div className="wbdv-activity-details">
-                                               You posted a new definition-- "{content.text}".
+                                               You posted a new definition-- "{content.text}"
                                            </div>}
                                       </div>
                                  )}
