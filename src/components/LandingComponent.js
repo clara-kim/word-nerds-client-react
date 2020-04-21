@@ -43,6 +43,9 @@ class LandingComponent extends React.Component {
             activities[act].creationDate = new Date(activities[act].creationDate);
         }
         const sorted = activities.sort((a,b) => b.creationDate - a.creationDate);
+        if (sorted.length > 10) {
+            sorted.splice(10);
+        }
         return sorted;
     }
 
@@ -64,33 +67,47 @@ class LandingComponent extends React.Component {
                 <div className="parallax" id="word-stats">
                     <h2 className="section-title">&middot; WORDLY HAPPENINGS &middot;</h2>
                     <br/>
-                    <div className="wbdv-wordly-happenings-section">
+                    <div className="wbdv-wordly-happenings-section container">
                         <h3>Sitewide Recent Activity</h3>
-                        <ol>
                             {this.state.allContents && this.state.allContents < 1 &&
                              <p>No recent activity.</p>
                             }
                             {this.state.allContents && this.state.allContents.map(content =>
-                                <div key={content.contentId}>
+                                <div key={content.contentId} className="container wbdv-recent-activity">
                                     {content.contentType === "QUOTATION" &&
-                                     <li>
-                                         User posted a new quote-- "{content.text}"
-                                     </li>}
+                                     <div>
+                                         <Link to={`/profile/${content.contributor.userId}`}>
+                                             {content.contributor.username}
+                                         </Link> posted a new quote on <Link to={`/word/${content.word.text}`}>
+                                         {content.word.text}
+                                        </Link>-- "{content.text}"
+                                     </div>}
                                     {content.contentType === "SENTENCE" &&
-                                     <li>
-                                         User posted a new sentence-- "{content.text}"
-                                     </li>}
+                                     <div>
+                                         <Link to={`/profile/${content.contributor.userId}`}>
+                                             {content.contributor.username}
+                                         </Link> posted a new sentence on <Link to={`/word/${content.word.text}`}>
+                                         {content.word.text}
+                                        </Link>-- "{content.text}"
+                                     </div>}
                                     {content.contentType === "DEFINITION" &&
-                                     <li>
-                                         User posted a new definition-- "{content.text}"
-                                     </li>}
+                                     <div>
+                                         <Link to={`/profile/${content.contributor.userId}`}>
+                                             {content.contributor.username}
+                                         </Link> posted a new definition on <Link to={`/word/${content.word.text}`}>
+                                         {content.word.text}
+                                        </Link>-- "{content.text}"
+                                     </div>}
                                     {content.contentType === "COMMENT" &&
-                                     <li>
-                                         User posted a new definition-- "{content.text}"
-                                     </li>}
+                                     <div>
+                                         <Link to={`/profile/${content.contributor.userId}`}>
+                                             {content.contributor.username}
+                                         </Link> posted a new comment on <Link to={`/word/${content.word.text}`}>
+                                         {content.word.text}
+                                        </Link>-- "{content.text}"
+                                     </div>}
                                 </div>
                             )}
-                        </ol>
                     </div>
                 </div>
 
@@ -99,33 +116,39 @@ class LandingComponent extends React.Component {
                  <div className="parallax" id="wbdv-personal-stats">
                      <h2 className="section-title">&middot; PERSONAL AFFAIRS &middot;</h2>
                      <br/>
-                     <div className="wbdv-wordly-happenings-section">
+                     <div className="wbdv-wordly-happenings-section container">
                          <h3>Recently Liked Words</h3>
-                         <ol>
-                             {this.state.contents && this.state.contents < 1 &&
-                              <p>No recent activity.</p>
-                             }
-                             {this.state.contents && this.state.contents.map(content =>
-                                   <div key={content.contentId}>
-                                       {content.contentType === "QUOTATION" &&
-                                        <li >
-                                            You posted a new quote-- "{content.text}"
-                                        </li>}
-                                       {content.contentType === "SENTENCE" &&
-                                        <li>
-                                            You posted a new sentence-- "{content.text}"
-                                        </li>}
-                                       {content.contentType === "DEFINITION" &&
-                                        <li>
-                                            You posted a new definition-- "{content.text}"
-                                        </li>}
-                                       {content.contentType === "COMMENT" &&
-                                        <li>
-                                            You posted a new definition-- "{content.text}"
-                                        </li>}
-                                   </div>
-                             )}
-                         </ol>
+                         {this.state.contents && this.state.contents < 1 &&
+                          <p>No recent activity.</p>
+                         }
+                         {this.state.contents && this.state.contents.map(content =>
+                               <div key={content.contentId} className="container wbdv-recent-activity">
+                                   {content.contentType === "QUOTATION" &&
+                                    <div>
+                                        You posted a new quote on <Link to={`/word/${content.word.text}`}>
+                                        {content.word.text}
+                                    </Link>-- "{content.text}"
+                                    </div>}
+                                   {content.contentType === "SENTENCE" &&
+                                    <div>
+                                        You posted a new sentence on <Link to={`/word/${content.word.text}`}>
+                                        {content.word.text}
+                                    </Link>-- "{content.text}"
+                                    </div>}
+                                   {content.contentType === "DEFINITION" &&
+                                    <div>
+                                        You posted a new definition on <Link to={`/word/${content.word.text}`}>
+                                        {content.word.text}
+                                    </Link>-- "{content.text}"
+                                    </div>}
+                                   {content.contentType === "COMMENT" &&
+                                    <div>
+                                        You posted a new comment on <Link to={`/word/${content.word.text}`}>
+                                        {content.word.text}
+                                    </Link>-- "{content.text}"
+                                    </div>}
+                               </div>
+                         )}
                      </div>
                  </div> }
 
