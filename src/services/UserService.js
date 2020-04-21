@@ -1,5 +1,7 @@
+import {WN_API_URL} from "../common/constants.js";
+
 export const register = (user) =>
-    fetch("https://polar-ravine-37796.herokuapp.com/register", {
+    fetch(`${WN_API_URL}/register`, {
         method: 'POST',
         body: JSON.stringify(user),
         headers: {
@@ -11,7 +13,7 @@ export const register = (user) =>
 
 
 export const login = (user) =>
-    fetch("https://polar-ravine-37796.herokuapp.com/login", {
+    fetch(`${WN_API_URL}/login`, {
             method: 'POST',
             body: JSON.stringify(user),
             headers: {
@@ -22,19 +24,19 @@ export const login = (user) =>
         .catch(err => undefined)
 
 export const logout = () =>
-    fetch("https://polar-ravine-37796.herokuapp.com/logout", {
+    fetch(`${WN_API_URL}/logout`, {
         method: 'POST',
         credentials: "include"
     })
 
 export const profile = () =>
-    fetch("https://polar-ravine-37796.herokuapp.com/profile", {
+    fetch(`${WN_API_URL}/profile`, {
         method: 'GET',
         credentials: "include"
     }).then(response => response.json())
 
 export const updateProfile = (user) =>
-    fetch(`https://polar-ravine-37796.herokuapp.com/api/users/${user.userId}`, {
+    fetch(`${WN_API_URL}/api/users/${user.userId}`, {
         method: 'PUT',
         body: JSON.stringify(user),
         headers: {
@@ -45,7 +47,7 @@ export const updateProfile = (user) =>
         .then(response => response.json())
 
 export const viewProfile = (userId) =>
-    fetch(`https://polar-ravine-37796.herokuapp.com/api/users/${userId}`, {
+    fetch(`${WN_API_URL}/api/users/${userId}`, {
         method: 'GET',
         credentials: "include"
     })
