@@ -57,3 +57,8 @@ export const viewProfile = (userId) =>
 export const deleteUser = (userId) =>
     fetch (`${WN_API_URL}/api/users/${userId}`, {method: 'DELETE'})
         .then(response=>response.json())
+
+export const findContentsForUser = (userId) =>
+    fetch (`${WN_API_URL}/api/users/${userId}/contents`)
+        .then(response => response.status === 200 ? response.json() : [])
+        .catch(err => [])

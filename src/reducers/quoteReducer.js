@@ -2,11 +2,11 @@ import {FIND_QUOTES_FOR_WORD, DELETE_QUOTE, CREATE_QUOTE, UPDATE_QUOTE, } from "
 
 const initialState = { quotes: [
     {contentId: 123, text: "I'm a quote trolollololololololol", book: "I'm the book", author: "I'm the author.",
-        contributor: {userId: 11, username: "userA"}},
-    {contentId: 234, text: "I'm a quote2 trolollololololololol", book: "I'm the book2", author: "I'm the author2",
-        contributor: {userId: 11, username: "userB"}},
-    {contentId: 345, text: "I'm a quote3 trolollololololololol", book: "I'm the book3", author: "I'm the author3",
-        contributor: {userId: 345, username: "userC"}}
+            contributor: {userId: 11, username: "userA"}},
+        {contentId: 234, text: "I'm a quote2 trolollololololololol", book: "I'm the book2", author: "I'm the author2",
+            contributor: {userId: 11, username: "userB"}},
+        {contentId: 345, text: "I'm a quote3 trolollololololololol", book: "I'm the book3", author: "I'm the author3",
+            contributor: {userId: 345, username: "userC"}}
     ]}
 
 const quoteReducer = (state = initialState, action) => {

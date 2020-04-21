@@ -1,5 +1,5 @@
 import React from "react";
-import {viewProfile, updateProfile, deleteUser} from "../services/UserService";
+import {viewProfile, updateProfile, deleteUser, findContentsForUser} from "../services/UserService";
 import "./ProfileComponent.css"
 import {Link} from "react-router-dom";
 
@@ -13,17 +13,39 @@ class ProfileViewOnlyComponent extends React.Component {
             email: '',
             userType: "PUBLIC"
         },
-        followers: [{userId: 123, username: "nerdynerdA"},
-            {userId: 234, username: "nerdynerdB"},
-            {userId: 345, username: "nerdynerdC"}],
-        following: [{userId: 456, username: "wordynerdX"},
-            {userId: 567, username: "wordynerdY"},
-            {userId: 678, username: "wordynerdZ"}],
+        followers: [],
+        following: [],
+        contents: [],
     }
 
     componentDidMount() {
         viewProfile(this.props.viewUserId)
-            .then(profile => {if (profile !== undefined){this.setState({viewProfile: profile})}})
+            .then(profile => {
+                if (profile !== undefined){this.setState({viewProfile: profile})};
+                  findContentsForUser(this.state.viewProfile.userId)
+                      .then(response => {this.setState({contents: this.sortByRecent(response)})})
+            }
+            )
+    }
+
+    componentDidUpdate(prevProps, prevState, snapshot) {
+        if(prevProps.viewUserId !== this.props.viewUserId) {
+            viewProfile(this.props.viewUserId)
+                .then(profile => {
+                          if (profile !== undefined){this.setState({viewProfile: profile})};
+                          findContentsForUser(this.state.viewProfile.userId)
+                              .then(response => {this.setState({contents: this.sortByRecent(response)})})
+                      }
+                )
+        }
+    }
+
+    sortByRecent = (activities) => {
+        for (const act in activities) {
+            activities[act].creationDate = new Date(activities[act].creationDate);
+        }
+        const sorted = activities.sort((a,b) => b.creationDate - a.creationDate);
+        return sorted;
     }
 
     deleteUser(userId) {
@@ -94,7 +116,9 @@ class ProfileViewOnlyComponent extends React.Component {
                                  <h2 className="wbdv-section-title">Following</h2>
                                  <div className="wbdv-section-details">
                                      <ul>
-                                         {this.state.following.map(follow =>
+                                         {this.state.following && this.state.following < 1 &&
+                                          <li> This field lay barren. </li>}
+                                         {this.state.following && this.state.following.map(follow =>
                                            <li key={follow.userId}>
                                                <Link to={`/profile/${follow.userId}`}>
                                                    {follow.username}
@@ -108,6 +132,8 @@ class ProfileViewOnlyComponent extends React.Component {
                                  <h2 className="wbdv-section-title">Followers</h2>
                                  <div className="wbdv-section-details">
                                      <ul>
+                                         {this.state.followers && this.state.followers < 1 &&
+                                          <li> This field lay barren. </li>}
                                          {this.state.followers.map(follow =>
                                            <li key={follow.userId}>
                                                <Link to={`/profile/${follow.userId}`}>
@@ -122,33 +148,32 @@ class ProfileViewOnlyComponent extends React.Component {
                          <div className="col-md-8 wbdv-profile-right">
                              <div className="wbdv-profile-section">
                                  <h2 className="wbdv-section-title">Recent Activity</h2>
-                                 <div className="wbdv-activity-details">
-                                     You uploaded a new word-- [hyperlink to word page].
-                                 </div>
-                                 <div className="wbdv-activity-details">
-                                     You liked a new word-- [hyperlink to word page].
-                                 </div>
-                                 <div className="wbdv-activity-details">
-                                     You commented on a word-- [hyperlink to word page].
-                                 </div>
-                                 <div className="wbdv-activity-details">
-                                     You uploaded a new word-- [hyperlink to word page].
-                                 </div>
-                                 <div className="wbdv-activity-details">
-                                     You liked a new word-- [hyperlink to word page].
-                                 </div>
-                                 <div className="wbdv-activity-details">
-                                     You commented on a word-- [hyperlink to word page].
-                                 </div>
-                                 <div className="wbdv-activity-details">
-                                     You uploaded a new word-- [hyperlink to word page].
-                                 </div>
-                                 <div className="wbdv-activity-details">
-                                     You liked a new word-- [hyperlink to word page].
-                                 </div>
-                                 <div className="wbdv-activity-details">
-                                     You commented on a word-- [hyperlink to word page].
-                                 </div>
+                                 {this.state.contents && this.state.contents < 1 &&
+                                  <div className="wbdv-activity-details">
+                                      No recent activity.
+                                  </div>
+                                 }
+                                 {this.state.contents &&
+                                  this.state.contents.map( content =>
+                                       <div key={content.contentId}>
+                                           {content.contentType === "QUOTATION" &&
+                                            <div className="wbdv-activity-details">
+                                                You posted a new quote-- "{content.text}".
+                                            </div>}
+                                           {content.contentType === "SENTENCE" &&
+                                            <div className="wbdv-activity-details">
+                                                You posted a new sentence-- "{content.text}".
+                                            </div>}
+                                           {content.contentType === "DEFINITION" &&
+                                            <div className="wbdv-activity-details">
+                                                You posted a new definition-- "{content.text}".
+                                            </div>}
+                                           {content.contentType === "COMMENT" &&
+                                            <div className="wbdv-activity-details">
+                                                You posted a new definition-- "{content.text}".
+                                            </div>}
+                                       </div>
+                                  )}
                              </div>
                          </div>
                      </div>

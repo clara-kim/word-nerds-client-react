@@ -7,42 +7,72 @@ export const findQuotesForWord = (word) =>
             'content-type': 'application/json'
         },
     })
-        .then(response => response.json())
+        .then(response => response.status === 200 ? response.json() : [])
+        .catch(err => [])
 
-// export const deleteModule = (moduleId) =>
-//     fetch(`${PROF_API_URL}/modules/${moduleId}`, {
-//         method: "DELETE"
-//     })
-//         .then(response => response.json())
-//
-// export const findAllModules = () =>
-//     fetch(`${PROF_API_URL}/modules`)
-//         .then(response => response.json())
-//
-// export const createContent =  (newContent, userId, word) =>
-//     fetch(`${WN_API_URL}/api/contents`, {
-//         method: "POST",
-//         body: JSON.stringify(newContent, userId, word), //TODO SEPARATE OUT EACH?
-//         headers: {
-//             'content-type': 'application/json'
-//         }
-//     })
-//         .then(response => response.json())
-//
-// export const updateModule = async (moduleId, module) => {
-//     const response = await fetch(`${PROF_API_URL}/modules/${moduleId}`, {
-//         method: 'PUT',
-//         body: JSON.stringify(module),
-//         headers: {
-//             'content-type': 'application/json'
-//         }
-//     })
-//     return await response.json()
-// }
+export const findSentencesForWord = (word) =>
+    fetch(`${WN_API_URL}/api/words/${word}/quotations`, {
+        method: 'GET',
+        headers: {
+            'content-type': 'application/json'
+        },
+    })
+        .then(response => response.status === 200 ? response.json() : [])
+        .catch(err => [])
+
+export const findCommentsForWord = (word) =>
+    fetch(`${WN_API_URL}/api/words/${word}/quotations`, {
+        method: 'GET',
+        headers: {
+            'content-type': 'application/json'
+        },
+    })
+        .then(response => response.status === 200 ? response.json() : [])
+        .catch(err => [])
+
+export const findDefinitionsForWord = (word) =>
+    fetch(`${WN_API_URL}/api/words/${word}/quotations`, {
+        method: 'GET',
+        headers: {
+            'content-type': 'application/json'
+        },
+    })
+        .then(response => response.status === 200 ? response.json() : [])
+        .catch(err => [])
+
+export const deleteContent = (contentId) =>
+    fetch(`${WN_API_URL}/contents/${contentId}`, {
+        method: "DELETE"
+    })
+        .then(response => response.json());
+
+export const createContent =  (newContent, userId, word) =>
+    fetch(`${WN_API_URL}/api/users/${userId}/words/${word}/contents`, {
+        method: "POST",
+        body: JSON.stringify(newContent),
+        headers: {
+            'content-type': 'application/json'
+        }
+    })
+        .then(response => response.json());
+
+export const updateContent = async (contentId, content) => {
+    const response = await fetch(`${WN_API_URL}/api/contents/${contentId}`, {
+        method: 'PUT',
+        body: JSON.stringify(content),
+        headers: {
+            'content-type': 'application/json'
+        }
+    })
+    return await response.json()
+}
 
 export default {
-    // deleteModule,
+    deleteContent,
+    createContent,
+    updateContent,
     findQuotesForWord,
-    // createModule,
-    // updateModule
+    findSentencesForWord,
+    findCommentsForWord,
+    findDefinitionsForWord
 }
