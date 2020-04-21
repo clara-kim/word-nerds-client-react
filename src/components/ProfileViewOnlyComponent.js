@@ -56,7 +56,8 @@ class ProfileViewOnlyComponent extends React.Component {
     }
 
     makeAdmin(){
-        updateProfile({userId: this.state.viewProfile.userId, userType: "ADMIN"})
+        updateProfile({userId: this.state.viewProfile.userId, userType: "ADMIN"});
+        this.setState({viewProfile: {...this.state.viewProfile, userType:"ADMIN"}});
     }
 
     render() {
