@@ -5,9 +5,9 @@ export const findDefinitionsForWord = (word) => ({
 
 export const FIND_DEFINITIONS_FOR_WORD = "FIND_DEFINITIONS_FOR_WORD"
 
-export const deleteDefinition = (definitionId) => ({
+export const deleteDefinition = (contentId) => ({
     type: DELETE_DEFINITION,
-    definitionId: definitionId
+    contentId: contentId
 })
 export const DELETE_DEFINITION = "DELETE_DEFINITION"
 
@@ -17,7 +17,7 @@ export const createDefinition = (definition) => ({
 })
 export const CREATE_DEFINITION = "CREATE_DEFINITION"
 
-export const updateDefinition = (definitionId, definition) => ({
+export const updateDefinition = (contentId, definition) => ({
     type: UPDATE_DEFINITION,
     updatedDefinition: definition
 })

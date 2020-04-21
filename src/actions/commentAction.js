@@ -5,9 +5,9 @@ export const findCommentsForWord = (word) => ({
 
 export const FIND_COMMENTS_FOR_WORD = "FIND_COMMENTS_FOR_WORD"
 
-export const deleteComment = (commentId) => ({
+export const deleteComment = (contentId) => ({
     type: DELETE_COMMENT,
-    commentId: commentId
+    contentId: contentId
 })
 export const DELETE_COMMENT = "DELETE_COMMENT"
 
@@ -17,7 +17,7 @@ export const createComment = (comment) => ({
 })
 export const CREATE_COMMENT = "CREATE_COMMENT"
 
-export const updateComment = (commentId, comment) => ({
+export const updateComment = (contentId, comment) => ({
     type: UPDATE_COMMENT,
     updatedComment: comment
 })

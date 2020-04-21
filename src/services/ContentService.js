@@ -19,10 +19,10 @@ export const findQuotesForWord = (word) =>
 //     fetch(`${PROF_API_URL}/modules`)
 //         .then(response => response.json())
 //
-// export const createModule =  (courseId) =>
-//     fetch(`${PROF_API_URL}/courses/${courseId}/modules`, {
+// export const createContent =  (newContent, userId, word) =>
+//     fetch(`${WN_API_URL}/api/contents`, {
 //         method: "POST",
-//         body: JSON.stringify({title: "New Module"}),
+//         body: JSON.stringify(newContent, userId, word), //TODO SEPARATE OUT EACH?
 //         headers: {
 //             'content-type': 'application/json'
 //         }

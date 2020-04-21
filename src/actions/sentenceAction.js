@@ -5,9 +5,9 @@ export const findSentencesForWord = (word) => ({
 
 export const FIND_SENTENCES_FOR_WORD = "FIND_SENTENCES_FOR_WORD"
 
-export const deleteSentence = (sentenceId) => ({
+export const deleteSentence = (contentId) => ({
     type: DELETE_SENTENCE,
-    sentenceId: sentenceId
+    contentId: contentId
 })
 export const DELETE_SENTENCE = "DELETE_SENTENCE"
 
@@ -17,7 +17,7 @@ export const createSentence = (sentence) => ({
 })
 export const CREATE_SENTENCE = "CREATE_SENTENCE"
 
-export const updateSentence = (sentenceId, sentence) => ({
+export const updateSentence = (contentId, sentence) => ({
     type: UPDATE_SENTENCE,
     updatedSentence: sentence
 })

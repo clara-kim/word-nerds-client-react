@@ -5,9 +5,9 @@ export const findQuotesForWord = (word) => ({
 
 export const FIND_QUOTES_FOR_WORD = "FIND_QUOTES_FOR_WORD"
 
-export const deleteQuote = (quoteId) => ({
+export const deleteQuote = (contentId) => ({
     type: DELETE_QUOTE,
-    quoteId: quoteId
+    contentId: contentId
 })
 export const DELETE_QUOTE = "DELETE_QUOTE"
 
@@ -17,7 +17,7 @@ export const createQuote = (quote) => ({
 })
 export const CREATE_QUOTE = "CREATE_QUOTE"
 
-export const updateQuote = (quoteId, quote) => ({
+export const updateQuote = (contentId, quote) => ({
     type: UPDATE_QUOTE,
     updatedQuote: quote
 })

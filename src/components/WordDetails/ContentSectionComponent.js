@@ -32,10 +32,19 @@ class ContentSectionComponent extends React.Component {
                     {/*QUOTES TAB*/}
                     <Tab eventKey="quotes" title="Quotes" className="wbdv-tab">
                         {/*TODO add MAP for each quote*/}
-                        <QuoteComponent profile={this.props.profile}/>
+                        {this.props.quotes && this.props.quotes.map(quote =>
+                            <QuoteComponent
+                                profile={this.props.profile}
+                                quote = {quote}
+                                key={quote.contentId}
+                                deleteQuote = {this.props.deleteQuote}
+                                updateQuote = {this.props.updateQuote}
+                            />
+                        )}
                         <QuoteInputComponent
                             profile={this.props.profile}
                             word={this.props.word}
+                            createQuote = {this.props.createQuote}
                         />
                     </Tab>
 
@@ -76,30 +85,33 @@ const dispatchToPropertyMapper = (dispatch) => {
         //                                             type: FIND_QUOTES_FOR_WORD,
         //                                             quotes: actualQuotes
         //                                         })),
-        // deleteQuote: (quoteId) =>
-        //     QuoteService.deleteQuote(quoteId)
-        //         .then(status =>
-        //                   dispatch({
-        //                                type: DELETE_QUOTE,
-        //                                quoteId: quoteId
-        //                            })),
-        // createQuote: (word) => {
-        //     QuoteService.createQuote(word)
+
+        deleteQuote: (contentId) =>
+            // QuoteService.deleteQuote(contentId)
+            //     .then(status =>
+                          dispatch({
+                                       type: DELETE_QUOTE,
+                                       contentId: contentId
+                                   }), //TODO REMOVE COMMA WHEN BRINGING IN SERVICE
+                // ),
+
+        createQuote: (newQuote, userId, word) =>
+        //     QuoteService.createQuote(newQuote, userId, word)
         //         .then(actualQuote =>
-        //                   dispatch({
-        //                                type: CREATE_QUOTE,
-        //                                newQuote: actualQuote
-        //                            }))
-        // },
-        // updateQuote: (quoteId, quote) => {
-        //     QuoteService.updateQuote(quoteId, quote)
+                          dispatch({
+                                       type: CREATE_QUOTE,
+                                       newQuote: newQuote
+                                   }), //TODO REMOVE COMMA WHEN BRINGING IN SERVICE
+        // )
+
+        updateQuote: (contentId, quote) =>
+        //     QuoteService.updateQuote(contentId, quote)
         //         .then(quote =>
-        //                   dispatch({
-        //                                type: UPDATE_QUOTE,
-        //                                updatedQuote: quote
-        //                            })
+                          dispatch({
+                                       type: UPDATE_QUOTE,
+                                       updatedQuote: quote
+                                   })
         //         )
-        // }
     }
 }
 

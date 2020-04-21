@@ -6,7 +6,7 @@ class SentenceInputComponent extends React.Component {
         userId: this.props.profile.userId,
         word: this.props.word,
         content : {
-            contentType: 0,
+            contentType: 3,
             text: "",
             book: "",
             author: "",

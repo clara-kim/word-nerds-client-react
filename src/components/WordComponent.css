@@ -79,7 +79,8 @@
 .wbdv-tabs-section {
     margin-top: 30px;
     background-color: rgb(52,58, 64);
-    height: 100vh;
+    min-height: 100vh;
+    padding-bottom: 3vh
 }
 .wbdv-tabs {
     font-size: 20px;

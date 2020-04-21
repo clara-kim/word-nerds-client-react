@@ -6,10 +6,12 @@ class QuoteInputComponent extends React.Component {
         userId: this.props.profile.userId,
         word: this.props.word,
         content : {
-            contentType: 0,
+            contentType: 2,
             text: "",
             book: "",
             author: "",
+            //REMOVE CONTRIBUTOR LATER
+            contributor: {username: this.props.profile.username, userId: this.props.profile.userId}
         }
     }
 
@@ -24,8 +26,8 @@ class QuoteInputComponent extends React.Component {
             this.setState(
                 {content:
                         {...this.state.content,
-                            text: "", book: "", author: ""}})
-            // CALL ADD SERVICE CONTENT
+                            text: "", book: "", author: ""}});
+            this.props.createQuote(this.state.content, this.props.profile.userId, this.props.word)
         }
     }
 
