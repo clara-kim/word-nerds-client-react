@@ -143,3 +143,14 @@
     padding-bottom: 1%;
     padding-top: 1%;
 }
+
+.wbdv-edit-text {
+    font-size: 20px;
+    vertical-align: top;
+    color: darkgoldenrod;
+}
+
+.wbdv-edit-icon{
+    text-align: center;
+    color: darkgoldenrod;
+}

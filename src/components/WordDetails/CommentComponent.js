@@ -6,6 +6,7 @@ class CommentComponent extends React.Component {
         wordData: [],
         likes: 9,
         dislikes: 1,
+        editing: false,
     }
 
     // IF NOT SIGNED IN, CLICKING LIKE OR DISLIKE OPENS POP-UP
@@ -63,10 +64,38 @@ class CommentComponent extends React.Component {
                          <i className="fa fa-trash wbdv-word-dislike-icon"
                             title="delete"/>
                      </button>}
+
+                    {/*EDIT -- ONLY VISIBLE IF USER CONTRIBUTED AND NOT EDITING*/}
+                    {this.props.profile.userType === "ADMIN" && !this.state.editing &&
+                    //{this.props.profile.userId === this.props.content.contributor.userId && !this.state.editing &&
+                     <button className="wbdv-transparent-button" onClick={()=>this.setState({editing: true})}>
+                         <i className="fa fa-edit wbdv-edit-icon"
+                            title="edit"/>
+                         <br/>
+                         <span className="wbdv-edit-text">
+                            EDIT
+                        </span>
+                     </button>
+                    }
+
+                    {/*SAVE -- ONLY VISIBLE IF USER CONTRIBUTED AND IS EDITING*/}
+                    {this.props.profile.userType === "ADMIN" && this.state.editing &&
+                     //{this.props.profile.userId === this.props.content.contributor.userId && !this.state.editing &&
+                     <button className="wbdv-transparent-button" onClick={()=>this.setState({editing: false})}>
+                         <i className="fa fa-save wbdv-edit-icon"
+                            title="save"/>
+                         <br/>
+                         <span className="wbdv-edit-text">
+                            SAVE
+                        </span>
+                     </button>
+                    }
                 </p>
 
                 {/*THE COMMENT*/}
-                <p className="wbdv-tab-data-input">A user-submitted comment would go here.</p>
+                {!this.state.editing &&
+                 <p className="wbdv-tab-data-input">A user-submitted comment would go here.</p>}
+                {this.state.editing && <input type="text" className="container-fluid wbdv-input-data"/>}
                 <p className="wbdv-tab-data-user"> Submitted by: User </p>
             </div>
         )
