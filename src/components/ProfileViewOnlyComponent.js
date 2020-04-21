@@ -1,17 +1,24 @@
 import React from "react";
 import {viewProfile, updateProfile, deleteUser} from "../services/UserService";
 import "./ProfileComponent.css"
+import {Link} from "react-router-dom";
 
 class ProfileViewOnlyComponent extends React.Component {
     state = {
         viewProfile: {
-            userId: '',
+            userId: 0,
             username: '',
             firstName: '',
             lastName: '',
             email: '',
             userType: "PUBLIC"
-        }
+        },
+        followers: [{userId: 123, username: "nerdynerdA"},
+            {userId: 234, username: "nerdynerdB"},
+            {userId: 345, username: "nerdynerdC"}],
+        following: [{userId: 456, username: "wordynerdX"},
+            {userId: 567, username: "wordynerdY"},
+            {userId: 678, username: "wordynerdZ"}],
     }
 
     componentDidMount() {
@@ -86,9 +93,13 @@ class ProfileViewOnlyComponent extends React.Component {
                                  <h2 className="wbdv-section-title">Following</h2>
                                  <div className="wbdv-section-details">
                                      <ul>
-                                         <li>Example_User_A</li>
-                                         <li>Example_User_B</li>
-                                         <li>Example_User_C</li>
+                                         {this.state.following.map(follow =>
+                                           <li>
+                                               <Link to={`/profile/${follow.userId}`}>
+                                                   {follow.username}
+                                               </Link>
+                                           </li>
+                                         )}
                                      </ul>
                                  </div>
                              </div>
@@ -96,9 +107,13 @@ class ProfileViewOnlyComponent extends React.Component {
                                  <h2 className="wbdv-section-title">Followers</h2>
                                  <div className="wbdv-section-details">
                                      <ul>
-                                         <li>Example_User_A</li>
-                                         <li>Example_User_B</li>
-                                         <li>Example_User_C</li>
+                                         {this.state.followers.map(follow =>
+                                           <li>
+                                               <Link to={`/profile/${follow.userId}`}>
+                                                   {follow.username}
+                                               </Link>
+                                           </li>
+                                         )}
                                      </ul>
                                  </div>
                              </div>

@@ -6,7 +6,7 @@ import "./ProfileComponent.css"
 class ProfileComponent extends React.Component {
     state = {
         profile: {
-            userId: '',
+            userId: 0,
             username: '',
             password: '',
             firstName: '',
@@ -15,6 +15,12 @@ class ProfileComponent extends React.Component {
             roles: [],
             userType: "PUBLIC"
         },
+        followers: [{userId: 123, username: "nerdynerdA"},
+                    {userId: 234, username: "nerdynerdB"},
+                    {userId: 345, username: "nerdynerdC"}],
+        following: [{userId: 456, username: "wordynerdX"},
+                    {userId: 567, username: "wordynerdY"},
+                    {userId: 678, username: "wordynerdZ"}],
         editing: false
     }
 
@@ -154,9 +160,13 @@ class ProfileComponent extends React.Component {
                                  <h2 className="wbdv-section-title">Following</h2>
                                  <div className="wbdv-section-details">
                                      <ul>
-                                         <li>Example_User_A</li>
-                                         <li>Example_User_B</li>
-                                         <li>Example_User_C</li>
+                                         {this.state.following.map(follow =>
+                                         <li>
+                                             <Link to={`/profile/${follow.userId}`}>
+                                                 {follow.username}
+                                             </Link>
+                                         </li>
+                                         )}
                                      </ul>
                                  </div>
                              </div>
@@ -164,9 +174,13 @@ class ProfileComponent extends React.Component {
                                  <h2 className="wbdv-section-title">Followers</h2>
                                  <div className="wbdv-section-details">
                                      <ul>
-                                         <li>Example_User_A</li>
-                                         <li>Example_User_B</li>
-                                         <li>Example_User_C</li>
+                                         {this.state.followers.map(follow =>
+                                           <li>
+                                               <Link to={`/profile/${follow.userId}`}>
+                                                   {follow.username}
+                                               </Link>
+                                           </li>
+                                         )}
                                      </ul>
                                  </div>
                              </div>
