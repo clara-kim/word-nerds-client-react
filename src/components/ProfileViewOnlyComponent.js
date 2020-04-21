@@ -95,7 +95,7 @@ class ProfileViewOnlyComponent extends React.Component {
                                  <div className="wbdv-section-details">
                                      <ul>
                                          {this.state.following.map(follow =>
-                                           <li>
+                                           <li key={follow.userId}>
                                                <Link to={`/profile/${follow.userId}`}>
                                                    {follow.username}
                                                </Link>
@@ -109,7 +109,7 @@ class ProfileViewOnlyComponent extends React.Component {
                                  <div className="wbdv-section-details">
                                      <ul>
                                          {this.state.followers.map(follow =>
-                                           <li>
+                                           <li key={follow.userId}>
                                                <Link to={`/profile/${follow.userId}`}>
                                                    {follow.username}
                                                </Link>
