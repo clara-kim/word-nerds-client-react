@@ -213,19 +213,27 @@ class ProfileComponent extends React.Component {
                                       <div key={content.contentId}>
                                           {content.contentType === "QUOTATION" &&
                                            <div className="wbdv-activity-details">
-                                               You posted a new quote-- "{content.text}"
+                                               You posted a new quote on <Link to={`/word/${content.word.text}`}>
+                                               {content.word.text}
+                                           </Link>-- "{content.text}"
                                            </div>}
                                           {content.contentType === "SENTENCE" &&
-                                          <div className="wbdv-activity-details">
-                                              You posted a new sentence-- "{content.text}"
-                                          </div>}
+                                           <div className="wbdv-activity-details">
+                                               You posted a new sentence on <Link to={`/word/${content.word.text}`}>
+                                               {content.word.text}
+                                           </Link>-- "{content.text}"
+                                           </div>}
                                           {content.contentType === "DEFINITION" &&
                                            <div className="wbdv-activity-details">
-                                               You posted a new definition-- "{content.text}"
+                                               You posted a new definition on <Link to={`/word/${content.word.text}`}>
+                                               {content.word.text}
+                                           </Link>-- "{content.text}"
                                            </div>}
                                           {content.contentType === "COMMENT" &&
                                            <div className="wbdv-activity-details">
-                                               You posted a new definition-- "{content.text}"
+                                               You posted a new comment on <Link to={`/word/${content.word.text}`}>
+                                               {content.word.text}
+                                           </Link>-- "{content.text}"
                                            </div>}
                                       </div>
                                  )}
