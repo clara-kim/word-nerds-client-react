@@ -1,19 +1,11 @@
 import React from "react";
 import "./WordComponent.css"
-import Tab from 'react-bootstrap/Tabs'
-import Tabs from 'react-bootstrap/Tabs'
 import {getWordDetails} from "../services/DictionaryService";
-import SentenceComponent from "./WordDetails/SentenceComponent";
-import CommentComponent from "./WordDetails/CommentComponent";
-import DefinitionComponent from "./WordDetails/DefinitionComponent";
 import {Provider} from 'react-redux'
 import quoteReducer from "../reducers/quoteReducer";
 import {combineReducers, createStore} from 'redux';
-import QuoteComponent from "./WordDetails/QuoteComponent";
-import QuoteInputComponent from "./WordDetails/QuoteInputComponent";
-import CommentInputComponent from "./WordDetails/CommentInputComponent";
-import SentenceInputComponent from "./WordDetails/SentenceInputComponent";
-import DefinitionInputComponent from "./WordDetails/DefinitionInputComponent";
+import ContentSectionComponent from "./WordDetails/ContentSectionComponent";
+import DefinitionSectionComponent from "./WordDetails/DefinitionSectionComponent";
 
 const rootReducer = combineReducers({
                                         quotes: quoteReducer
@@ -114,35 +106,17 @@ class WordComponent extends React.Component {
                         </div>
                         )}
 
-                        <DefinitionComponent profile={this.props.profile}/>
-                        <DefinitionInputComponent profile={this.props.profile}/>
+                        <DefinitionSectionComponent
+                            profile={this.props.profile}
+                            word={this.props.word}
+                        />
                     </div>
 
                     {/*TABS SECTION*/}
-                    <div className="wbdv-tabs-section">
-                        <Tabs defaultActiveKey="quotes" id="uncontrolled-tab-example"
-                              className="wbdv-tabs">
-
-                            {/*QUOTES TAB*/}
-                            <Tab eventKey="quotes" title="Quotes" className="wbdv-tab">
-                                {/*TODO add MAP for each quote*/}
-                                <QuoteComponent profile={this.props.profile}/>
-                                <QuoteInputComponent profile={this.props.profile}/>
-                            </Tab>
-
-                            {/*EXAMPLE SENTENCES TAB*/}
-                            <Tab eventKey="examples" title="Example Sentences">
-                                <SentenceComponent profile={this.props.profile}/>
-                                <SentenceInputComponent profile={this.props.profile}/>
-                            </Tab>
-
-                            {/*COMMENTS TAB*/}
-                            <Tab eventKey="comments" title="Comments">
-                                <CommentComponent profile={this.props.profile}/>
-                                <CommentInputComponent profile={this.props.profile}/>
-                            </Tab>
-                        </Tabs>
-                    </div>
+                    <ContentSectionComponent
+                        profile={this.props.profile}
+                        word={this.props.word}
+                    />
                 </div>
             </Provider>
         )
