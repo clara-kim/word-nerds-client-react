@@ -1,6 +1,7 @@
 import React from "react";
 import "./LandingComponent.css"
-import {profile} from "../services/UserService";
+import {profile, findContentsForUser} from "../services/UserService";
+import {findAllContent} from "../services/ContentService";
 import {Link} from "react-router-dom";
 
 /*
@@ -11,21 +12,38 @@ class LandingComponent extends React.Component {
 
     state = {
         profile: { // user information (if user is logged in)
+            userId: 0,
             username: '',
             password: '',
             firstName: '',
             lastName: '',
             email: '',
             userType: "PUBLIC"
-        }
+        },
+        allContents: [],
+        contents: []
     }
 
     // Requests user information upon component mount.
     // Content displayed is user-specific.
     componentDidMount(){
         profile()
-            .then(profile =>
-                      this.setState({profile: profile}))
+            .then(profile => {
+                      this.setState({profile: profile});
+                      if (profile.userType === "MEMBER" || profile.userType ==="ADMIN"){
+                          findContentsForUser(this.state.profile.userId)
+                              .then(response => {this.setState({contents: this.sortByRecent(response)})})
+                      }
+            });
+        findAllContent().then(contents => this.setState({allContents:this.sortByRecent(contents)}));
+    }
+
+    sortByRecent = (activities) => {
+        for (const act in activities) {
+            activities[act].creationDate = new Date(activities[act].creationDate);
+        }
+        const sorted = activities.sort((a,b) => b.creationDate - a.creationDate);
+        return sorted;
     }
 
     render (){
@@ -46,28 +64,33 @@ class LandingComponent extends React.Component {
                 <div className="parallax" id="word-stats">
                     <h2 className="section-title">&middot; WORDLY HAPPENINGS &middot;</h2>
                     <br/>
-                    <div className="row container">
-                        <div className="col-3 wbdv-wordly-happenings-section">
-                            <h3>Most Liked Words</h3>
-                            <ol>
-                                <li>Lorem</li>
-                                <li>Ipsum</li>
-                                <li>Dolor</li>
-                                <li>Sit</li>
-                                <li>Amet</li>
-                            </ol>
-                        </div>
-                        <div className="col-1"/>
-                        <div className="col-8 wbdv-wordly-happenings-section">
-                            <h3>Most Liked Sentences</h3>
-                            <ol>
-                                <li>Consectetur</li>
-                                <li>Adipiscing</li>
-                                <li>Elit</li>
-                                <li>Sed</li>
-                                <li>Eiusmod</li>
-                            </ol>
-                        </div>
+                    <div className="wbdv-wordly-happenings-section">
+                        <h3>Sitewide Recent Activity</h3>
+                        <ol>
+                            {this.state.allContents && this.state.allContents < 1 &&
+                             <p>No recent activity.</p>
+                            }
+                            {this.state.allContents && this.state.allContents.map(content =>
+                                <div key={content.contentId}>
+                                    {content.contentType === "QUOTATION" &&
+                                     <li className="wbdv-activity-details">
+                                         User posted a new quote-- "{content.text}".
+                                     </li>}
+                                    {content.contentType === "SENTENCE" &&
+                                     <li className="wbdv-activity-details">
+                                         User posted a new sentence-- "{content.text}".
+                                     </li>}
+                                    {content.contentType === "DEFINITION" &&
+                                     <li className="wbdv-activity-details">
+                                         User posted a new definition-- "{content.text}".
+                                     </li>}
+                                    {content.contentType === "COMMENT" &&
+                                     <li className="wbdv-activity-details">
+                                         User posted a new definition-- "{content.text}".
+                                     </li>}
+                                </div>
+                            )}
+                        </ol>
                     </div>
                 </div>
 
@@ -76,28 +99,33 @@ class LandingComponent extends React.Component {
                  <div className="parallax" id="wbdv-personal-stats">
                      <h2 className="section-title">&middot; PERSONAL AFFAIRS &middot;</h2>
                      <br/>
-                     <div className="row container">
-                         <div className="col-4 wbdv-wordly-happenings-section">
-                             <h3>Recently Liked Words</h3>
-                             <ol>
-                                 <li>Lorem</li>
-                                 <li>Ipsum</li>
-                                 <li>Dolor</li>
-                                 <li>Sit</li>
-                                 <li>Amet</li>
-                             </ol>
-                         </div>
-                         <div className="col-1"/>
-                         <div className="col-7 wbdv-wordly-happenings-section">
-                             <h3>Recently Liked Sentences</h3>
-                             <ol>
-                                 <li>Consectetur</li>
-                                 <li>Adipiscing</li>
-                                 <li>Elit</li>
-                                 <li>Sed</li>
-                                 <li>Eiusmod</li>
-                             </ol>
-                         </div>
+                     <div className="wbdv-wordly-happenings-section">
+                         <h3>Recently Liked Words</h3>
+                         <ol>
+                             {this.state.contents && this.state.contents < 1 &&
+                              <p>No recent activity.</p>
+                             }
+                             {this.state.contents && this.state.contents.map(content =>
+                                   <div key={content.contentId}>
+                                       {content.contentType === "QUOTATION" &&
+                                        <li className="wbdv-activity-details">
+                                            You posted a new quote-- "{content.text}".
+                                        </li>}
+                                       {content.contentType === "SENTENCE" &&
+                                        <li className="wbdv-activity-details">
+                                            You posted a new sentence-- "{content.text}".
+                                        </li>}
+                                       {content.contentType === "DEFINITION" &&
+                                        <li className="wbdv-activity-details">
+                                            You posted a new definition-- "{content.text}".
+                                        </li>}
+                                       {content.contentType === "COMMENT" &&
+                                        <li className="wbdv-activity-details">
+                                            You posted a new definition-- "{content.text}".
+                                        </li>}
+                                   </div>
+                             )}
+                         </ol>
                      </div>
                  </div> }
 

@@ -65,6 +65,7 @@
     background: rgba(0, 0, 0, 0.3);
     border: solid white thin;
     border-radius: 5px;
+    padding-left: 5vh;
 }
 
 #wbdv-personal-stats {
