@@ -58,7 +58,8 @@ class QuoteComponent extends React.Component {
                     </button>
 
                     {/*DELETE -- ONLY VISIBLE TO ADMIN AND UPLOADING USER*/}
-                    {this.props.profile.userType === "ADMIN" &&
+                    {(this.props.profile.userType === "ADMIN" ||
+                      this.props.profile.userId === this.props.content.contributor.userId) &&
                      <button className="wbdv-transparent-button" onClick={() =>
                          this.props.deleteQuote(this.props.quote.contentId)}>
                          <i className="fa fa-trash wbdv-word-dislike-icon"

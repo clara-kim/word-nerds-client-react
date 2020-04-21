@@ -10,8 +10,6 @@ class QuoteInputComponent extends React.Component {
             text: "",
             book: "",
             author: "",
-            //REMOVE CONTRIBUTOR LATER
-            contributor: {username: this.props.profile.username, userId: this.props.profile.userId}
         }
     }
 

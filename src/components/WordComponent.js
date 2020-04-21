@@ -6,6 +6,7 @@ import quoteReducer from "../reducers/quoteReducer";
 import {combineReducers, createStore} from 'redux';
 import ContentSectionComponent from "./WordDetails/ContentSectionComponent";
 import DefinitionSectionComponent from "./WordDetails/DefinitionSectionComponent";
+import {getDislikeNumberForWord, getLikeNumberForWord} from "../services/wordService"
 
 const rootReducer = combineReducers({
                                         quotes: quoteReducer
@@ -21,8 +22,8 @@ class WordComponent extends React.Component {
     state = {
         wordData: [],
         definition:[],
-        likes: 46,
-        dislikes: 2,
+        likes: 0,
+        dislikes: 0,
     }
 
     // IF NOT SIGNED IN, CLICKING LIKE OR DISLIKE OPENS POP-UP
@@ -45,15 +46,23 @@ class WordComponent extends React.Component {
     }
 
     componentDidMount = async() => {
-        const wordData = await getWordDetails(this.props.word)
+        const wordData = await getWordDetails(this.props.word);
         this.setState({wordData: wordData});
-        this.setState({definition: wordData.shortdef})
+        this.setState({definition: wordData.shortdef});
+        const likes = await getLikeNumberForWord(this.props.word);
+        const dislikes = await getDislikeNumberForWord(this.props.word);
+        this.setState({likes: likes});
+        this.setState({dislikes: dislikes});
     }
 
     componentDidUpdate(prevProps, prevState, snapshot) {
         if(prevProps.word !== this.props.word) {
             getWordDetails(this.props.word)
-                .then(result => this.setState({wordData: result[0]}))
+                .then(result => this.setState({wordData: result[0]}));
+            getLikeNumberForWord(this.props.word)
+                .then(result => this.setState({likes: result}));
+            getDislikeNumberForWord(this.props.word)
+                .then(result => this.setState({dislikes: result}));
         }
     }
 

@@ -15,7 +15,7 @@ import {
     FIND_QUOTES_FOR_WORD,
     UPDATE_QUOTE
 } from "../../actions/quoteAction";
-import QuoteService from "../../services/ContentService"
+import ContentService from "../../services/ContentService"
 
 class ContentSectionComponent extends React.Component {
 
@@ -31,7 +31,6 @@ class ContentSectionComponent extends React.Component {
 
                     {/*QUOTES TAB*/}
                     <Tab eventKey="quotes" title="Quotes" className="wbdv-tab">
-                        {/*TODO add MAP for each quote*/}
                         {this.props.quotes && this.props.quotes.map(content =>
                             <QuoteComponent
                                 profile={this.props.profile}
@@ -79,15 +78,15 @@ const stateToPropertyMapper = (state) => {
 
 const dispatchToPropertyMapper = (dispatch) => {
     return {
-        // findQuotesForWord: (word) =>
-        //     QuoteService.findQuotesForWord(word)
-        //         .then(actualQuotes => dispatch({
-        //                                             type: FIND_QUOTES_FOR_WORD,
-        //                                             quotes: actualQuotes
-        //                                         })),
+        findQuotesForWord: (word) =>
+            ContentService.findQuotesForWord(word)
+                .then(actualQuotes => dispatch({
+                                                    type: FIND_QUOTES_FOR_WORD,
+                                                    quotes: actualQuotes
+                                                })),
 
         deleteQuote: (contentId) =>
-            // QuoteService.deleteQuote(contentId)
+            // ContentService.deleteContent(contentId)
             //     .then(status =>
                           dispatch({
                                        type: DELETE_QUOTE,
@@ -96,16 +95,16 @@ const dispatchToPropertyMapper = (dispatch) => {
                 // ),
 
         createQuote: (newQuote, userId, word) =>
-        //     QuoteService.createQuote(newQuote, userId, word)
-        //         .then(actualQuote =>
+             ContentService.createContent(newQuote, userId, word)
+                 .then(actualQuote =>
                           dispatch({
                                        type: CREATE_QUOTE,
-                                       newQuote: newQuote
-                                   }), //TODO REMOVE COMMA WHEN BRINGING IN SERVICE
-        // )
+                                       newQuote: actualQuote
+                                   })
+        ),
 
         updateQuote: (contentId, quote) =>
-        //     QuoteService.updateQuote(contentId, quote)
+        //     ContentService.updateContent(contentId, quote)
         //         .then(quote =>
                           dispatch({
                                        type: UPDATE_QUOTE,
