@@ -3,6 +3,7 @@ import React from 'react';
 class DefinitionInputComponent extends React.Component {
 
     state = {
+        userId: this.props.profile.userId,
         word: this.props.word,
         content : {
             contentType: 0,

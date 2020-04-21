@@ -3,6 +3,7 @@ import React from 'react';
 class SentenceInputComponent extends React.Component {
 
     state = {
+        userId: this.props.profile.userId,
         word: this.props.word,
         content : {
             contentType: 0,

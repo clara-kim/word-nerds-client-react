@@ -26,6 +26,7 @@ class MainComponent extends React.Component {
     state = {
         searchField: "", // string in the search field
         profile: { // user information (if user is logged in)
+            userId: 0,
             username: '',
             //password: '', TODO DELETE IF UNNECESSARY
             firstName: '',

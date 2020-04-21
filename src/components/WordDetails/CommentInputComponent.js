@@ -3,6 +3,7 @@ import React from 'react';
 class CommentInputComponent extends React.Component {
 
     state = {
+        userId: this.props.profile.userId,
         word: this.props.word,
         content : {
             contentType: 1,
