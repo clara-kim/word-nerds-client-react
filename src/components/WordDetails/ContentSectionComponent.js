@@ -32,11 +32,11 @@ class ContentSectionComponent extends React.Component {
                     {/*QUOTES TAB*/}
                     <Tab eventKey="quotes" title="Quotes" className="wbdv-tab">
                         {/*TODO add MAP for each quote*/}
-                        {this.props.quotes && this.props.quotes.map(quote =>
+                        {this.props.quotes && this.props.quotes.map(content =>
                             <QuoteComponent
                                 profile={this.props.profile}
-                                quote = {quote}
-                                key={quote.contentId}
+                                content = {content}
+                                key={content.contentId}
                                 deleteQuote = {this.props.deleteQuote}
                                 updateQuote = {this.props.updateQuote}
                             />

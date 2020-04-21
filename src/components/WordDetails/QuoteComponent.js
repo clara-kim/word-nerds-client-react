@@ -8,7 +8,7 @@ class QuoteComponent extends React.Component {
         likes: 17,
         dislikes: 4,
         editing: false,
-        quote: this.props.quote,
+        content: this.props.content,
     }
 
     // IF NOT SIGNED IN, CLICKING LIKE OR DISLIKE OPENS POP-UP
@@ -66,8 +66,7 @@ class QuoteComponent extends React.Component {
                      </button>}
 
                     {/*EDIT -- ONLY VISIBLE IF USER CONTRIBUTED AND NOT EDITING*/}
-                    {this.props.profile.userType !== "ADMIN" && !this.state.editing &&
-                     //{this.props.profile.userId === this.props.content.contributor.userId && !this.state.editing &&
+                    {this.props.profile.userId === this.props.content.contributor.userId && !this.state.editing &&
                      <button className="wbdv-transparent-button" onClick={()=>this.setState({editing: true})}>
                          <i className="fa fa-edit wbdv-edit-icon"
                             title="edit"/>
@@ -79,12 +78,11 @@ class QuoteComponent extends React.Component {
                     }
 
                     {/*SAVE -- ONLY VISIBLE IF USER CONTRIBUTED AND IS EDITING*/}
-                    {this.props.profile.userType !== "ADMIN" && this.state.editing &&
-                     //{this.props.profile.userId === this.props.content.contributor.userId && !this.state.editing &&
+                    {this.props.profile.userId === this.props.content.contributor.userId && this.state.editing &&
                      <button className="wbdv-transparent-button"
                              onClick={()=> {
                                  this.setState({editing: false});
-                                 this.props.updateQuote(this.state.quote)
+                                 this.props.updateQuote(this.state.content)
                              }}>
                          <i className="fa fa-save wbdv-edit-icon"
                             title="save"/>
@@ -98,39 +96,39 @@ class QuoteComponent extends React.Component {
 
                 {/*THE QUOTE*/}
                 {!this.state.editing &&
-                 <p className="wbdv-tab-data-input">{this.state.quote.text}</p>}
+                 <p className="wbdv-tab-data-input">{this.state.content.text}</p>}
                 {this.state.editing &&
                  <input type="text" className="container-fluid wbdv-input-data"
                         placeholder="Update quote here!"
-                        value={this.state.quote.text}
+                        value={this.state.content.text}
                         onChange={(e) => this.setState(
-                            {quote:
-                                    {...this.state.quote,
+                            {content:
+                                    {...this.state.content,
                                         text: e.target.value}})}
                  />}
                 {!this.state.editing &&
-                 <p className="wbdv-tab-data-user"> {this.state.quote.book} ({this.state.quote.author}) </p>}
+                 <p className="wbdv-tab-data-user"> {this.state.content.book} ({this.state.content.author}) </p>}
                 {this.state.editing &&
                  <input type="text" className="container-fluid wbdv-input-data"
                         placeholder="Update book here!"
-                        value={this.state.quote.book}
+                        value={this.state.content.book}
                         onChange={(e) => this.setState(
-                            {quote:
-                                    {...this.state.quote,
+                            {content:
+                                    {...this.state.content,
                                         book: e.target.value}})}
                  />}
                 {this.state.editing &&
                  <input type="text" className="container-fluid wbdv-input-data"
                         placeholder="Update author here!"
-                        value={this.state.quote.author}
+                        value={this.state.content.author}
                         onChange={(e) => this.setState(
-                            {quote:
-                                    {...this.state.quote,
+                            {content:
+                                    {...this.state.content,
                                         author: e.target.value}})}
                  />}
                  <p className="wbdv-tab-data-user"> Submitted by:&nbsp;
-                     <Link to={`/profile/${this.state.quote.contributor.userId}`}>
-                         {this.state.quote.contributor.username}
+                     <Link to={`/profile/${this.state.content.contributor.userId}`}>
+                         {this.state.content.contributor.username}
                      </Link>
                  </p>
             </div>
