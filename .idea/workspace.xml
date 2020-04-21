@@ -3,10 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="5ebd5028-f892-4d65-9156-9ba402878a9e" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/WordComponent.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/WordComponent.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/WordDetails/CommentComponent.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/WordDetails/CommentComponent.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/WordDetails/DefinitionComponent.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/WordDetails/DefinitionComponent.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/WordDetails/QuoteComponent.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/WordDetails/QuoteComponent.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ProfileComponent.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ProfileComponent.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ProfileViewOnlyComponent.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ProfileViewOnlyComponent.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -19,8 +17,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/MainComponent.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
-              <caret line="134" column="55" lean-forward="true" selection-start-line="134" selection-start-column="55" selection-end-line="134" selection-end-column="55" />
+            <state relative-caret-position="167">
+              <caret line="87" column="40" lean-forward="true" selection-start-line="87" selection-start-column="40" selection-end-line="87" selection-end-column="40" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
               </folding>
@@ -29,37 +27,25 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/components/WordComponent.css">
+        <entry file="file://$PROJECT_DIR$/src/components/ProfileComponent.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="331">
-              <caret line="152" column="15" selection-start-line="152" selection-start-column="1" selection-end-line="152" selection-end-column="15" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/components/WordDetails/CommentComponent.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="250">
-              <caret line="97" column="16" lean-forward="true" selection-start-line="97" selection-start-column="16" selection-end-line="97" selection-end-column="88" />
+            <state relative-caret-position="289">
+              <caret line="116" column="37" lean-forward="true" selection-start-line="116" selection-start-column="37" selection-end-line="118" selection-end-column="41" />
+              <folding>
+                <element signature="e#0#26#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/components/WordDetails/QuoteComponent.js">
+        <entry file="file://$PROJECT_DIR$/src/components/ProfileViewOnlyComponent.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="100" column="100" selection-start-line="100" selection-start-column="100" selection-end-line="100" selection-end-column="100" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/components/WordDetails/QuoteInputComponent.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="117">
-              <caret line="41" column="71" lean-forward="true" selection-start-line="41" selection-start-column="56" selection-end-line="41" selection-end-column="71" />
+            <state relative-caret-position="-464">
+              <caret line="35" column="16" selection-start-line="35" selection-start-column="16" selection-end-line="35" selection-end-column="16" />
+              <folding>
+                <element signature="e#0#26#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -76,13 +62,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>rgba</find>
-      <find>QuoteCo</find>
-      <find>wordLikes</find>
-      <find>wordDislikes</find>
-      <find>QuoteC</find>
-      <find>QuoteComponent</find>
-      <find>onclick</find>
       <find>SentenceComponent</find>
       <find>CommentComponent</find>
       <find>profile</find>
@@ -106,6 +85,13 @@
       <find>text</find>
       <find>history.push</find>
       <find>word-dislike-butt</find>
+      <find>map(</find>
+      <find>Link</find>
+      <find>L</find>
+      <find>Link</find>
+      <find>Lin</find>
+      <find>Link to=</find>
+      <find>.map</find>
     </findStrings>
     <replaceStrings>
       <replace>user-submitted</replace>
@@ -153,7 +139,6 @@
         <option value="$PROJECT_DIR$/src/components/LandingComponent.js" />
         <option value="$PROJECT_DIR$/src/components/RegisterComponent.js" />
         <option value="$PROJECT_DIR$/src/components/RegisterComponent.css" />
-        <option value="$PROJECT_DIR$/src/components/ProfileComponent.js" />
         <option value="$PROJECT_DIR$/src/services/WordService.js" />
         <option value="$PROJECT_DIR$/actions/wordActions.js" />
         <option value="$PROJECT_DIR$/src/actions/wordAction.js" />
@@ -175,14 +160,15 @@
         <option value="$PROJECT_DIR$/src/components/WordDetails/DefinitionInputComponent.js" />
         <option value="$PROJECT_DIR$/src/components/WordDetails/QuoteInputComponent.js" />
         <option value="$PROJECT_DIR$/src/components/WordDetails/SentenceInputComponent.js" />
-        <option value="$PROJECT_DIR$/src/components/WordDetails/SentenceComponent.js" />
         <option value="$PROJECT_DIR$/src/services/UserService.js" />
         <option value="$PROJECT_DIR$/src/components/ProfileComponent.css" />
-        <option value="$PROJECT_DIR$/src/components/ProfileViewOnlyComponent.js" />
         <option value="$PROJECT_DIR$/src/components/WordComponent.css" />
         <option value="$PROJECT_DIR$/src/components/WordDetails/CommentComponent.js" />
         <option value="$PROJECT_DIR$/src/components/WordDetails/DefinitionComponent.js" />
         <option value="$PROJECT_DIR$/src/components/WordDetails/QuoteComponent.js" />
+        <option value="$PROJECT_DIR$/src/components/WordDetails/SentenceComponent.js" />
+        <option value="$PROJECT_DIR$/src/components/ProfileViewOnlyComponent.js" />
+        <option value="$PROJECT_DIR$/src/components/ProfileComponent.js" />
       </list>
     </option>
   </component>
@@ -251,7 +237,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1587439654707" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1587471845243" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
@@ -320,21 +306,7 @@
       <workItem from="1586453580427" duration="248000" />
       <workItem from="1586461657111" duration="623000" />
       <workItem from="1587065510665" duration="1416000" />
-      <workItem from="1587315194399" duration="66036000" />
-    </task>
-    <task id="LOCAL-00057" summary="include try/catch for failed login">
-      <created>1586284537751</created>
-      <option name="number" value="00057" />
-      <option name="presentableId" value="LOCAL-00057" />
-      <option name="project" value="LOCAL" />
-      <updated>1586284537751</updated>
-    </task>
-    <task id="LOCAL-00058" summary="only attempt to display profile information if logged in">
-      <created>1586284977101</created>
-      <option name="number" value="00058" />
-      <option name="presentableId" value="LOCAL-00058" />
-      <option name="project" value="LOCAL" />
-      <updated>1586284977101</updated>
+      <workItem from="1587315194399" duration="68640000" />
     </task>
     <task id="LOCAL-00059" summary="added try/catch to login">
       <created>1586285167118</created>
@@ -665,11 +637,25 @@
       <option name="project" value="LOCAL" />
       <updated>1587438606805</updated>
     </task>
-    <option name="localTasksCounter" value="106" />
+    <task id="LOCAL-00106" summary="added edit button and edit input box">
+      <created>1587439675252</created>
+      <option name="number" value="00106" />
+      <option name="presentableId" value="LOCAL-00106" />
+      <option name="project" value="LOCAL" />
+      <updated>1587439675252</updated>
+    </task>
+    <task id="LOCAL-00107" summary="added list of followers/following profile links">
+      <created>1587470887159</created>
+      <option name="number" value="00107" />
+      <option name="presentableId" value="LOCAL-00107" />
+      <option name="project" value="LOCAL" />
+      <updated>1587470887159</updated>
+    </task>
+    <option name="localTasksCounter" value="108" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="178620000" />
+    <option name="totallyTimeSpent" value="181224000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1295" height="695" extended-state="6" />
@@ -741,8 +727,6 @@
     <option name="version" value="1" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="added note about not logged-in users" />
-    <MESSAGE value="added link to privacy policy" />
     <MESSAGE value="added photo credits" />
     <MESSAGE value="added brackets around photo credits" />
     <MESSAGE value="added handler if error is returned for registering" />
@@ -766,7 +750,9 @@
     <MESSAGE value="added delete button (visible to admin only)" />
     <MESSAGE value="implemented delete user functionality" />
     <MESSAGE value="began implementing upgrade user to admin functionality" />
-    <option name="LAST_COMMIT_MESSAGE" value="began implementing upgrade user to admin functionality" />
+    <MESSAGE value="added edit button and edit input box" />
+    <MESSAGE value="added list of followers/following profile links" />
+    <option name="LAST_COMMIT_MESSAGE" value="added list of followers/following profile links" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/App.js" />
@@ -965,30 +951,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/SearchResultsComponent.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="20" column="32" selection-start-line="20" selection-start-column="32" selection-end-line="20" selection-end-column="32" />
-          <folding>
-            <element signature="e#0#25#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/services/ContentService.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
           <caret line="9" column="14" selection-start-line="9" selection-start-column="14" selection-end-line="9" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/WordComponent.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="249">
-          <caret line="109" column="56" lean-forward="true" selection-start-line="109" selection-start-column="28" selection-end-line="109" selection-end-column="56" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1023,13 +989,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/WordDetails/SentenceComponent.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="386">
-          <caret line="68" column="37" selection-start-line="68" selection-start-column="37" selection-end-line="68" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/LoginComponent.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="179">
@@ -1054,33 +1013,38 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/ProfileViewOnlyComponent.js">
+    <entry file="file://$PROJECT_DIR$/src/components/WordDetails/QuoteInputComponent.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="54" column="26" lean-forward="true" selection-start-line="54" selection-start-column="26" selection-end-line="54" selection-end-column="26" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="117">
+          <caret line="41" column="71" lean-forward="true" selection-start-line="41" selection-start-column="56" selection-end-line="41" selection-end-column="71" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/ProfileComponent.js">
+    <entry file="file://$PROJECT_DIR$/src/components/WordDetails/DefinitionComponent.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-17">
-          <caret line="74" column="51" lean-forward="true" selection-start-line="74" selection-start-column="51" selection-end-line="74" selection-end-column="51" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="236">
+          <caret line="97" column="100" selection-start-line="97" selection-start-column="100" selection-end-line="97" selection-end-column="100" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/MainComponent.js">
+    <entry file="file://$PROJECT_DIR$/src/components/WordDetails/QuoteComponent.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="134" column="55" lean-forward="true" selection-start-line="134" selection-start-column="55" selection-end-line="134" selection-end-column="55" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="221">
+          <caret line="91" column="31" lean-forward="true" selection-start-line="91" selection-start-column="31" selection-end-line="91" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/WordDetails/CommentComponent.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="250">
+          <caret line="97" column="104" selection-start-line="97" selection-start-column="16" selection-end-line="97" selection-end-column="104" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/WordDetails/SentenceComponent.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1632">
+          <caret line="96" column="51" selection-start-line="95" selection-start-column="51" selection-end-line="96" selection-end-column="51" />
         </state>
       </provider>
     </entry>
@@ -1091,31 +1055,53 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/WordDetails/DefinitionComponent.js">
+    <entry file="file://$PROJECT_DIR$/src/components/SearchResultsComponent.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="527">
-          <caret line="91" column="21" lean-forward="true" selection-start-line="67" selection-start-column="19" selection-end-line="91" selection-end-column="21" />
+        <state relative-caret-position="179">
+          <caret line="45" column="38" selection-start-line="45" selection-start-column="38" selection-end-line="45" selection-end-column="38" />
+          <folding>
+            <element signature="e#0#25#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/WordDetails/CommentComponent.js">
+    <entry file="file://$PROJECT_DIR$/src/components/WordComponent.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="250">
-          <caret line="97" column="16" lean-forward="true" selection-start-line="97" selection-start-column="16" selection-end-line="97" selection-end-column="88" />
+        <state relative-caret-position="179">
+          <caret line="101" column="71" selection-start-line="101" selection-start-column="71" selection-end-line="101" selection-end-column="71" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/WordDetails/QuoteInputComponent.js">
+    <entry file="file://$PROJECT_DIR$/src/components/MainComponent.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="117">
-          <caret line="41" column="71" lean-forward="true" selection-start-line="41" selection-start-column="56" selection-end-line="41" selection-end-column="71" />
+        <state relative-caret-position="167">
+          <caret line="87" column="40" lean-forward="true" selection-start-line="87" selection-start-column="40" selection-end-line="87" selection-end-column="40" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/WordDetails/QuoteComponent.js">
+    <entry file="file://$PROJECT_DIR$/src/components/ProfileComponent.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="100" column="100" selection-start-line="100" selection-start-column="100" selection-end-line="100" selection-end-column="100" />
+        <state relative-caret-position="289">
+          <caret line="116" column="37" lean-forward="true" selection-start-line="116" selection-start-column="37" selection-end-line="118" selection-end-column="41" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/ProfileViewOnlyComponent.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-464">
+          <caret line="35" column="16" selection-start-line="35" selection-start-column="16" selection-end-line="35" selection-end-column="16" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

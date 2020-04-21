@@ -34,8 +34,6 @@ class ProfileViewOnlyComponent extends React.Component {
     }
 
     makeAdmin(){
-        //this.setState({viewProfile: {...this.state.viewProfile, userType: "ADMIN"}});
-        //updateProfile(this.state.viewProfile);
         updateProfile({userId: this.state.viewProfile.userId, userType: "ADMIN"})
     }
 
@@ -76,6 +74,9 @@ class ProfileViewOnlyComponent extends React.Component {
                                  <div className="wbdv-section-details">
                                      <p>Username:
                                          <span className="wbdv-bold"> {this.state.viewProfile.username}</span>
+                                     </p>
+                                     <p>Type:
+                                         <span className="wbdv-bold"> {this.state.viewProfile.userType}</span>
                                      </p>
                                      <p>Name:&nbsp;&nbsp;
                                          <span className="wbdv-bold">

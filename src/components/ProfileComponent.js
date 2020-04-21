@@ -114,46 +114,50 @@ class ProfileComponent extends React.Component {
                                      <p>Username:
                                          <span className="wbdv-bold"> {this.state.profile.username}</span>
                                      </p>
-                                         <p>Name:&nbsp;&nbsp;
-                                             {!this.state.editing && <span className="wbdv-bold">
-                                                 {this.state.profile.firstName} {this.state.profile.lastName}
-                                             </span> }
-                                         </p>
-                                         {this.state.editing && <div>
-                                             <input className="input-group" type="text"
-                                                    placeholder="First Name" title="First Name"
-                                                    value={this.state.profile.firstName}
-                                                    onChange={(e) => this.setState({
-                                                                                       profile: {
-                                                                                           ...this.state.profile,
-                                                                                           firstName: e.target.value
-                                                                                       }
-                                                                                   })}/>
-                                             <input className="input-group" type="text"
-                                                    placeholder="Last Name" title="Last Name"
-                                                    value={this.state.profile.lastName}
-                                                    onChange={(e) => this.setState({
-                                                                                       profile: {
-                                                                                           ...this.state.profile,
-                                                                                           lastName: e.target.value
-                                                                                       }
-                                                                                   })}/>
-                                         </div>}
-                                         <p>Email:&nbsp;&nbsp;
-                                             {!this.state.editing && <span className="wbdv-bold">
-                                                 {this.state.profile.email}
-                                             </span>}
-                                             { this.state.editing &&
-                                               <input className="input-group" type="email"
-                                                      placeholder="Email" title="Email"
-                                                      value={this.state.profile.email}
-                                                      onChange={(e) => this.setState({
-                                                             profile: {
-                                                                 ...this.state.profile,
-                                                                 email: e.target.value
-                                                             }
-                                                         })}/>}
-                                         </p>
+                                     <p>Type:
+                                         <span className="wbdv-bold"> {this.state.profile.userType}</span>
+                                     </p>
+                                     <p>Name:&nbsp;&nbsp;
+                                         {!this.state.editing && <span className="wbdv-bold">
+                                             {this.state.profile.firstName} {this.state.profile.lastName}
+                                         </span> }
+                                     </p>
+                                     {this.state.editing &&
+                                      <div>
+                                         <input className="input-group" type="text"
+                                                placeholder="First Name" title="First Name"
+                                                value={this.state.profile.firstName}
+                                                onChange={(e) => this.setState({
+                                                                                   profile: {
+                                                                                       ...this.state.profile,
+                                                                                       firstName: e.target.value
+                                                                                   }
+                                                                               })}/>
+                                         <input className="input-group" type="text"
+                                                placeholder="Last Name" title="Last Name"
+                                                value={this.state.profile.lastName}
+                                                onChange={(e) => this.setState({
+                                                                                   profile: {
+                                                                                       ...this.state.profile,
+                                                                                       lastName: e.target.value
+                                                                                   }
+                                                                               })}/>
+                                     </div>}
+                                     <p>Email:&nbsp;&nbsp;
+                                         {!this.state.editing && <span className="wbdv-bold">
+                                             {this.state.profile.email}
+                                         </span>}
+                                         { this.state.editing &&
+                                           <input className="input-group" type="email"
+                                                  placeholder="Email" title="Email"
+                                                  value={this.state.profile.email}
+                                                  onChange={(e) => this.setState({
+                                                         profile: {
+                                                             ...this.state.profile,
+                                                             email: e.target.value
+                                                         }
+                                                     })}/>}
+                                     </p>
                                  </div>
                              </div>
                              <div className="wbdv-profile-section">
