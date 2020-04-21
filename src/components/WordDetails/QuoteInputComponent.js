@@ -3,20 +3,27 @@ import React from 'react';
 class QuoteInputComponent extends React.Component {
 
     state = {
-        newQuote: "",
-        newBook: "",
-        newAuthor: "",
+        word: this.props.word,
+        content : {
+            contentType: 0,
+            text: "",
+            book: "",
+            author: "",
+        }
     }
 
     addQuote () {
         if (this.props.profile.userType === "PUBLIC"){
             alert("You must be logged in to perform this action!")
         }
-        else if (this.state.newBook === "" || this.state.newAuthor === "" || this.state.newQuote === "") {
+        else if (this.state.content.book === "" || this.state.content.author === "" || this.state.content.text === "") {
             alert("Please fill in all fields and try again!")
         } else {
-            //console.log(this.state.newBook + this.state.newAuthor + this.state.newQuote);
-            this.setState({newBook: "", newAuthor: "", newQuote: ""});
+            //console.log(this.state.content.text + this.state.content.book + this.state.content.author);
+            this.setState(
+                {content:
+                        {...this.state.content,
+                            text: "", book: "", author: ""}})
             // CALL ADD SERVICE CONTENT
         }
     }
@@ -24,15 +31,27 @@ class QuoteInputComponent extends React.Component {
     render(){
         return(
             <div className="wbdv-input-div container">
-                                <textarea className="container wbdv-input-data" title="Quote"
-                                          placeholder="Add a new quote here..." value={this.state.newQuote}
-                                          onChange={(e) => this.setState({newQuote: e.target.value})}/>
+                <textarea className="container wbdv-input-data" title="Quote"
+                          placeholder="Add a new quote here..." value={this.state.content.text}
+                          onChange={(e) => this.setState(
+                              {content:
+                                      {...this.state.content,
+                                      text: e.target.value}})}
+                />
                 <input type="text" className="container wbdv-input-data" title="Book"
-                       placeholder="Add quote's book here..." value={this.state.newBook}
-                       onChange={(e) => this.setState({newBook: e.target.value})}/>
+                       placeholder="Add quote's book here..." value={this.state.content.book}
+                       onChange={(e) => this.setState(
+                           {content:
+                                   {...this.state.content,
+                                       book: e.target.value}})}
+                />
                 <input type="text" className="container wbdv-input-data" title="Author"
-                       placeholder="Add quote's author here..." value={this.state.newAuthor}
-                       onChange={(e) => this.setState({newAuthor: e.target.value})}/>
+                       placeholder="Add quote's author here..." value={this.state.content.author}
+                       onChange={(e) => this.setState(
+                           {content:
+                                   {...this.state.content,
+                                       author: e.target.value}})}
+                />
                 <button className="container btn btn-success"
                         onClick={() => this.addQuote()}>
                     Add New Quote
