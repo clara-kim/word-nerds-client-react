@@ -3,15 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="5ebd5028-f892-4d65-9156-9ba402878a9e" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/WordComponent.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/WordComponent.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/WordDetails/CommentComponent.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/WordDetails/CommentComponent.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/WordDetails/CommentInputComponent.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/WordDetails/CommentInputComponent.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/WordDetails/ContentSectionComponent.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/WordDetails/ContentSectionComponent.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/WordDetails/QuoteComponent.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/WordDetails/QuoteComponent.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/WordDetails/QuoteInputComponent.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/WordDetails/QuoteInputComponent.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/WordDetails/SentenceComponent.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/WordDetails/SentenceComponent.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/WordDetails/SentenceInputComponent.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/WordDetails/SentenceInputComponent.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/services/ContentService.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/ContentService.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/WordDetails/DefinitionComponent.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/WordDetails/DefinitionComponent.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/WordDetails/DefinitionInputComponent.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/WordDetails/DefinitionInputComponent.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/WordDetails/DefinitionSectionComponent.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/WordDetails/DefinitionSectionComponent.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -22,19 +16,10 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/services/ContentService.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="340">
-              <caret line="26" column="38" selection-start-line="26" selection-start-column="38" selection-end-line="26" selection-end-column="38" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/WordDetails/ContentSectionComponent.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="216">
-              <caret line="77" column="50" selection-start-line="77" selection-start-column="50" selection-end-line="77" selection-end-column="50" />
+            <state relative-caret-position="301">
+              <caret line="53" column="66" lean-forward="true" selection-start-line="52" selection-start-column="28" selection-end-line="53" selection-end-column="66" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
               </folding>
@@ -43,10 +28,22 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/components/WordDetails/SentenceComponent.js">
+        <entry file="file://$PROJECT_DIR$/src/components/WordDetails/DefinitionSectionComponent.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="131">
-              <caret line="87" column="58" selection-start-line="87" selection-start-column="58" selection-end-line="87" selection-end-column="58" />
+            <state relative-caret-position="289">
+              <caret line="29" column="18" lean-forward="true" selection-start-line="29" selection-start-column="18" selection-end-line="29" selection-end-column="18" />
+              <folding>
+                <element signature="e#0#26#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/components/WordDetails/CommentComponent.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="289">
+              <caret line="89" column="31" selection-start-line="86" selection-start-column="29" selection-end-line="89" selection-end-column="31" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
               </folding>
@@ -55,10 +52,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/components/WordDetails/CommentComponent.js">
+        <entry file="file://$PROJECT_DIR$/src/components/WordDetails/DefinitionComponent.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="697">
-              <caret line="87" column="82" lean-forward="true" selection-start-line="87" selection-start-column="82" selection-end-line="87" selection-end-column="82" />
+            <state relative-caret-position="-51">
+              <caret line="84" column="113" selection-start-line="84" selection-start-column="113" selection-end-line="84" selection-end-column="113" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
               </folding>
@@ -156,12 +153,10 @@
         <option value="$PROJECT_DIR$/actions/wordActions.js" />
         <option value="$PROJECT_DIR$/src/actions/wordAction.js" />
         <option value="$PROJECT_DIR$/src/components/WordDetails/QuotesListComponent.js" />
-        <option value="$PROJECT_DIR$/src/components/WordDetails/DefinitionSectionComponent.js" />
         <option value="$PROJECT_DIR$/src/components/WordDetails/QuoteListComponent.js" />
         <option value="$PROJECT_DIR$/src/services/QuoteService.js" />
         <option value="$PROJECT_DIR$/src/components/SearchResultsComponent.js" />
         <option value="$PROJECT_DIR$/src/components/MainComponent.js" />
-        <option value="$PROJECT_DIR$/src/components/WordDetails/DefinitionInputComponent.js" />
         <option value="$PROJECT_DIR$/src/components/ProfileComponent.css" />
         <option value="$PROJECT_DIR$/src/actions/quoteAction.js" />
         <option value="$PROJECT_DIR$/src/actions/commentAction.js" />
@@ -171,7 +166,6 @@
         <option value="$PROJECT_DIR$/src/reducers/definitionReducer.js" />
         <option value="$PROJECT_DIR$/src/services/wordService.js" />
         <option value="$PROJECT_DIR$/src/services/UserService.js" />
-        <option value="$PROJECT_DIR$/src/components/WordDetails/DefinitionComponent.js" />
         <option value="$PROJECT_DIR$/src/reducers/quoteReducer.js" />
         <option value="$PROJECT_DIR$/src/common/constants.js" />
         <option value="$PROJECT_DIR$/src/components/LandingComponent.js" />
@@ -189,6 +183,9 @@
         <option value="$PROJECT_DIR$/src/components/WordDetails/SentenceComponent.js" />
         <option value="$PROJECT_DIR$/src/components/WordDetails/QuoteComponent.js" />
         <option value="$PROJECT_DIR$/src/components/WordDetails/CommentComponent.js" />
+        <option value="$PROJECT_DIR$/src/components/WordDetails/DefinitionInputComponent.js" />
+        <option value="$PROJECT_DIR$/src/components/WordDetails/DefinitionSectionComponent.js" />
+        <option value="$PROJECT_DIR$/src/components/WordDetails/DefinitionComponent.js" />
       </list>
     </option>
   </component>
@@ -257,7 +254,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1587514295288" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1587515807261" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
@@ -326,14 +323,7 @@
       <workItem from="1586453580427" duration="248000" />
       <workItem from="1586461657111" duration="623000" />
       <workItem from="1587065510665" duration="1416000" />
-      <workItem from="1587315194399" duration="103398000" />
-    </task>
-    <task id="LOCAL-00073" summary="stylized profile page">
-      <created>1586388580927</created>
-      <option name="number" value="00073" />
-      <option name="presentableId" value="LOCAL-00073" />
-      <option name="project" value="LOCAL" />
-      <updated>1586388580928</updated>
+      <workItem from="1587315194399" duration="104968000" />
     </task>
     <task id="LOCAL-00074" summary="factored out word detail components from word component">
       <created>1586391806398</created>
@@ -671,11 +661,18 @@
       <option name="project" value="LOCAL" />
       <updated>1587511118413</updated>
     </task>
-    <option name="localTasksCounter" value="122" />
+    <task id="LOCAL-00122" summary="finalized find/create/edit/delete for quotes, comments, sentences">
+      <created>1587514372998</created>
+      <option name="number" value="00122" />
+      <option name="presentableId" value="LOCAL-00122" />
+      <option name="project" value="LOCAL" />
+      <updated>1587514372999</updated>
+    </task>
+    <option name="localTasksCounter" value="123" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="215982000" />
+    <option name="totallyTimeSpent" value="217552000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1295" height="695" extended-state="6" />
@@ -747,7 +744,6 @@
     <option name="version" value="1" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="began implementing store" />
     <MESSAGE value="replaced string url with constant" />
     <MESSAGE value="commented out password for now" />
     <MESSAGE value="changed state to match content model in back end" />
@@ -772,7 +768,8 @@
     <MESSAGE value="updated noted" />
     <MESSAGE value="updating styling and included link to word/user in recent activity" />
     <MESSAGE value="added link to word in recent activity" />
-    <option name="LAST_COMMIT_MESSAGE" value="added link to word in recent activity" />
+    <MESSAGE value="finalized find/create/edit/delete for quotes, comments, sentences" />
+    <option name="LAST_COMMIT_MESSAGE" value="finalized find/create/edit/delete for quotes, comments, sentences" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/public/index.html">
@@ -868,13 +865,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/WordDetails/DefinitionSectionComponent.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="64" selection-start-line="3" selection-start-column="64" selection-end-line="3" selection-end-column="64" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/WordDetails/QuoteListComponent.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="272">
@@ -930,13 +920,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/WordDetails/DefinitionInputComponent.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="42" selection-start-line="5" selection-start-column="42" selection-end-line="5" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/actions/definitionAction.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="323">
@@ -972,13 +955,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="369">
           <caret line="62" column="30" lean-forward="true" selection-start-line="62" selection-start-column="30" selection-end-line="62" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/WordDetails/DefinitionComponent.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="69" column="51" lean-forward="true" selection-start-line="69" selection-start-column="51" selection-end-line="69" selection-end-column="51" />
         </state>
       </provider>
     </entry>
@@ -1081,13 +1057,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/WordDetails/CommentInputComponent.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="41" column="24" lean-forward="true" selection-start-line="41" selection-start-column="24" selection-end-line="41" selection-end-column="57" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/reducers/commentReducer.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="476">
@@ -1095,27 +1064,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/services/ContentService.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="26" column="38" selection-start-line="26" selection-start-column="38" selection-end-line="26" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/WordDetails/SentenceInputComponent.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="697">
           <caret line="41" column="57" lean-forward="true" selection-start-line="41" selection-start-column="57" selection-end-line="41" selection-end-column="57" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/WordDetails/ContentSectionComponent.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="77" column="50" selection-start-line="77" selection-start-column="50" selection-end-line="77" selection-end-column="50" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1131,8 +1083,49 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/components/WordDetails/SentenceComponent.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="131">
-          <caret line="87" column="58" selection-start-line="87" selection-start-column="58" selection-end-line="87" selection-end-column="58" />
+        <state relative-caret-position="182">
+          <caret line="65" column="100" selection-start-line="65" selection-start-column="29" selection-end-line="65" selection-end-column="100" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/services/ContentService.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="26" column="38" selection-start-line="26" selection-start-column="38" selection-end-line="26" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/WordDetails/DefinitionInputComponent.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="27" column="13" lean-forward="true" selection-start-line="27" selection-start-column="13" selection-end-line="27" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/WordDetails/CommentInputComponent.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="79">
+          <caret line="26" column="16" lean-forward="true" selection-start-line="26" selection-start-column="16" selection-end-line="26" selection-end-column="104" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/WordDetails/ContentSectionComponent.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="301">
+          <caret line="53" column="66" lean-forward="true" selection-start-line="52" selection-start-column="28" selection-end-line="53" selection-end-column="66" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/WordDetails/DefinitionSectionComponent.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="29" column="18" lean-forward="true" selection-start-line="29" selection-start-column="18" selection-end-line="29" selection-end-column="18" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
           </folding>
@@ -1141,8 +1134,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/components/WordDetails/CommentComponent.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="697">
-          <caret line="87" column="82" lean-forward="true" selection-start-line="87" selection-start-column="82" selection-end-line="87" selection-end-column="82" />
+        <state relative-caret-position="289">
+          <caret line="89" column="31" selection-start-line="86" selection-start-column="29" selection-end-line="89" selection-end-column="31" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/WordDetails/DefinitionComponent.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-51">
+          <caret line="84" column="113" selection-start-line="84" selection-start-column="113" selection-end-line="84" selection-end-column="113" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
           </folding>

@@ -20,12 +20,11 @@ class DefinitionInputComponent extends React.Component {
             if (this.state.content.text === "") {
                 alert("Please fill in the field and try again!")
             } else {
-                //console.log(this.state.content.text);
                 this.setState(
                     {content:
                             {...this.state.content,
                                 text: ""}})
-                // CALL ADD SERVICE CONTENT
+                this.props.createDefinition(this.state.content, this.props.profile.userId, this.props.word)
             }
         }
     }
