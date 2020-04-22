@@ -62,3 +62,33 @@ export const findContentsForUser = (userId) =>
     fetch (`${WN_API_URL}/api/users/${userId}/contents`)
         .then(response => response.status === 200 ? response.json() : [])
         .catch(err => [])
+
+export const followUser = (userIdFollower, userIdFollowing) =>
+    fetch(`${WN_API_URL}/api/users/${userIdFollower}/users/${userIdFollowing}/follows`, {
+        method: 'PUT',
+        headers: {
+            'content-type': 'application/json'
+        },
+    })
+        .then(response => response.status === 200 ? "good" : "bad")
+        .catch(err => "bad")
+
+export const unfollowUser = (userIdFollower, userIdFollowing) =>
+    fetch(`${WN_API_URL}/api/users/${userIdFollower}/users/${userIdFollowing}/follows`, {
+        method: 'DELETE',
+        headers: {
+            'content-type': 'application/json'
+        },
+    })
+        .then(response => response.status === 200 ? "good" : "bad")
+        .catch(err => "bad")
+
+export const getFollowers = (userId) =>
+    fetch (`${WN_API_URL}/api/users/${userId}/followers`)
+        .then(response => response.status === 200 ? response.json() : [])
+        .catch(err => [])
+
+export const getFollowings = (userId) =>
+    fetch (`${WN_API_URL}/api/users/${userId}/followings`)
+        .then(response => response.status === 200 ? response.json() : [])
+        .catch(err => [])

@@ -1,5 +1,12 @@
 import React from "react";
-import {logout, profile, updateProfile, findContentsForUser} from "../services/UserService";
+import {
+    logout,
+    profile,
+    updateProfile,
+    findContentsForUser,
+    getFollowers,
+    getFollowings,
+    viewProfile} from "../services/UserService";
 import {Link} from "react-router-dom";
 import "./ProfileComponent.css"
 
@@ -50,7 +57,11 @@ class ProfileComponent extends React.Component {
                                   })
                 }
                 findContentsForUser(this.state.profile.userId)
-                    .then(response => {this.setState({contents: this.sortByRecent(response)})})
+                    .then(response => {this.setState({contents: this.sortByRecent(response)})});
+                getFollowers(this.state.profile.userId)
+                    .then(response => {this.setState({followers: response})});
+                getFollowings(this.state.profile.userId)
+                    .then(response => { this.setState({following: response })});
             });
     }
 

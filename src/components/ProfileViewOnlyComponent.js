@@ -1,5 +1,12 @@
 import React from "react";
-import {viewProfile, updateProfile, deleteUser, findContentsForUser} from "../services/UserService";
+import {
+    viewProfile,
+    updateProfile,
+    deleteUser,
+    findContentsForUser,
+    followUser,
+    unfollowUser, getFollowers, getFollowings
+} from "../services/UserService";
 import "./ProfileComponent.css"
 import {Link} from "react-router-dom";
 
@@ -16,14 +23,26 @@ class ProfileViewOnlyComponent extends React.Component {
         followers: [],
         following: [],
         contents: [],
+        isFollower: false,
     }
 
     componentDidMount() {
         viewProfile(this.props.viewUserId)
             .then(profile => {
                 if (profile !== undefined){this.setState({viewProfile: profile})};
-                  findContentsForUser(this.state.viewProfile.userId)
-                      .then(response => {this.setState({contents: this.sortByRecent(response)})})
+              findContentsForUser(this.state.viewProfile.userId)
+                  .then(response => {this.setState({contents: this.sortByRecent(response)})});
+              getFollowers(this.state.viewProfile.userId)
+                  .then(response => {
+                      this.setState({followers: response});
+                      for (const foll in response){
+                          if (response[foll].userId === this.props.profile.userId){
+                              this.setState({isFollower: true})
+                          }
+                      }
+                  });
+              getFollowings(this.state.viewProfile.userId)
+                  .then(response => {this.setState({followings: response})});
             }
             )
     }
@@ -34,7 +53,18 @@ class ProfileViewOnlyComponent extends React.Component {
                 .then(profile => {
                           if (profile !== undefined){this.setState({viewProfile: profile})};
                           findContentsForUser(this.state.viewProfile.userId)
-                              .then(response => {this.setState({contents: this.sortByRecent(response)})})
+                              .then(response => {this.setState({contents: this.sortByRecent(response)})});
+                          getFollowers(this.state.viewProfile.userId)
+                              .then(response => {
+                                  this.setState({followers: response});
+                                  for (const foll in response){
+                                      if (response[foll].userId === this.props.profile.userId){
+                                          this.setState({isFollower: true})
+                                      }
+                                  }
+                              });
+                          getFollowings(this.state.viewProfile.userId)
+                              .then(response => {this.setState({followings: response})});
                       }
                 )
         }
@@ -58,6 +88,18 @@ class ProfileViewOnlyComponent extends React.Component {
     makeAdmin(){
         updateProfile({userId: this.state.viewProfile.userId, userType: "ADMIN"});
         this.setState({viewProfile: {...this.state.viewProfile, userType:"ADMIN"}});
+    }
+
+    follow(){
+        this.setState({isFollower: true});
+        followUser(this.props.profile.userId, this.state.viewProfile.userId);
+        this.setState({followers: [...this.state.followers, this.props.profile]})
+    }
+
+    unfollow(){
+        this.setState({isFollower: false});
+        unfollowUser(this.props.profile.userId, this.state.viewProfile.userId)
+        this.setState({followers: this.state.followers.filter(follower => follower.userId !== this.props.profile.userId)})
     }
 
     render() {
@@ -130,7 +172,21 @@ class ProfileViewOnlyComponent extends React.Component {
                                  </div>
                              </div>
                              <div className="wbdv-profile-section">
-                                 <h2 className="wbdv-section-title">Followers</h2>
+                                 <h2 className="wbdv-section-title">
+                                     Followers
+                                     {this.props.profile.userType !== "PUBLIC" && !this.state.isFollower &&
+                                      <button id="wbdv-profile-edit" className="btn btn-warning"
+                                              title="Edit My Details"
+                                              onClick={() => this.follow()}>
+                                          Follow
+                                      </button>}
+                                     {this.props.profile.userType !== "PUBLIC" && this.state.isFollower &&
+                                      <button id="wbdv-profile-edit" className="btn btn-danger"
+                                              title="Save My Details"
+                                              onClick={() => this.unfollow()}>
+                                          Unfollow
+                                      </button>}
+                                 </h2>
                                  <div className="wbdv-section-details">
                                      <ul>
                                          {this.state.followers && this.state.followers < 1 &&
