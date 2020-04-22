@@ -3,9 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="5ebd5028-f892-4d65-9156-9ba402878a9e" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/ProfileComponent.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ProfileComponent.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/ProfileViewOnlyComponent.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ProfileViewOnlyComponent.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/services/UserService.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/UserService.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/common/constants.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/common/constants.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/MainComponent.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/MainComponent.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -24,11 +23,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/ProfileComponent.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="288">
-              <caret line="63" column="62" selection-start-line="63" selection-start-column="62" selection-end-line="63" selection-end-column="62" />
+            <state relative-caret-position="255">
+              <caret line="63" column="64" selection-start-line="63" selection-start-column="64" selection-end-line="63" selection-end-column="64" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
               </folding>
@@ -36,11 +35,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/components/ProfileViewOnlyComponent.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="646">
-              <caret line="62" column="39" lean-forward="true" selection-start-line="62" selection-start-column="39" selection-end-line="62" selection-end-column="39" />
+            <state relative-caret-position="183">
+              <caret line="83" column="73" selection-start-line="83" selection-start-column="73" selection-end-line="83" selection-end-column="73" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
               </folding>
@@ -78,8 +77,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>wbdv-input-div</find>
-      <find>SENTENCE</find>
       <find>Link to</find>
       <find>QuotesList</find>
       <find>newAuthor</find>
@@ -108,6 +105,8 @@
       <find>quote</find>
       <find>sentence</find>
       <find>following</find>
+      <find>TOD</find>
+      <find>TODO</find>
     </findStrings>
     <replaceStrings>
       <replace>user-submitted</replace>
@@ -159,7 +158,6 @@
         <option value="$PROJECT_DIR$/src/components/WordDetails/QuoteListComponent.js" />
         <option value="$PROJECT_DIR$/src/services/QuoteService.js" />
         <option value="$PROJECT_DIR$/src/components/SearchResultsComponent.js" />
-        <option value="$PROJECT_DIR$/src/components/MainComponent.js" />
         <option value="$PROJECT_DIR$/src/components/ProfileComponent.css" />
         <option value="$PROJECT_DIR$/src/actions/quoteAction.js" />
         <option value="$PROJECT_DIR$/src/actions/commentAction.js" />
@@ -169,7 +167,6 @@
         <option value="$PROJECT_DIR$/src/reducers/definitionReducer.js" />
         <option value="$PROJECT_DIR$/src/services/wordService.js" />
         <option value="$PROJECT_DIR$/src/reducers/quoteReducer.js" />
-        <option value="$PROJECT_DIR$/src/common/constants.js" />
         <option value="$PROJECT_DIR$/src/components/LandingComponent.js" />
         <option value="$PROJECT_DIR$/src/components/LandingComponent.css" />
         <option value="$PROJECT_DIR$/src/reducers/sentenceReducer.js" />
@@ -187,8 +184,10 @@
         <option value="$PROJECT_DIR$/src/components/WordDetails/DefinitionSectionComponent.js" />
         <option value="$PROJECT_DIR$/src/components/WordDetails/DefinitionComponent.js" />
         <option value="$PROJECT_DIR$/src/services/UserService.js" />
-        <option value="$PROJECT_DIR$/src/components/ProfileViewOnlyComponent.js" />
         <option value="$PROJECT_DIR$/src/components/ProfileComponent.js" />
+        <option value="$PROJECT_DIR$/src/components/ProfileViewOnlyComponent.js" />
+        <option value="$PROJECT_DIR$/src/components/MainComponent.js" />
+        <option value="$PROJECT_DIR$/src/common/constants.js" />
       </list>
     </option>
   </component>
@@ -250,7 +249,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1587521364315" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1587521527499" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
@@ -319,21 +318,7 @@
       <workItem from="1586453580427" duration="248000" />
       <workItem from="1586461657111" duration="623000" />
       <workItem from="1587065510665" duration="1416000" />
-      <workItem from="1587315194399" duration="109858000" />
-    </task>
-    <task id="LOCAL-00075" summary="added &quot;add new&quot; button">
-      <created>1586392204895</created>
-      <option name="number" value="00075" />
-      <option name="presentableId" value="LOCAL-00075" />
-      <option name="project" value="LOCAL" />
-      <updated>1586392204895</updated>
-    </task>
-    <task id="LOCAL-00076" summary="failed login still returns undefined (changed due to backend adjustment)">
-      <created>1587316490016</created>
-      <option name="number" value="00076" />
-      <option name="presentableId" value="LOCAL-00076" />
-      <option name="project" value="LOCAL" />
-      <updated>1587316490017</updated>
+      <workItem from="1587315194399" duration="110413000" />
     </task>
     <task id="LOCAL-00077" summary="failed registration alert added">
       <created>1587316954920</created>
@@ -664,11 +649,25 @@
       <option name="project" value="LOCAL" />
       <updated>1587515864239</updated>
     </task>
-    <option name="localTasksCounter" value="124" />
+    <task id="LOCAL-00124" summary="implemented follow/unfollow in profile pages">
+      <created>1587521392895</created>
+      <option name="number" value="00124" />
+      <option name="presentableId" value="LOCAL-00124" />
+      <option name="project" value="LOCAL" />
+      <updated>1587521392896</updated>
+    </task>
+    <task id="LOCAL-00125" summary="fixed typo">
+      <created>1587521486929</created>
+      <option name="number" value="00125" />
+      <option name="presentableId" value="LOCAL-00125" />
+      <option name="project" value="LOCAL" />
+      <updated>1587521486929</updated>
+    </task>
+    <option name="localTasksCounter" value="126" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="222442000" />
+    <option name="totallyTimeSpent" value="222997000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1295" height="695" extended-state="6" />
@@ -740,8 +739,6 @@
     <option name="version" value="1" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="commented out password for now" />
-    <MESSAGE value="changed state to match content model in back end" />
     <MESSAGE value="renamed &quot;QuoteService&quot; as &quot;ContentService&quot;" />
     <MESSAGE value="added userId to state" />
     <MESSAGE value="added delete button (visible to admin only)" />
@@ -765,7 +762,9 @@
     <MESSAGE value="added link to word in recent activity" />
     <MESSAGE value="finalized find/create/edit/delete for quotes, comments, sentences" />
     <MESSAGE value="finalized find/create/edit/delete for definitions" />
-    <option name="LAST_COMMIT_MESSAGE" value="finalized find/create/edit/delete for definitions" />
+    <MESSAGE value="implemented follow/unfollow in profile pages" />
+    <MESSAGE value="fixed typo" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed typo" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/public/index.html">
@@ -917,13 +916,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
           <caret line="15" column="18" lean-forward="true" selection-start-line="15" selection-start-column="18" selection-end-line="15" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/common/constants.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="85" selection-start-column="85" selection-end-column="85" />
         </state>
       </provider>
     </entry>
@@ -1128,20 +1120,23 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/ProfileViewOnlyComponent.js">
+    <entry file="file://$PROJECT_DIR$/src/components/ProfileComponent.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="646">
-          <caret line="62" column="39" lean-forward="true" selection-start-line="62" selection-start-column="39" selection-end-line="62" selection-end-column="39" />
+        <state relative-caret-position="255">
+          <caret line="63" column="64" selection-start-line="63" selection-start-column="64" selection-end-line="63" selection-end-column="64" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/ProfileComponent.js">
+    <entry file="file://$PROJECT_DIR$/src/common/constants.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/ProfileViewOnlyComponent.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="63" column="62" selection-start-line="63" selection-start-column="62" selection-end-line="63" selection-end-column="62" />
+        <state relative-caret-position="183">
+          <caret line="83" column="73" selection-start-line="83" selection-start-column="73" selection-end-line="83" selection-end-column="73" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
           </folding>
