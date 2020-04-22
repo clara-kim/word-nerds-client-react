@@ -42,7 +42,7 @@ class ProfileViewOnlyComponent extends React.Component {
                       }
                   });
               getFollowings(this.state.viewProfile.userId)
-                  .then(response => {this.setState({followings: response})});
+                  .then(response => {this.setState({following: response})});
             }
             )
     }
@@ -64,7 +64,7 @@ class ProfileViewOnlyComponent extends React.Component {
                                   }
                               });
                           getFollowings(this.state.viewProfile.userId)
-                              .then(response => {this.setState({followings: response})});
+                              .then(response => {this.setState({following: response})});
                       }
                 )
         }
