@@ -20,12 +20,11 @@ class SentenceInputComponent extends React.Component {
             if (this.state.content.text === "") {
                 alert("Please fill in the field and try again!")
             } else {
-                //console.log(this.state.content.text);
                 this.setState(
                     {content:
                             {...this.state.content,
                                 text: ""}})
-                // CALL ADD SERVICE CONTENT
+                this.props.createSentence(this.state.content, this.props.profile.userId, this.props.word)
             }
         }
     }
@@ -33,12 +32,12 @@ class SentenceInputComponent extends React.Component {
     render(){
         return(
             <div className="wbdv-input-div container">
-                                <textarea className="container wbdv-input-data" title="Sentence"
-                                          placeholder="Add a new sentence here..." value={this.state.content.text}
-                                          onChange={(e) => this.setState(
-                                              {content:
-                                                      {...this.state.content,
-                                                          text: e.target.value}})}/>
+                <textarea className="container wbdv-input-data" title="Sentence"
+                          placeholder="Add a new sentence here..." value={this.state.content.text}
+                          onChange={(e) => this.setState(
+                              {content:
+                                      {...this.state.content,
+                                          text: e.target.value}})}/>
                 <button className="container btn btn-success"
                         onClick={() => this.addContent()}>
                     Add New Sentence

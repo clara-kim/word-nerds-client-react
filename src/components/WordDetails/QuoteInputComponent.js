@@ -20,7 +20,6 @@ class QuoteInputComponent extends React.Component {
         else if (this.state.content.book === "" || this.state.content.author === "" || this.state.content.text === "") {
             alert("Please fill in all fields and try again!")
         } else {
-            //console.log(this.state.content.text + this.state.content.book + this.state.content.author);
             this.setState(
                 {content:
                         {...this.state.content,

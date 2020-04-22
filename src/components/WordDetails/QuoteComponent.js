@@ -61,7 +61,7 @@ class QuoteComponent extends React.Component {
                     {(this.props.profile.userType === "ADMIN" ||
                       this.props.profile.userId === this.props.content.contributor.userId) &&
                      <button className="wbdv-transparent-button" onClick={() =>
-                         this.props.deleteQuote(this.props.quote.contentId)}>
+                         this.props.deleteQuote(this.props.content.contentId)}>
                          <i className="fa fa-trash wbdv-word-dislike-icon"
                             title="delete"/>
                      </button>}
@@ -83,7 +83,7 @@ class QuoteComponent extends React.Component {
                      <button className="wbdv-transparent-button"
                              onClick={()=> {
                                  this.setState({editing: false});
-                                 this.props.updateQuote(this.state.content)
+                                 this.props.updateQuote(this.state.content.contentId, this.state.content)
                              }}>
                          <i className="fa fa-save wbdv-edit-icon"
                             title="save"/>

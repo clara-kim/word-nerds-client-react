@@ -7,9 +7,15 @@ import {combineReducers, createStore} from 'redux';
 import ContentSectionComponent from "./WordDetails/ContentSectionComponent";
 import DefinitionSectionComponent from "./WordDetails/DefinitionSectionComponent";
 import {getDislikeNumberForWord, getLikeNumberForWord} from "../services/wordService"
+import definitionReducer from "../reducers/definitionReducer";
+import sentenceReducer from "../reducers/sentenceReducer";
+import commentReducer from "../reducers/commentReducer";
 
 const rootReducer = combineReducers({
-                                        quotes: quoteReducer
+                                        quotes: quoteReducer,
+                                        definitions: definitionReducer,
+                                        sentences: sentenceReducer,
+                                        comments: commentReducer
                                     })
 
 const store = createStore (rootReducer);

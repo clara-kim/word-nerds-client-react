@@ -16,12 +16,20 @@ import {
     UPDATE_QUOTE
 } from "../../actions/quoteAction";
 import ContentService from "../../services/ContentService"
+import {
+    CREATE_SENTENCE,
+    DELETE_SENTENCE,
+    FIND_SENTENCES_FOR_WORD, UPDATE_SENTENCE
+} from "../../actions/sentenceAction";
+import {CREATE_COMMENT, DELETE_COMMENT, FIND_COMMENTS_FOR_WORD} from "../../actions/commentAction";
 
 class ContentSectionComponent extends React.Component {
 
-    // componentDidMount() {
-    //     this.props.findQuotesForWord(this.props.word)
-    // }
+    componentDidMount() {
+        this.props.findQuotesForWord(this.props.word);
+        this.props.findSentencesForWord(this.props.word);
+        this.props.findCommentsForWord(this.props.word);
+    }
 
     render () {
         return (
@@ -49,19 +57,37 @@ class ContentSectionComponent extends React.Component {
 
                     {/*EXAMPLE SENTENCES TAB*/}
                     <Tab eventKey="examples" title="Example Sentences">
-                        <SentenceComponent profile={this.props.profile}/>
+                        {this.props.sentences && this.props.sentences.map(content =>
+                            <SentenceComponent
+                                profile={this.props.profile}
+                                content = {content}
+                                key={content.contentId}
+                                deleteSentence = {this.props.deleteSentence}
+                                updateSentence = {this.props.updateSentence}
+                            />
+                        )}
                         <SentenceInputComponent
                             profile={this.props.profile}
                             word={this.props.word}
+                            createSentence = {this.props.createSentence}
                         />
                     </Tab>
 
                     {/*COMMENTS TAB*/}
                     <Tab eventKey="comments" title="Comments">
-                        <CommentComponent profile={this.props.profile}/>
+                        {this.props.comments && this.props.comments.map(content =>
+                        <CommentComponent
+                            profile={this.props.profile}
+                            content = {content}
+                            key={content.contentId}
+                            deleteComment = {this.props.deleteComment}
+                            updateComment = {this.props.updateComment}
+                        />
+                        )}
                         <CommentInputComponent
                             profile={this.props.profile}
                             word={this.props.word}
+                            createComment = {this.props.createComment}
                         />
                     </Tab>
                 </Tabs>
@@ -72,7 +98,9 @@ class ContentSectionComponent extends React.Component {
 
 const stateToPropertyMapper = (state) => {
     return {
-        quotes: state.quotes.quotes
+        quotes: state.quotes.quotes,
+        comments: state.comments.comments,
+        sentences: state.sentences.sentences
     }
 }
 
@@ -84,16 +112,42 @@ const dispatchToPropertyMapper = (dispatch) => {
                                                     type: FIND_QUOTES_FOR_WORD,
                                                     quotes: actualQuotes
                                                 })),
-
+        findCommentsForWord: (word) =>
+            ContentService.findCommentsForWord(word)
+                .then(actualComments => dispatch({
+                                                   type: FIND_COMMENTS_FOR_WORD,
+                                                   comments: actualComments
+                                               })),
+        findSentencesForWord: (word) =>
+            ContentService.findSentencesForWord(word)
+                .then(actualSentences => dispatch({
+                                                   type: FIND_SENTENCES_FOR_WORD,
+                                                   sentences: actualSentences
+                                               })),
         deleteQuote: (contentId) =>
-            // ContentService.deleteContent(contentId)
-            //     .then(status =>
+            ContentService.deleteContent(contentId)
+                .then(status =>
                           dispatch({
                                        type: DELETE_QUOTE,
                                        contentId: contentId
-                                   }), //TODO REMOVE COMMA WHEN BRINGING IN SERVICE
-                // ),
-
+                                   })
+                ),
+        deleteSentence: (contentId) =>
+            ContentService.deleteContent(contentId)
+                .then(status =>
+                          dispatch({
+                                       type: DELETE_SENTENCE,
+                                       contentId: contentId
+                                   })
+                ),
+        deleteComment: (contentId) =>
+            ContentService.deleteContent(contentId)
+                .then(status =>
+                          dispatch({
+                                       type: DELETE_COMMENT,
+                                       contentId: contentId
+                                   })
+                ),
         createQuote: (newQuote, userId, word) =>
              ContentService.createContent(newQuote, userId, word)
                  .then(actualQuote =>
@@ -102,15 +156,46 @@ const dispatchToPropertyMapper = (dispatch) => {
                                        newQuote: actualQuote
                                    })
         ),
-
+        createSentence: (newSentence, userId, word) =>
+            ContentService.createContent(newSentence, userId, word)
+                .then(actualSentence =>
+                          dispatch({
+                                       type: CREATE_SENTENCE,
+                                       newSentence: actualSentence
+                                   })
+                ),
+        createComment: (newComment, userId, word) =>
+            ContentService.createContent(newComment, userId, word)
+                .then(actualComment =>
+                          dispatch({
+                                       type: CREATE_COMMENT,
+                                       newComment: actualComment
+                                   })
+                ),
         updateQuote: (contentId, quote) =>
-        //     ContentService.updateContent(contentId, quote)
-        //         .then(quote =>
+            ContentService.updateContent(contentId, quote)
+                .then(quote =>
                           dispatch({
                                        type: UPDATE_QUOTE,
                                        updatedQuote: quote
                                    })
-        //         )
+                ),
+        updateSentence: (contentId, sentence) =>
+            ContentService.updateContent(contentId, sentence)
+                .then(sentence =>
+                          dispatch({
+                                       type: UPDATE_SENTENCE,
+                                       updatedSentence: sentence
+                                   })
+                ),
+        updateComment: (contentId, comment) =>
+            ContentService.updateContent(contentId, comment)
+                .then(comment =>
+                          dispatch({
+                                       type: UPDATE_SENTENCE,
+                                       updatedComment: comment
+                                   })
+                )
     }
 }
 

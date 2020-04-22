@@ -11,7 +11,7 @@ export const findQuotesForWord = (word) =>
         .catch(err => [])
 
 export const findSentencesForWord = (word) =>
-    fetch(`${WN_API_URL}/api/words/${word}/quotations`, {
+    fetch(`${WN_API_URL}/api/words/${word}/sentences`, {
         method: 'GET',
         headers: {
             'content-type': 'application/json'
@@ -21,7 +21,7 @@ export const findSentencesForWord = (word) =>
         .catch(err => [])
 
 export const findCommentsForWord = (word) =>
-    fetch(`${WN_API_URL}/api/words/${word}/quotations`, {
+    fetch(`${WN_API_URL}/api/words/${word}/comments`, {
         method: 'GET',
         headers: {
             'content-type': 'application/json'
@@ -31,7 +31,7 @@ export const findCommentsForWord = (word) =>
         .catch(err => [])
 
 export const findDefinitionsForWord = (word) =>
-    fetch(`${WN_API_URL}/api/words/${word}/quotations`, {
+    fetch(`${WN_API_URL}/api/words/${word}/definitions`, {
         method: 'GET',
         headers: {
             'content-type': 'application/json'
@@ -41,10 +41,10 @@ export const findDefinitionsForWord = (word) =>
         .catch(err => [])
 
 export const deleteContent = (contentId) =>
-    fetch(`${WN_API_URL}/contents/${contentId}`, {
+    fetch(`${WN_API_URL}/api/contents/${contentId}`, {
         method: "DELETE"
     })
-        .then(response => response.json());
+        .then(response => response.status === 200 ? "success" : "failure");
 
 export const createContent =  (newContent, userId, word) =>
     fetch(`${WN_API_URL}/api/users/${userId}/words/${word}/contents`, {
