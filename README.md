@@ -1,6 +1,14 @@
 # Word Nerds
 
-P1/P2: https://docs.google.com/document/d/1dXGW-LkW1DCGeepDEwpKy55eLejBVBa7obd173uS2Vg/edit?usp=sharing
+Word Nerds is a community dictionary where users personally engage with words and enhance them with meaningful human input. We want to ignite young people’s interest in vocabulary and books by giving them a space to engage with and take ownership of their language.
+
+This repository is the front-end of the Word-Nerds website.
+
+Heroku Deployment: https://word-nerds.herokuapp.com/
+
+Developers:
+* Back-end: Christopher Sims, Rebecca Bonne-Annee
+* Front-end: Clara Kim
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
